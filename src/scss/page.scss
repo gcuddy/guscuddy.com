@@ -1,0 +1,15 @@
+// First up: config and functions
+@import "config";
+
+// Set Gorko to output no CSS for this file
+$outputTokenCSS: false;
+
+// Next: pull in Gorko for design tokens
+@import "../../node_modules/gorko/gorko.scss";
+
+@import "blocks/post-list";
+@import "blocks/pagination";
+@import "blocks/page-content";
+@import "blocks/recommended-posts";
+@import "blocks/heading-anchor";
+@import "./blocks/post-footer";

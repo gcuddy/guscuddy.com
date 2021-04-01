@@ -1,0 +1,13 @@
+.headline {
+    font-size: get-size('800');
+    font-weight: 900;
+    max-width: 18ch;
+
+  @include media-query('md') {
+    font-size: get-size('900');
+  }
+
+  @include media-query('lg') {
+    font-size: get-size('major');
+  }
+}

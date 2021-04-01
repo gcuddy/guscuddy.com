@@ -1,0 +1,18 @@
+{% set ctaPrefix = cta %} {% if ctaContent %} {% set ctaPrefix = 'ctaContent' %}
+{% endif %}
+
+<article id="cta" class="[ cta ]">
+  <div class="content">
+    <div class="[ cta__inner ] [ flow shadow ]">
+      <h2 class="[ cta__heading ] [ neon ]" data-highlight="quaternary">
+        {# {{ ctaPrefix.title }} #}
+        The C<span>u</span>rtain
+      </h2>
+      <p class="[ cta__summary ] [ measure-short ]">{{ ctaPrefix.summary }}</p>
+      <div class="cta__action">
+
+        {% include "partials/email-capture.html" %}
+      </div>
+    </div>
+  </div>
+</article>

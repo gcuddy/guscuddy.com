@@ -1,0 +1,47 @@
+// First up: config and functions
+@import "config";
+
+// Set Gorko to output no CSS for this file
+$outputTokenCSS: false;
+
+// Next: pull in Gorko for design tokens
+@import "../../node_modules/gorko/gorko.scss";
+
+@import './curtain-fonts';
+
+// Blocks
+@import "./blocks/pill";
+@import "./blocks/curtain-header";
+
+body {
+    // @include media-query("lg") {
+    //     animation-name: backgroundColorPalette;
+    //     animation-duration: 90s;
+    //     animation-iteration-count: infinite;
+    //     animation-direction: alternate;
+    //     animation-timing-function: linear;    
+    // }
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: var(--bg-glare);
+	}
+	100% {
+		background: var(--animation-color, #{darken(get-color('primary-shade'), 10%)});
+	}
+}
+
+// .site-wrap {
+//     box-shadow: 0 0 #{get-size('300')} var(--animation-color, #{darken(get-color('primary-shade'), 10%)}), 0 0 #{get-size('400')} var(--animation-color, #{darken(get-color('primary-shade'), 10%)});
+// }
+// i should animate the animation color with js probably.....
+
+
+// h1, h2, h3, h4 {
+//     font-family: "Space Mono", monospace;
+// }
+
+// .post-list__link {
+//     font-family: "Space Mono", monospace;
+// }

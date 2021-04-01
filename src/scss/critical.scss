@@ -1,0 +1,272 @@
+// First up: config and functions
+@import "config";
+
+// Next: pull in gorko for design tokens
+@import "../../node_modules/gorko/gorko.scss";
+
+// CSS Reset
+@import "reset";
+
+// Load fonts
+@import "fonts";
+
+
+// Use sass functions to get colors and fonts into CSS variables
+:root {
+  @each $color in $gorko-colors {
+    #{'--color-' + nth($color, 1)}: #{nth($color, 2)};
+  }
+  @each $size in $gorko-size-scale {
+    #{'--s-' + nth($size, 1)}: #{nth($size, 2)};
+  }
+  @each $font in $gorko-fonts {
+    #{'--font-' + nth($font, 1)}: #{nth($font, 2)};
+  }
+  --flow-space: var(--s-500);
+}
+
+// Create a light mode and dark mode
+@mixin dark-mode {
+  --bg-img: url('/images/noise-tile-dark.svg');
+  --bg: var(--color-dark-blue);
+  --bg-shade: var(--color-dark-shade);
+  --bg-glare: var(--color-dark-glare);
+  --text: var(--color-light);
+  --text-glare: var(--color-light-glare);
+  --text-shade: var(--color-light-shade);
+  --primary: var(--color-pink);
+
+  --color-mid: var(--color-gray);
+  --color-dim: var(--color-dark-gray);
+
+  --grayscale: grayscale(100%);
+}
+
+@mixin light-mode {
+
+  --color-mode: "light";
+
+  --site-border: var(--color-gold);
+  --bg: var(--color-light);
+  --bg-glare: var(--color-light-glare);
+  --bg-shade: var(--color-light-shade);
+  --text: var(--color-near-black);
+  --text-glare: var(--color-black);
+  --text-shade: var(--color-dark-blue);
+  --primary: var(--color-blue);
+  --primary-glare: var(--color-light-blue);
+  --color-mid: var(--color-dark-gray);
+  --color-dim: var(--color-gray);
+
+  --font-base: var(--font-serif);
+  --font-headings: var(--font-sans);
+
+  --grayscale: grayscale(50%);
+
+  //--font-base: #{@i}
+
+}
+
+:root {
+  @include light-mode();
+}
+
+
+// Global styles start
+// :root {
+//   --color-mode: "light";
+
+//   --dark: #{get-color("dark")};
+//   --dark-glare: #{get-color("dark-glare")};
+//   --dark-shade: #{get-color("dark-shade")};
+//   --light: #{get-color("light")};
+//   --light-glare: #{get-color("light-glare")};
+//   --light-shade: #{get-color("light-shade")};
+//   --primary: #{get-color("blue")};
+//   --primary-shade: #{get-color("primary-shade")};
+//   --primary-glare: #{get-color("primary-glare")};
+//   --secondary: #{get-color("secondary")};
+
+//   --blue: #{get-color('blue')};
+//   --green: #{get-color('green')};
+
+//   --bg: var(--color-light);
+//   --bg-shade: var(--light-shade);
+//   --bg-glare: var(--light-glare);
+//   --text: var(--black);
+//   --text-glare: var(--dark-glare);
+//   --text-shade: var(--dark-shade);
+
+// }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+  :root:not([data-user-color-scheme]) {
+    --bg: var(--dark);
+    --bg-shade: var(--dark-shade);
+    --bg-glare: var(--dark-glare);
+    --text: var(--light);
+    --text-glare: var(--light-glare);
+    --text-shade: var(--light-shade);
+    --primary: #{get-color('gold')};
+  }
+}
+// note: could make above sass mixin
+
+// [data-user-color-scheme="dark"] {
+//   --bg-img: url('/images/noise-tile-dark.svg');
+//   --bg: ${get-color('dark-blue')};
+//   --bg-shade: var(--dark-shade);
+//   --bg-glare: var(--dark-glare);
+//   --text: var(--light);
+//   --text-glare: var(--light-glare);
+//   --text-shade: var(--light-shade);
+//   --primary: #{get-color('pink')};
+//   --bg: var(--bg-glare) var(--bg-img) repeat;
+
+// }
+
+[data-user-color-scheme="dark"] {
+  @include dark-mode();
+}
+
+
+body {
+  background: var(--bg);
+  background-size: 500px;
+  animation: bg-animate 7s infinite;
+  color: var(--text);
+  line-height: 1.5;
+  font-size: get-size("500");
+  font-family: var(--font-base);
+  // @include media-query("lg") {
+  //   font-size:get-size('600');
+  // }
+}
+
+
+
+.site-wrap {
+  overflow-x: hidden;
+  background: var(--bg);
+  min-height: 100vh;
+  @include media-query("lg") {
+    margin: get-size('500');
+    // border: 2px solid var(--bg-shade);
+    border-radius: get-size('400');
+  }
+
+}
+
+a:not([class]) {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--color-mid);
+}
+
+main:focus {
+  outline: none;
+}
+
+:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 0.25rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  @include apply-utility("leading", "flat");
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: var(--s-800);
+}
+
+h2 {
+  font-size: var(--s-700);
+}
+
+h3 {
+  font-size: var(--s-600);
+}
+
+h2,h3,h4 {
+  font-family: var(--font-sans);
+}
+
+time[datetime] {
+  display: block;
+  font-style: italic;
+}
+
+p, li, hr {
+  max-width: 65ch;
+}
+
+// High contrast selection because it can help visually-impaired
+// folks read the text easier
+::selection {
+  color: var(--bg-glare);
+
+  // We set this as an RGBA because that's how you get a solid color, by using 0.99
+  // alpha value. Browsers are wild.
+  background: var(--primary);
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: 1px solid var(--text-glare);
+  //border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-shade);
+  border-radius: 0.1rem;
+}
+
+hr {
+  border: 0;
+  height: 0.2rem;
+  background: var(--color-dim);
+}
+
+
+@import "./utilities/flow";
+@import "./utilities/radius";
+@import "./utilities/content";
+@import "./utilities/visually-hidden";
+@import "./utilities/grid";
+@import "./utilities/reel";
+@import "./utilities/headline";
+@import "./utilities/panel";
+@import "./utilities/shadow";
+@import "./utilities/neon";
+@import "./utilities/full-bleed";
+@import "./utilities/post";
+@import './utilities/auto-grid';
+
+// @import "./blocks/post-list";
+@import "./blocks/pill";
+@import "./blocks/site-head";
+@import "./blocks/nav";
+@import "./blocks/site-foot";
+@import "./blocks/button";
+@import "./blocks/skip-link";
+@import "./blocks/page-header";
+@import "./blocks/work";
+@import "./blocks/cta";
+@import "./blocks/user-toggle";
+@import './blocks/callout'; 

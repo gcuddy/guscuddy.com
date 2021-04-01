@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "text": "Acting",
+      "url": "/work/acting/"
+    },
+    {
+      "text": "Writing",
+      "url": "/work/writing/"
+    },
+    {
+      "text": "Technology",
+      "url": "/work/tech/"
+    }
+  ]
+}

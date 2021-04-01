@@ -1,0 +1,18 @@
+.curtain-header {
+
+  &__time {
+    @extend .pill;
+    color: var(--primary);
+    border: get-size('300') double var(--primary-glare);
+    border-radius: get-size('400');
+    padding: get-size('400');
+    text-transform: uppercase;
+    font-family: "Space Mono", monospace;
+    margin: get-size('600') 0;
+    background: var(--bg-glare); 
+    @include media-query("md") {
+      font-size: get-size("500");
+      transform: rotate(-4deg);
+    }
+  }
+}

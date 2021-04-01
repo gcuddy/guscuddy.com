@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %} {% set pageHeaderTitle = title %} {% set
+pageHeaderSummary = content %} {% block content %}
+<article>{% include "partials/page-header.html" %}</article>
+<div class="[ panel dot-shadow ] [ bg-tertiary-glare ]">
+  <div class="content">
+    <article class="[ work ] [ ]">
+      <div>
+        {% for item in work.items %}
+        <div class="work__item">
+          <a href="{{ item.url }}">{{ item.text }}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </article>
+  </div>
+</div>
+
+{% include "partials/cta.html" %} {% endblock %}

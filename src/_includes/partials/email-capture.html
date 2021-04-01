@@ -1,0 +1,29 @@
+<form
+  action="/"
+  id="signupForm"
+  class="[ signup__form ]"
+  method="POST"
+>
+  <label for="email">Email address</label>
+  <div class="cta__fields">
+    <div>
+      <input
+        type="email"
+        name="email"
+        placeholder="me@website.com"
+        id="email"
+        autocapitalize="none"
+        autocorrect="off"
+        required
+        pattern="[^@]+@[^\.]+\..+"
+      />
+      <button type="submit" class="button">
+        <span
+          >{% if buttonText %}{{ buttonText }}{% else %}Subscribe{% endif
+          %}</span
+        >
+      </button>
+    </div>
+  </div>
+</form>
+<div aria-atomic="true" role="alert" class="signup__alert"></div>

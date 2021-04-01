@@ -1,0 +1,28 @@
+{% set letterboxdItems = letterboxd.slice(0,5) %}
+
+<div class="[ film__items ] [ flow ]">
+  <h2>Film Diary</h2>
+  {% for item in letterboxdItems %}
+  <article class="[ film__entry ] [ measure-short ]">
+    <a href="{{ item.uri }}" class="film__url">
+      <div class="film__media">
+        <img
+          src="{{ item.film.image.small }}"
+          alt="Poster for {{ item.film.title }}"
+          loading="lazy"
+        />
+      </div>
+      <div class="film__info">
+        <span class="film__title"
+          >{{ item.film.title }}<span class="film__rating"
+            >{{ item.rating.text }}</span
+          ></span
+        >
+        <span class="film__watched-date"
+          >{{ item.date.watched | dateFilter }}</span
+        >
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,84 @@
+{
+  "isbnString": {
+    "messages": [
+      "2021-02-15T19:53:20.914Z openlibrary url=https://openlibrary.org/api/books?format=json&jscmd=data&bibkeys=ISBN:9780061233326",
+      "2021-02-15T19:53:20.915Z worldcat url=https://www.worldcat.org/isbn/9780061233326",
+      "2021-02-15T19:53:20.955Z openlibrary request (41ms)",
+      "2021-02-15T19:53:21.177Z goodreads request (262ms)",
+      "2021-02-15T19:53:21.177Z goodreads url=https://www.goodreads.com/book/show/393033.json?key=H0A4fmIW7WF2btmo1ACpw",
+      "2021-02-15T19:53:21.744Z goodreads request (567ms)",
+      "2021-02-15T19:53:21.833Z worldcat request (918ms)",
+      "2021-02-15T19:53:21.833Z  overall id=9780061233326 type=isbn (919ms)"
+    ],
+    "results": {
+      "isbn": ["0061233323"],
+      "lccn": [],
+      "title": ["Pilgrim at Tinker Creek"],
+      "authors": ["Annie Dillard"],
+      "oclc": [],
+      "openlibrary": ["OL23385196M"],
+      "goodreads": ["393033"],
+      "isbn13": ["9780061233326"]
+    },
+    "permalinks": [
+      "https://openlibrary.org/books/OL23385196M",
+      "https://goodreads.com/book/show/393033",
+      "https://www.worldcat.org/isbn/9780061233326",
+      "https://worldcat.org/oclc/undefined"
+    ]
+  },
+  "9780061233326": {
+    "messages": [
+      "2021-02-15T19:54:12.317Z openlibrary url=https://openlibrary.org/api/books?format=json&jscmd=data&bibkeys=ISBN:9780061233326",
+      "2021-02-15T19:54:12.318Z worldcat url=https://www.worldcat.org/isbn/9780061233326",
+      "2021-02-15T19:54:12.389Z openlibrary request (72ms)",
+      "2021-02-15T19:54:12.582Z goodreads request (264ms)",
+      "2021-02-15T19:54:12.582Z goodreads url=https://www.goodreads.com/book/show/393033.json?key=H0A4fmIW7WF2btmo1ACpw",
+      "2021-02-15T19:54:13.266Z goodreads request (684ms)",
+      "2021-02-15T19:54:13.295Z worldcat request (977ms)",
+      "2021-02-15T19:54:13.295Z  overall id=9780061233326 type=isbn (978ms)"
+    ],
+    "results": {
+      "isbn": ["0061233323"],
+      "lccn": [],
+      "title": ["Pilgrim at Tinker Creek"],
+      "authors": ["Annie Dillard"],
+      "oclc": [],
+      "openlibrary": ["OL23385196M"],
+      "goodreads": ["393033"],
+      "isbn13": ["9780061233326"]
+    },
+    "permalinks": [
+      "https://openlibrary.org/books/OL23385196M",
+      "https://goodreads.com/book/show/393033",
+      "https://www.worldcat.org/isbn/9780061233326",
+      "https://worldcat.org/oclc/undefined"
+    ]
+  },
+  "978-1635572100": {
+    "messages": [
+      "2021-02-15T20:00:50.913Z openlibrary url=https://openlibrary.org/api/books?format=json&jscmd=data&bibkeys=ISBN:978-1635572100",
+      "2021-02-15T20:00:50.914Z worldcat url=https://www.worldcat.org/isbn/978-1635572100",
+      "2021-02-15T20:00:50.984Z openlibrary request (71ms)",
+      "2021-02-15T20:00:50.984Z openlibrary ERROR",
+      "2021-02-15T20:00:51.260Z goodreads request (347ms)",
+      "2021-02-15T20:00:51.260Z goodreads url=https://www.goodreads.com/book/show/44453047.json?key=H0A4fmIW7WF2btmo1ACpw",
+      "2021-02-15T20:00:51.684Z worldcat request (770ms)",
+      "2021-02-15T20:00:51.824Z goodreads request (564ms)",
+      "2021-02-15T20:00:51.827Z  overall id=978-1635572100 type=isbn (914ms)"
+    ],
+    "results": {
+      "goodreads": ["44453047"],
+      "isbn": ["163557210X"],
+      "isbn13": [],
+      "title": ["The Longing for Less: Living with Minimalism"],
+      "authors": ["Kyle Chayka"],
+      "oclc": []
+    },
+    "permalinks": [
+      "https://goodreads.com/book/show/44453047",
+      "https://www.worldcat.org/isbn/978-1635572100",
+      "https://worldcat.org/oclc/undefined"
+    ]
+  }
+}

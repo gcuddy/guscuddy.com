@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %} {% set pageCriticalStyles = ['css/page.css',
+'css/curtain.css'] %} {% set pageHeaderTitle = title %} {# Grab other posts that
+aren’t this one for the 'more from the newsletter' feed #} {% set
+recommendedPosts = helpers.getSiblingContent(collections.newsletter, page) %} {#
+Render post date and any tags that this post has been filed under #} {% set time
+%}
+<div class="[ curtain-header__time ]">
+  <span>Sent:</span>
+  <time datetime="{{ page.date | w3DateFilter }}"
+    >{{ page.date | dateFilter }}</time
+  >
+</div>
+{% endset %} {% block content %}
+<article>
+  <div class="[ curtain-header ]">
+    <div class="[ content ] [ flow ]">
+      <h1
+        class="[ curtain-header__heading ] [ headline ]"
+        data-highlight="primary"
+      >
+        {{ title }}
+      </h1>
+      {% if description %}
+      <div class="[ curtain-header__summary ] [ measure-long ]">
+        {{ description | safe }}
+      </div>
+      {% endif %} {{ time | safe}}
+    </div>
+  </div>
+
+  <div class="[ page-content ] [ flow content ] [ flow-space-700 gap-top-700 ]">
+    {{ content | safe }}
+  </div>
+  {% if recommendedPosts %}
+  <footer class="recommended-posts">
+    {% set postListItems = recommendedPosts %} {% set postListHeadline = 'Other
+    random posts you might enjoy' %} {% include "partials/post-list.html" %}
+  </footer>
+  {% endif %}
+</article>
+
+{% include "partials/cta.html" %} {% endblock %}

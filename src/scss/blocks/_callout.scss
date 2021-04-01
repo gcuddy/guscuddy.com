@@ -1,0 +1,39 @@
+.callout {
+    @extend .shadow;
+    @extend .radius;
+    background: var(--bg-shade);
+    padding: var(--s-400);
+    color: var(--primary-shade);
+
+    .close {
+  
+        cursor:pointer;
+      
+        &:after, &:before {
+          
+          content:"";
+          height:20px;
+          width:20px;
+          border-top:2px solid var(--primary);
+          position:absolute;
+          top:7px;
+          right:-8px;
+          transform: rotate(-45deg);
+        
+        }
+            
+        &:before {
+              
+          right:6px;
+         transform: rotate(45deg);
+        
+        }
+        
+        &:hover {
+               
+         transform: opacity(0.3);
+          
+        }
+        
+      }
+}

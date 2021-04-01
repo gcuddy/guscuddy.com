@@ -1,0 +1,18 @@
+.note-overlay {
+    margin-right: var(--s-300);
+    margin-left: var(--s-300);
+    border: 5px solid var(--primary-glare);
+
+    legend {
+        text-transform: uppercase;
+        font-size: var(--s-300);
+    }
+}
+
+.note-content {
+    font-family: var(--font-ia);
+
+    > * {
+        @include apply-utility('measure', 'long');
+    }
+}

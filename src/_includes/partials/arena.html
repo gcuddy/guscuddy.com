@@ -1,0 +1,18 @@
+{% set arenaChannels = arena.slice(0,7) %}
+
+<ul class="[ arena__channels ] [ flow ]">
+  {% for channel in arenaChannels %}
+  <li>
+    <!-- maybe include first image here? -->
+    <a href="https://are.na/gus-cuddy/{{ channel.slug }}"
+      >{{ channel.title }}</a
+    >
+    <span class="arena__updated"
+      >Last Updated: {{ channel.updated_at | dateFilter}}</span
+    >
+    {% if channel.metadata.description %}
+    <p>{{ channel.metadata.description }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

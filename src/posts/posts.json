@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/post.html",
+  "location": "Brooklyn",
+  "permalink": "/blog/{{ title | slug }}/index.html"
+}

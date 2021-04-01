@@ -1,0 +1,12 @@
+.heading-anchor {
+    display: none;
+    @include media-query("lg") {
+        display: block;
+        position: absolute;
+        left: -#{get-size('400')};
+        opacity: 0;
+    }
+    &:hover, &:focus {
+        opacity: 1;
+    }
+}

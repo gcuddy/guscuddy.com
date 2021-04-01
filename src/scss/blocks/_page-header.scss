@@ -1,0 +1,11 @@
+.page-header {
+  padding-top: get-size("600");
+
+  > * {
+    border-bottom: 0.2rem solid var(--color-dim);
+    padding-bottom: get-size("300");
+  }
+
+  &__heading {
+  }
+}

@@ -1,0 +1,12 @@
+.arena__channels {
+  > * {
+    display: inline-block;
+    padding: get-size("400");
+    border: 1px solid var(--text-glare);
+  }
+}
+.arena__updated {
+  display: block;
+  font-size: get-size("300");
+  font-style: italic;
+}

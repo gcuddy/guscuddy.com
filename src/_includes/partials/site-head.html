@@ -1,0 +1,29 @@
+<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
+<header role="banner" class="site-head">
+  <div class="content">
+    <div class="site-head__inner">
+      <h1 class="site-head__logo"><a href="/">Gus Cuddy</a></h1>
+      <nav
+        class="[ nav ] [ site-head__nav ] [ md:text-600 ]"
+        aria-label="Primary"
+      >
+        <ul class="nav__list">
+          {% for item in navigation.items %}
+          <li>
+            <a
+              href="{{ item.url }}"
+              {{
+              helpers.getLinkActiveState(item.url,
+              page.url)
+              |
+              safe
+              }}
+              >{{ item.text }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,47 @@
+.recently-played {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: none;
+    //border-radius: 0.25rem;
+  }
+
+  &__album {
+    padding: get-size("300");
+    font-size: get-size("300");
+  }
+  &__album + &__album {
+    margin-inline-start: get-size("500");
+  }
+
+  &__url {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &__media {
+    height: 10rem;
+    margin-bottom: get-size("300");
+    width: 10rem;
+
+    img {
+      border-radius: 0.25rem;
+      border: 1px solid var(--text-glare);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+  }
+
+  &__artist {
+    margin-top: 0.25rem;
+    color: var(--text-shade);
+    display: block;
+  }
+}

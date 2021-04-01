@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %} {% set pageCriticalStyles = ['css/log.css'] %}
+{% set pageHeaderTitle = title %} {% block content %}
+<div class="[ content flow ]">
+  {% include "partials/page-header.html" %}
+  <div class="grid">
+    {% include 'partials/film-diary.html' %} {% include
+  "partials/book-log.html" %}
+  </div>
+  {% include "partials/recently-played.html" %} 
+  {% include "partials/arena.html" %}
+</div>
+{% endblock %}

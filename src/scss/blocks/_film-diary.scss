@@ -1,0 +1,41 @@
+.film {
+  &__items {
+    --flow-space: #{get-size("300")};
+  }
+
+  &__entry {
+    font-size: get-size("400");
+    overflow: hidden;
+
+    > * {
+      display: flex;
+    }
+
+    img {
+      border-radius: 0.25rem;
+      border: 1px solid var(--text-glare);
+    }
+  }
+
+  &__url {
+    text-decoration: none;
+  }
+  &__info {
+    align-self: center;
+    margin-left: get-size("400");
+  }
+  &__rating {
+    margin-left: get-size("300");
+  }
+
+  &__title {
+    display: block;
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  &__watched-date {
+    display: block;
+    color: var(--text-shade);
+  }
+}

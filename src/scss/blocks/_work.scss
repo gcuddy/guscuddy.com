@@ -1,0 +1,42 @@
+.work {
+  --measure: 60ch;
+
+  > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc((#{get-size("400")} / 2) * -1);
+  }
+
+  > * > * {
+    flex-grow: 1;
+    flex-basis: calc((30rem - (100% - #{get-size("400")})) * 999);
+    margin: calc(#{get-size("400")} / 2);
+  }
+
+  > * > :nth-last-child(n + 5),
+  > * > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
+  }
+
+  font-size: get-size("600");
+  text-align: center;
+
+  margin-bottom: get-size("500");
+
+  &__item {
+    position: relative;
+
+    &::before {
+      @include media-query("md") {
+        content: "";
+        border-right: 0.125rem solid #ea4399;
+        pointer-events: none;
+        height: 3.25rem;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        z-index: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
+  <div class="[ content ] [ flow flow-space-700 ]">
+    {% if postListHeadline %}
+    <h2 class="[ headline ] [ measure-micro ]" data-highlight="primary">
+      {{ postListHeadline }}
+    </h2>
+    {% endif %}
+    <div>
+      <ol class="[ post-list ] [ flow post ]">
+        {% set current = "" %}
+        {% for item in postListItems %}
+                  
+        <li class="[ post-list__item ] [ leading-tight measure-long ]">
+          <a href="{{ item.url }}" class="post-list__link"
+            >{{ item.data.title }}</a
+          >
+          {% if item.data.season %}
+          <a href="#" class="pill">Season {{ item.data.season }}</a>
+          {% endif %}
+          <time
+            class="post-list__time"
+            datetime="{{ item.date | w3DateFilter }}"
+            >{{ item.date | dateFilter }}</time
+          >
+          <p class="post-list__description">{{ item.data.description }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</div>

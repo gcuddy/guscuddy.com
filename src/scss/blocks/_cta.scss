@@ -1,0 +1,55 @@
+.cta {
+  margin: #{get-size("700")} 0;
+
+  &__inner {
+    // @extend .radius;
+    // padding: get-size("400");
+    // border: 3px solid var(--text-shade);
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
+  label {
+      text-transform: uppercase;
+      font-size: get-size('300');
+      color: var(--text-shade);
+      margin: calc(#{get-size("300")} / 2);
+  }
+  &__fields {
+    overflow: hidden;
+
+    > * {
+      display: flex;
+      flex-wrap: wrap;
+      margin: calc(0px / 2 * -1);
+    }
+
+    > * > * {
+      margin: calc(#{get-size("300")} / 2);
+      flex-grow: 1;
+    }
+
+    > * > :first-child {
+      flex-basis: 0;
+      flex-grow: 999;
+      min-width: 66%;
+    }
+
+    input[type="email"] {
+      background-color: inherit;
+      border: none;
+      border-bottom: 2px dashed var(--text);
+      color: var(--text);
+    //  @include apply-utility('font', 'headings');
+     // font-size: var(--s-600);
+
+      &:focus {
+        border-color: var(--primary-glare);
+      }
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+    }
+  }
+}

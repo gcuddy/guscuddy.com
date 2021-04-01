@@ -1,0 +1,22 @@
+{% set ctaPrefix = cta %} 
+{% if ctaContent %} 
+{% set ctaPrefix = 'ctaContent' %}
+{% endif %}
+
+<article id="cta" class="[ cta ]">
+  <div class="content post">
+    <div class="[ cta__inner ] [ flow ]">
+      {% if ctaPrefix.title %}
+      <h2 class="[ cta__heading ]">
+        {{ ctaPrefix.title }}
+      </h2>
+      {% endif %}
+      <p class="[ cta__summary ] [ measure-short ]">
+        You might consider signing up for my weekly newsletter, <em>The Curtain</em>. It's wide-ranging, but mainly I cover cultural psyches, media philosophy, performance and the internet. I try to make it feel personal, and hundreds of folks seem to love it. <a href="/newsletter">You can also browse through the archives here</a>.
+      </p>
+      <div class="cta__action">
+        {% include "partials/email-capture.html" %}
+      </div>
+    </div>
+  </div>
+</article>
