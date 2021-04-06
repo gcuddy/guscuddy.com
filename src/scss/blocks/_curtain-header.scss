@@ -7,12 +7,21 @@
     border-radius: get-size('400');
     padding: get-size('400');
     text-transform: uppercase;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     margin: get-size('600') 0;
-    background: var(--bg-glare); 
-    @include media-query("md") {
-      font-size: get-size("500");
-      transform: rotate(-4deg);
+    background: transparent; 
+    @include apply-utility("leading", "tight");
+    // @include media-query("md") {
+    //   font-size: get-size("500");
+    //   transform: rotate(-4deg);
+    // }
+
+    time {
+      display: inline;
+    }
+
+    span {
+      display: block;
     }
   }
 }

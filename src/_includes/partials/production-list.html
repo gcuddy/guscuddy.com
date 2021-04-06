@@ -1,0 +1,12 @@
+<h2>Productions I've Been in</h2>
+
+<ol class="[ production-list ] [ flow ]">
+  {% set currentYear = "" %} 
+  {% for show in collections.shows %} 
+    {% set year = show.date.getFullYear() %} 
+    {% if currentYear != year %}
+        <h3>{{ year }}</h3>
+    {% endif %}
+  <li class="production-list__item"><a class="production-list__item-title" href="{{show.url}}">{{ show.data.title }}</a></li>
+  {% endfor %}
+</ol>

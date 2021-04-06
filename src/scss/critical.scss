@@ -31,7 +31,7 @@
   --bg: var(--color-dark-blue);
   --bg-shade: var(--color-dark-shade);
   --bg-glare: var(--color-dark-glare);
-  --text: var(--color-light);
+  --text: var(--color-off-white);
   --text-glare: var(--color-light-glare);
   --text-shade: var(--color-light-shade);
   --primary: var(--color-pink);
@@ -39,7 +39,7 @@
   --color-mid: var(--color-gray);
   --color-dim: var(--color-dark-gray);
 
-  --grayscale: grayscale(100%);
+  --grayscale: grayscale(66%);
 }
 
 @mixin light-mode {
@@ -104,13 +104,7 @@
     --color-mode: "dark";
   }
   :root:not([data-user-color-scheme]) {
-    --bg: var(--dark);
-    --bg-shade: var(--dark-shade);
-    --bg-glare: var(--dark-glare);
-    --text: var(--light);
-    --text-glare: var(--light-glare);
-    --text-shade: var(--light-shade);
-    --primary: #{get-color('gold')};
+    @include dark-mode();
   }
 }
 // note: could make above sass mixin
@@ -135,30 +129,28 @@
 
 body {
   background: var(--bg);
-  background-size: 500px;
-  animation: bg-animate 7s infinite;
   color: var(--text);
   line-height: 1.5;
-  font-size: get-size("500");
+  font-size: var(--s-500);
   font-family: var(--font-base);
-  // @include media-query("lg") {
-  //   font-size:get-size('600');
-  // }
-}
-
-
-
-.site-wrap {
   overflow-x: hidden;
   background: var(--bg);
   min-height: 100vh;
-  @include media-query("lg") {
-    margin: get-size('500');
-    // border: 2px solid var(--bg-shade);
-    border-radius: get-size('400');
-  }
-
 }
+
+
+
+// .site-wrap {
+//   overflow-x: hidden;
+//   background: var(--bg);
+//   min-height: 100vh;
+//   @include media-query("lg") {
+//     margin: get-size('500');
+//     // border: 2px solid var(--bg-shade);
+//     border-radius: get-size('400');
+//   }
+
+// }
 
 a:not([class]) {
   color: var(--text);
@@ -211,10 +203,26 @@ p, li, hr {
   max-width: 65ch;
 }
 
+img {
+  max-width: min(55rem, 100%);
+}
+
+// p,
+// li {
+//   max-width: 60ch;
+// }
+
+// h1,
+// h2,
+// h3 {
+//   max-width: 25ch;
+// }
+
+
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
-  color: var(--bg-glare);
+  color: var(--bg);
 
   // We set this as an RGBA because that's how you get a solid color, by using 0.99
   // alpha value. Browsers are wild.
@@ -237,11 +245,11 @@ p, li, hr {
   border-radius: 0.1rem;
 }
 
-hr {
-  border: 0;
-  height: 0.2rem;
-  background: var(--color-dim);
-}
+// hr {
+//   border: 0;
+//   height: 0.2rem;
+//   background: var(--color-dim);
+// }
 
 
 @import "./utilities/flow";
@@ -257,6 +265,7 @@ hr {
 @import "./utilities/full-bleed";
 @import "./utilities/post";
 @import './utilities/auto-grid';
+@import "./utilities/extend";
 
 // @import "./blocks/post-list";
 @import "./blocks/pill";
@@ -270,3 +279,4 @@ hr {
 @import "./blocks/cta";
 @import "./blocks/user-toggle";
 @import './blocks/callout'; 
+@import './blocks/hr';

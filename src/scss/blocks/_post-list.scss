@@ -1,5 +1,13 @@
 .post-list {
 
+  time {
+    display: inline;
+  }
+
+  &__tag {
+    margin-left: var(--s-300);
+  }
+
   &__grouping {
     position: sticky;
     top: 0;

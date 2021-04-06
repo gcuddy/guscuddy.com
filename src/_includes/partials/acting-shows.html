@@ -1,7 +1,7 @@
 {% for show in collections.shows %}
 
-<details class="flow"><summary><h3>{{ show.data.title }}</h3></summary>
-<div class="auto-grid">
+<details class="[ acting-shows ] [ flow ]"><summary><h3>{{ show.data.title }}</h3></summary>
+<div class="[ acting-shows__gallery] [ auto-grid extend ]">
 {% for photo in show.data.photos %}
 
 <img src="{{photo}}" alt="">

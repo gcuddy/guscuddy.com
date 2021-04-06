@@ -13,7 +13,7 @@ _Watchmen_ is the most blatant example of this: a show that was concerned with i
 
 But the exploration of masks and trauma didn't stop and start with _Watchmen_. In Bong Joon-Ho's massive hit movie _Parasite_, there is a different kind of mask. A mask that hides a deep and twisted political trauma, buried underneath itself. In Jordan Peele's _Us_ the mask is ourselves; similar to _Parasite_, it buries something dark and sinister. In _Succession_ we saw [the hyper interrelation of wealth and trauma](https://www.vox.com/culture/2019/9/24/20870750/succession-hbo-review-season-2-recap), and the many perverse masks used to cover it up, generation through generation. In _Russian Doll_, Natasha Lyonne's character dies over and over as a type of mask, repressing her own deep, embedded trauma. In _Fleabag_'s second season, Fleabag grapples with the trauma of womanhood and grief, meeting a hot priest along the way who sees through her mask: her constant use of the fourth-wall as a means of fictionalizing and dissociating from her own reality.
 
-![Russian Doll](/images/Russian%20Doll.jpg)
+![Russian Doll](/images/russian-doll.jpg)
 
 In the fantastic short documentary _Ghosts of Sugar Land_, the interviewees wear cheap Party City masks to protect their identity as they talk about their childhood friend who was radicalized and joined ISIS; the masks are literal, hiding the trauma of being Muslim in America.
 

@@ -10,19 +10,19 @@
         {% set current = "" %}
         {% for item in postListItems %}
                   
-        <li class="[ post-list__item ] [ leading-tight measure-long ]">
+        <li class="[ post-list__item ] [ measure-long ]">
           <a href="{{ item.url }}" class="post-list__link"
             >{{ item.data.title }}</a
           >
-          {% if item.data.season %}
-          <a href="#" class="pill">Season {{ item.data.season }}</a>
-          {% endif %}
+          <p class="post-list__description">{{ item.data.description }}</p>
           <time
             class="post-list__time"
             datetime="{{ item.date | w3DateFilter }}"
             >{{ item.date | dateFilter }}</time
           >
-          <p class="post-list__description">{{ item.data.description }}</p>
+          {% if 'newsletter' in item.filePathStem  %}
+          <a href="/newsletter" class="[ post-list__tag ] [ pill ]">The Curtain</a>
+          {% endif %}
         </li>
         {% endfor %}
       </ol>

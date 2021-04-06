@@ -22,6 +22,7 @@ dd {
 ul[class],
 ol[class] {
   padding: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a class attrbiute */
@@ -52,6 +53,11 @@ picture {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+picture img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Lazy Image rendering */

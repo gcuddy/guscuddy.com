@@ -21,8 +21,10 @@ const applySetting = passedSetting => {
   if (currentSetting) {
     document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
     setButtonLabelAndStatus(currentSetting);
+    updateTwitterEmbedTheme(currentSetting);
   } else {
     setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
+    updateTwitterEmbedTheme(getCSSCustomProp(COLOR_MODE_KEY));
   }
 };
 
@@ -32,6 +34,19 @@ const setButtonLabelAndStatus = currentSetting => {
   } mode`;
   modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
 };
+
+const updateTwitterEmbedTheme = currentSetting => {
+  // this is just silly, ugly changing twitter embed style to match theme
+  let twitterEmbeds = document.querySelectorAll('.twitter-embed iframe');
+
+  twitterEmbeds.forEach((el) => {
+    let src = el.getAttribute('src');
+    let regex = /(?<=theme=)(light|dark)/g;
+    src = src.replace(regex, currentSetting);
+    el.setAttribute("src", src);
+  })
+
+}
 
 const toggleSetting = () => {
   let currentSetting = localStorage.getItem(STORAGE_KEY);

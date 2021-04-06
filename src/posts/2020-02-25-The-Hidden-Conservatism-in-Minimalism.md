@@ -4,7 +4,7 @@ description: What exactly are we hiding?
 permalink: /conservatism-in-minimalism/
 ---
 
-![](/images/Glass%20house.jpg)
+![](/images/glass-house.jpg)
 
 Philip Johnson was a Nazi, that much is clear.
 {: #intro}

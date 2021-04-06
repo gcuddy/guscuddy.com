@@ -1,0 +1,49 @@
+hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    color: var(--color-dim);
+    text-align: center;
+}
+hr:after {
+    content: "⥈";
+    display: inline-block;
+    position: relative;
+    font-size: var(--s-700);
+}
+
+// hr:before {
+//     display: block;
+//     margin: 0 auto 0 auto;
+//     width: var(--s-900);
+//     height: var(--s-900);
+//     font-family: var(--font-serif);
+//     font-size: var(--s-700);
+//     color: var(--color-primary);
+//     font-weight: 700;
+//     text-align: center;
+//     content: '⧈ ⧈ ⧈';
+//     //text-shadow: var(--misprint-x) var(--misprint-y) var(--misprint-color);
+// }
+
+// hr:nth-of-type(2n+0):before {
+//     color: var(--color-green);
+// }
+
+// hr:nth-of-type(3n+0):before {
+//     color: var(--color-gold);
+// }
+
+// hr:nth-of-type(4n+0):before {
+//     color: var(--color-blue);
+// }
+
+// hr.link {
+//     width: 25%;
+//     margin: 0 auto 2rem auto;
+//     border-bottom: 1px dashed var(--body-text-color-gray);
+// }
+
+// hr.link:before {
+//     display: none;
+// }

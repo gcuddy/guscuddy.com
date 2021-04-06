@@ -7,17 +7,52 @@
     @include apply-utility("measure", "long");
   }
 
-  margin-bottom: get-size('900');
-  padding-bottom: get-size('900');
+  margin-bottom: get-size("900");
+  padding-bottom: get-size("900");
 
-  img,
-  picture,
-  video {
-    @extend .radius;
+  img {
     box-shadow: 0 0 0.25rem rgb(0 0 0 / 9%);
   }
 
-  .eleventy-plugin-youtube-embed, figure, img {
+  .youtube-embed {
+    padding-top: var(--s-800);
+  }
+
+  .youtube-embed + * {
+    --flow-space: var(--s-900);
+  }
+
+  picture,
+  video,
+  .youtube-embed {
+    @extend .radius;
+    width: 100vw;
+    max-width: 58rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  .twitter-embed {
+    iframe {
+      border-radius: 15px;
+      box-shadow: 0 0.3px 4.8px -8px rgba(0, 0, 0, 0.02),
+        0 0.7px 11.5px -8px rgba(0, 0, 0, 0.028),
+        0 1.3px 21.7px -8px rgba(0, 0, 0, 0.035),
+        0 2.2px 38.6px -8px rgba(0, 0, 0, 0.042),
+        0 3.8px 72.3px -8px rgba(0, 0, 0, 0.05),
+        0 8px 173px -8px rgba(0, 0, 0, 0.07);
+    }
+
+    > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .eleventy-plugin-youtube-embed,
+  figure,
+  img {
     max-width: min(55rem, 100%);
   }
 
@@ -56,6 +91,6 @@
   // Add tighter flow for elements that follow a heading
   h2 + *,
   h3 + * {
-    --flow-space: #{get-size("300")};
+    --flow-space: var(--s-400);
   }
 }

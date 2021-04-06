@@ -4,10 +4,11 @@ const fs = require("fs");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const shortHash = require("shorthash2");
+const Cache = require("@11ty/eleventy-cache-assets");
 
 const imageOptions = {
-  widths: [1920, 1280, 640, 320],
-  formats: ["jpeg", "avif", "webp"],
+  widths: [1800, 1200, 600],
+  formats: ["avif", "webp", "jpeg"],
   urlPath: "/images/",
   outputDir: "./dist/images/",
   cacheOptions: {
@@ -15,10 +16,13 @@ const imageOptions = {
     removeUrlQueryParams: true,
   },
   sharpJpegOptions: {
-      mozjpeg: true,
+    mozjpeg: true,
   },
   sharpAvifOptions: {
-      quality: 40,
+    quality: 40,
+  },
+  sharpWebpOptions: {
+    quality: 60,
   },
   filenameFormat: (id, src, width, format) => {
     const extension = path.extname(src);
@@ -54,38 +58,108 @@ module.exports = async function (value, outputPath) {
 
                 */
         const file = image.getAttribute("src");
+        const alt = image.getAttribute("alt");
+        let imageHtml;
+        // TODO: better sizes?
+        let sizes = "100vw";
+        let imageAttributes = {
+          alt,
+          sizes,
+          loading: "lazy",
+          decoding: "async",
+        };
+
+        // TODO: Refactor this to be DRY
 
         if (file.indexOf("http") < 0) {
-          // It's a remote image
-        } else {
           // It's a local image
 
-          const stats = Image.statsSync(file, imageOptions);
+          let localPath = "./dist" + file;
 
-          /** Creating a flat array of all the output paths from the stats object. */
-          const outputPaths = Object.keys(stats).reduce((acc, key) => {
-            return [
-              ...acc,
-              ...stats[key].map((resource) => {
-                return resource.outputPath;
-              }),
-            ];
-          }, []);
-          /** Checking if all output files exists. */
-          let hasImageBeenOptimized = true;
-          for (const outputPath of outputPaths) {
-              /* TODO: fix this output file path resolving dependent on file */
-            if (
-              !fs.existsSync(path.resolve(__dirname, "..", "..", outputPath))
-            ) {
-              hasImageBeenOptimized = false;
+          if (file.startsWith(".")) {
+            localPath = path.resolve(
+              __dirname,
+              "..",
+              "..",
+              path.dirname(outputPath),
+              file
+            );
+            console.log(localPath);
+          }
+
+          // let's only proceed if it actually exists. otherwise we'll get errors.
+          if (fs.existsSync(localPath)) {
+            let stats = Image.statsSync(localPath, imageOptions);
+
+            // Now let's generate the HTML.
+            imageHtml = Image.generateHTML(stats, imageAttributes);
+            // After generating the HTML, we'll check if we have already optimized this file. If not, we'll just run the actual thing.
+
+            /** Creating a flat array of all the output paths from the stats object. */
+            const outputPaths = Object.keys(stats).reduce((acc, key) => {
+              return [
+                ...acc,
+                ...stats[key].map((resource) => {
+                  return resource.outputPath;
+                }),
+              ];
+            }, []);
+            /** Checking if all output files exists. */
+            let hasImageBeenOptimized = true;
+            for (const outputPath of outputPaths) {
+              if (
+                !fs.existsSync(path.resolve(__dirname, "..", "..", outputPath))
+              ) {
+                hasImageBeenOptimized = false;
+              }
             }
-          }
-          if (!hasImageBeenOptimized) {
-            Image(src, imageOptions);
-          }
-        }
+            if (!hasImageBeenOptimized) {
+              stats = await Image(localPath, imageOptions);
+            }
+            const parent = image.parentElement;
+            if (parent.tagName === "P" && parent.querySelector("img:only-child")) {
+              parent.outerHTML = imageHtml;
+            } else {
+              image.outerHTML = imageHtml;
+            }
 
+            // TODO: fix the generated HTML to not put Jpeg in sources, it's screwing things up!
+          }
+        } else {
+          // It's a remote image, so we need to cache the download (eleventy-image does this automatically, but not with statsync)
+          let url = file;
+          let stats = await Image(url, {
+            widths: [1920, 1280, 640, 320],
+            formats: ["avif", "webp", "jpeg"],
+            urlPath: "/images/",
+            outputDir: "./dist/images/",
+            cacheOptions: {
+              duration: "7d",
+              removeUrlQueryParams: true,
+            },
+            sharpJpegOptions: {
+              mozjpeg: true,
+            },
+            sharpAvifOptions: {
+              quality: 40,
+            },
+            sharpWebpOptions: {
+              quality: 60,
+            },
+          });
+          imageHtml = Image.generateHTML(stats, imageAttributes);
+          const parent = image.parentElement;
+          if (parent.querySelector("img:only-child")) {
+            parent.outerHTML = imageHtml;
+          } else {
+            image.outerHTML = imageHtml;
+          }
+          // image.outerHTML = imageHtml;
+
+          //let metadata = await Image(file, imageOptions);
+          //console.log(metadata);
+        }
+        // replace image with our fancy new html
       }
     }
 

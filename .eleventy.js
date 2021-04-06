@@ -8,7 +8,7 @@ const isbn = require("./src/filters/isbn");
 
 // Plugins
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const embed = require("eleventy-plugin-embed-everything");
+const embedTwitter = require('eleventy-plugin-embed-twitter');
 const pluginPageAssets = require('eleventy-plugin-page-assets')
 
 // Utils
@@ -16,6 +16,7 @@ const markdown = require ('./src/utils/markdown.js');
 
 // Transforms
 const parseTransform = require('./src/transforms/parse-transforms');
+const embedTransform = require('./src/transforms/embeds');
 
 module.exports = (config) => {
 
@@ -36,7 +37,14 @@ module.exports = (config) => {
 
   // Plugins
   config.addPlugin(rssPlugin);
-  config.addPlugin(embed);
+  config.addPlugin(embedTwitter, {
+    doNotTrack: true,
+    embedClass: 'twitter-embed',
+    theme: 'dark',
+    twitterScript: {
+      defer: true,
+    }
+  });
   config.addPlugin(pluginPageAssets, {
     postsMatching: "src/newsletter/*/*.md",
     silent: true,
@@ -44,6 +52,7 @@ module.exports = (config) => {
 
 // Transforms
   config.addTransform("parsetransform", parseTransform);
+  config.addTransform("embedtransform", embedTransform);
 
   // Markdown parsing
   config.setLibrary('md', markdown);
@@ -55,11 +64,16 @@ module.exports = (config) => {
   config.addPassthroughCopy("./src/fonts");
 
   config.addCollection("newsletter", (collection) => {
-    return [...collection.getFilteredByGlob("./src/newsletter/**/*.md")].reverse();
+    return [...collection.getFilteredByGlob("./src/newsletter/**/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*.md")].reverse();
   });
 
   config.addCollection("blog", (collection) => {
     return [...collection.getFilteredByGlob("./src/posts/*.md")].reverse();
+  });
+
+  // this combines blog + newsletter collections
+  config.addCollection("archives", (collection) => {
+    return [...collection.getFilteredByGlob(["./src/posts/*.md", "./src/newsletter/**/*.md"])].reverse();
   });
 
   config.addCollection("shows", (collection) => {

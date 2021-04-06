@@ -9,7 +9,10 @@
   }
 
   &__logo {
-    font-size: var(--s-700);
+    font-size: var(--s-600);
+    @include media-query("md") {
+      font-size: var(--s-700);
+    }
     font-family: var(--font-serif);
     a {
       text-decoration: none;

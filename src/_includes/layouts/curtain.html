@@ -5,19 +5,17 @@ recommendedPosts = helpers.getSiblingContent(collections.newsletter, page) %} {#
 Render post date and any tags that this post has been filed under #} {% set time
 %}
 <div class="[ curtain-header__time ]">
-  <span>Sent:</span>
-  <time datetime="{{ page.date | w3DateFilter }}"
-    >{{ page.date | dateFilter }}</time
-  >
+  <span>To: The Curtain mailing list</span>
+  <span>From: Gus Cuddy</span>
+  <span>Sent: <time datetime="{{ page.date | w3DateFilter }}"
+    >{{ page.date | dateFilter }}</time></span>
 </div>
 {% endset %} {% block content %}
 <article>
-  <div class="[ curtain-header ]">
-    <div class="[ content ] [ flow ]">
+  <div class="[ page-header curtain-header ] [ content post ]">
+    <div class="[ flow ]">
       <h1
-        class="[ curtain-header__heading ] [ headline ]"
-        data-highlight="primary"
-      >
+        class="[ curtain-header__heading ]">
         {{ title }}
       </h1>
       {% if description %}
@@ -28,8 +26,10 @@ Render post date and any tags that this post has been filed under #} {% set time
     </div>
   </div>
 
-  <div class="[ page-content ] [ flow content ] [ flow-space-700 gap-top-700 ]">
+  <div class="[ page-content curtain ] [ content post ] [ flow-space-700 gap-top-900 ]">
+    <div class="flow">
     {{ content | safe }}
+  </div>
   </div>
   {% if recommendedPosts %}
   <footer class="recommended-posts">

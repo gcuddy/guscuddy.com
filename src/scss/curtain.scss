@@ -23,13 +23,23 @@ body {
     // }
 }
 
-@keyframes backgroundColorPalette {
-	0% {
-		background: var(--bg-glare);
-	}
-	100% {
-		background: var(--animation-color, #{darken(get-color('primary-shade'), 10%)});
-	}
+.curtain {
+
+
+    hr:after {
+        color: var(--color-primary);
+    }
+    hr:nth-of-type(2n+0):after {
+    color: var(--color-green);
+    }
+
+    hr:nth-of-type(3n+0):after {
+    color: var(--color-gold);
+    }
+
+    hr:nth-of-type(4n+0):after {
+    color: var(--color-blue);
+    }
 }
 
 // .site-wrap {
