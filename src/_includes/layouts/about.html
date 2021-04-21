@@ -1,9 +1,48 @@
-{% extends "layouts/base.html" %} {% set pageHeaderTitle = title %} {% block content %}
-<article>{% include "partials/page-header.html" %}
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/about.css'] %}
+{% set pageHeaderTitle = title %} {% block content %}
 
-<div class="[ page-content ] [ content flow post ] [ gap-top-700 ]">
-    {{ content | safe }}
-</div>
-</article>
+<div class="flow">
+    <article>{% include "partials/page-header.html" %}
 
-{% include "partials/cta.html" %} {% endblock %}
+        <div class="[ content flow post ] [ gap-top-700 ]">
+            {{ content | safe }}
+            <details open id="acting" class="flow">
+                <summary>
+                    <h2>Acting Portfolio</h2>
+                </summary>
+
+                <h3>Headshots & Resume</h3>
+
+                <article class="reel">
+
+                    <a href="/images/cuddy-headshot.jpg"><img src="/images/cuddy-headshot.jpg"
+                            alt="Headshot of Gus Cuddy"></a>
+                    <a href="/images/cuddy-headshot1.jpg"><img src="/images/cuddy-headshot1.jpg"
+                            alt="Headshot of Gus Cuddy"></a>
+                    <a href="/images/cuddy-headshot2.jpg"><img src="/images/cuddy-headshot2.jpg"
+                            alt="Headshot of Gus Cuddy"></a>
+                    <a href="/images/cuddy-headshot3.jpg"><img src="/images/cuddy-headshot3.jpg"
+                            alt="Headshot of Gus Cuddy"></a>
+
+
+                </article>
+                <a class="acting-resume" href="/files/cuddy-resume.pdf"><img src="/images/cuddy-resume.jpg"
+                        alt="Resume of Gus Cuddy"></a>
+
+
+                <hr>
+
+                {% set productionListHeadline %}
+                <h3 class="">Productions I've Been In</h3>
+                {% endset %}
+                {% include "partials/production-list.html" %}
+
+            </details>
+        </div>
+    </article>
+
+    <hr>
+
+    {% include "partials/cta.html" %}
+</div>{% endblock %}

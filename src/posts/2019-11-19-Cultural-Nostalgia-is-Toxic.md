@@ -20,7 +20,7 @@ These works romanticize instead of interrogating, and in that way they offer bla
 
 Meanwhile, this lack of interrogation is present in not just the content of new plays, but also in the aesthetics and presentation of old plays and stories. When you go to a revival of a classic in the US or Britain, you can generally expect to see textual fidelity, a reverence of the past, and a devotion to getting the period costumes and accents just right. In other words: a dead, museum theater piece. Little attention is paid to investigating how the story can be excavated and contextualized for the current time and place; it's as if directors forget that theatre is *always* in the present tense---which is its great strength.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">When you go to the theatre in Britain vs. When you go to the theatre in Germany <a href="https://t.co/7H3vll2DQg">pic.twitter.com/7H3vll2DQg</a></p>&mdash; Matthew Anderson (@MattAndersonNYT) <a href="https://twitter.com/MattAndersonNYT/status/1172416708901883904?ref_src=twsrc%5Etfw">September 13, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/MattAndersonNYT/status/1172416708901883904?ref_src=twsrc%5Etfw
 
 This lack of deeper thinking and introspection---the shallow presentation of classics "as they were meant to be staged"---is, likewise, political. As a form of complacent nostalgia, it's the same feeling responsible for Brexit, Trump, or [the departure of Emma Rice from the Globe](https://www.theguardian.com/stage/2017/apr/19/shakespeares-globe-board-did-not-respect-me-says-artistic-director-emma-rice).
 

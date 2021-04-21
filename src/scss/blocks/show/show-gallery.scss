@@ -1,0 +1,10 @@
+.show-gallery {
+  --full-bleed-max-width: 75rem;
+  --auto-grid-min-size: 20rem;
+
+  &.auto-grid img {
+    height: 20rem;
+    object-fit: cover;
+    object-position: 50% 25%;
+  }
+}

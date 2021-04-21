@@ -27,6 +27,7 @@ $gorko-base-size: 1rem;
 // Let's switch to Major Third
 
 $gorko-size-scale: (
+  "200": $gorko-base-size * 0.64,
   "300": $gorko-base-size * 0.8,
   "400": $gorko-base-size,
   "500": $gorko-base-size * 1.25,
@@ -44,10 +45,10 @@ $gorko-size-scale: (
  */
 $gorko-colors: (
   "dark": hsl(222, 5%, 8%),
-  "dark-glare": hsl(222, 94%, 10%),
-  "dark-shade": hsl(222, 5%, 9%),
-  "light": rgb(248,248,248),
-  "light-glare": hsl(222, 75%, 90%),
+  "dark-glare": hsl(222, 88%, 16%),
+  "dark-shade": hsla(220, 50%, 9%, 1),
+  "light": hsl(0, 0%, 97%),
+  "light-glare": hsl(360, 70%, 95%),
   "light-shade": hsl(222, 30%, 90%),
   "off-white": hsl(329, 7%, 87%),
   "primary": hsl(329, 80%, 59%),
@@ -55,7 +56,7 @@ $gorko-colors: (
   "primary-glare": #f07ab7,
   "secondary": hsl(115, 59%, 27%),
   "gold": hsl(42, 75%, 50%),
-  "blue": hsl(222, 43%, 50%),
+  "blue": hsl(222, 73%, 50%),
   "light-blue": hsl(222, 43%, 65%),
   "pink": hsl(323, 90%, 62%),
   "dark-blue": hsl(225, 64%, 9%),
@@ -68,7 +69,8 @@ $gorko-colors: (
 );
 
 $gorko-fonts: (
-  "headings": "'Gimlet Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  "headings":
+    "'Gimlet Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
   "sans":
     "'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
   "serif": "'Alegreya', Georgia, serif",

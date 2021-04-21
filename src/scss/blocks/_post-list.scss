@@ -1,7 +1,13 @@
 .post-list {
 
   time {
-    display: inline;
+    display: block;
+    color: var(--color-mid);
+    font-size: var(--s-400);
+    
+    @include media-query("lg") {
+      font-size: var(--s-500);
+    }
   }
 
   &__tag {
@@ -12,13 +18,21 @@
     position: sticky;
     top: 0;
   }
+  
+  @include media-query('md') {
+    &__item {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+    }
+    &__time {
+      text-align: right;
+    }
+  }
+
   &__link {
-    font-size: get-size("700");
     color: inherit;
     display: block;
-
-    @include apply-utility("font", "base");
-    @include apply-utility("weight", "bold");
+    font-weight: bold;
   }
 
   &__description {

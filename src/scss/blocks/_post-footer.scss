@@ -2,4 +2,15 @@
     time {
         display: inline;
     }
+    &__bio {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: var(--s-700);
+        align-items: center;
+        // Not sure about centering or not
+        
+        img {
+            border-radius: 50%;
+        }
+    }
 }

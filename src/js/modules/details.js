@@ -1,5 +1,8 @@
+// TODO: is there a better way to do this?
+
 const details = document.querySelector("details#acting");
 
+if (details) {
 let detailsState = sessionStorage.getItem("acting-details-state");
 
 if (detailsState) {
@@ -10,4 +13,5 @@ if (detailsState) {
 
 details.addEventListener("toggle", (event) => {
   sessionStorage.setItem("acting-details-state", details.open);
-});
+});  
+}

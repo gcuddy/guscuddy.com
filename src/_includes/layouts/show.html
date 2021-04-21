@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/show.css', 'css/about.css'] %}
+{% set pageHeaderTitle = title %}
+
+{% set pageHeaderSummary %}
+
+<time datetime="{{ date.toUTCString() | w3DateFilter }}">{{ date | dateMonthFilter }}</time>
+<p>{% if url %}<a href="{{url}}">{% endif %}{{ theater }}{% if url %}</a>{% endif %}</p>
+
+{% endset %}
+
+{% block content %}
+<article>{% include "partials/page-header.html" %}
+
+	<div class="[ show-content ] [ content post ] [ gap-top-700 ]">
+
+		<div class="flow flow-space-800">
+			<section class="[ show-gallery ] [ {%if photos.src.length > 2%}auto-grid{%endif%} full-bleed ]">
+				{% for photo in photos.src %}
+
+				<a href="{{page.url}}{{loop.index}}/"><img src="{{photo}}"
+						alt="Photo of Gus Cuddy in {{ title }} at {{ theater }}"></a>
+
+				{% endfor %}
+			</section>
+			<section class="[ details ]">
+				<dl class="details-items">
+					{% for role, name in credits %}
+					<dt>{{ role }}</dt>
+					<dd>{{ name }}</dd>
+					{% endfor %}
+				</dl>
+			</section>
+
+			</section>
+			<section class="flow">
+				<div class="flow flow-space-600">
+					{{ content | safe }}
+				</div>
+			</section>
+		</div>
+		<footer class="gap-top-900">
+			<div class="flow">
+
+				<details class="flow">
+					<summary>
+						<h2>Other Shows I've Been In</h2>
+					</summary>
+					{% include "partials/production-list.html" %}
+				</details>
+			</div>
+		</footer>
+
+	</div>
+</article>
+
+{% endblock %}

@@ -6,7 +6,7 @@ hr {
     text-align: center;
 }
 hr:after {
-    content: "⥈";
+    content: "◈";
     display: inline-block;
     position: relative;
     font-size: var(--s-700);

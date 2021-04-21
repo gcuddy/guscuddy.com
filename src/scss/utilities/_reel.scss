@@ -3,18 +3,35 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   height: auto;
+
+  &::-webkit-scrollbar {
+    height: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 1px solid var(--text-glare);
+    border-radius: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-shade);
+    border-radius: 0.25rem;
+  }
 }
 
-.reel > * {
+.reel>* {
   flex: 0 0 auto;
+  width: 18rem;
+  margin-bottom: var(--s-400);
 }
 
-.reel > img {
+.reel>img {
   height: 100%;
   flex-basis: auto;
   width: auto;
 }
 
-.reel > * + * {
-  margin-left: 1rem;
+.reel>*+* {
+  margin-left: var(--s-400);
 }

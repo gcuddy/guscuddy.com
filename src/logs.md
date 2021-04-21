@@ -1,5 +1,5 @@
 ---
-title: "Gus's Study"
+title: "The Logs"
 layout: "layouts/log.html"
 ---
 

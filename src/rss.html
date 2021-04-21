@@ -1,8 +1,8 @@
 ---
 title: "Gus Cuddy's Blog" 
-summary: "A feed of the latest posts from Gus
-Cuddy's blog." 
+summary: "A feed of the latest posts from Gus Cuddy's blog." 
 permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -13,8 +13,8 @@ permalink: "/feed.xml"
   <updated>{{ collections.blog | rssLastUpdatedDate }}</updated>
   <id>{{ site.url }}</id>
   <author>
-    <name>{{ site.authorName }}</name>
-    <email>hi@piccalil.li</email>
+    <name>{{ site.author.name }}</name>
+    <email>{{ site.author.email }}</email>
   </author>
   {% for post in collections.blog %} {% set absolutePostUrl %}{{ site.url }}{{
   post.url | url }}{% endset %}

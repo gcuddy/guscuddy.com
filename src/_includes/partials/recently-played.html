@@ -1,4 +1,5 @@
 {% set recentlyPlayed = lastfm.slice(0,10) %} {% if recentlyPlayed.length %}
+<div>
 <h2>What's on the turntable</h2>
 <ul class="recently-played">
   {% for item in recentlyPlayed %}
@@ -6,8 +7,8 @@
     <a href="{{ item.url }}" class="[ recently-played__url ]">
       <div class="recently-played__media">
         <img
-          src="{% if item.image %}{{ item.image }}{%else%}/images/lastfm-placeholder.png{%endif%}"
-          alt="Album artwork for {{ item.name }} by {{ item.artist['#text'] }}"
+          src="{% if item.image[3]['#text'].length > 0 %}{{ item.image[3]['#text'] }}{%else%}/images/lastfm-placeholder.png{%endif%}"
+          alt="Album artwork for {{ item.name }} by {{ item.artist.name }}"
           loading="lazy"
         />
       </div>
@@ -17,4 +18,5 @@
   </li>
   {% endfor %}
 </ul>
+</div>
 {% endif %}

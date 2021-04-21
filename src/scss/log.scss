@@ -10,4 +10,13 @@ $outputTokenCSS: false;
 @import "./blocks/recently-played";
 @import "./blocks/film-diary";
 @import "./blocks/arena";
-@import './blocks/book-log';
+@import "./blocks/book-log";
+
+.logs {
+  --auto-grid-min-size: 22rem;
+  font-family: var(--font-sans);
+
+  &__inner {
+    background: var(--bg-img);
+  }
+}

@@ -1,15 +1,16 @@
-.curtain-header {
+@import "./pill";
 
+.curtain-header {
   &__time {
     @extend .pill;
-    color: var(--primary);
-    border: get-size('300') double var(--primary-glare);
-    border-radius: get-size('400');
-    padding: get-size('400');
+    color: var(--color-primary);
+    border: get-size("300") double var(--primary-glare);
+    border-radius: get-size("400");
+    padding: get-size("400");
     text-transform: uppercase;
     font-family: var(--font-mono);
-    margin: get-size('600') 0;
-    background: transparent; 
+    margin: get-size("600") 0;
+    background: transparent;
     @include apply-utility("leading", "tight");
     // @include media-query("md") {
     //   font-size: get-size("500");

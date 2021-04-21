@@ -1,7 +1,6 @@
 const cheerio = require("cheerio");
 let markdownIt = require("markdown-it");
 const fs = require("fs");
-const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = {
   /**
@@ -82,5 +81,18 @@ module.exports = {
     let title = $("h1").text();
 
     return title;
+  },
+  currentYear() {
+    const today = new Date();
+    return today.getFullYear();
+  },
+  currentPage(allPages, currentPage) {
+    const matches = allPages.filter(
+      (page) => page.inputPath === currentPage.inputPath
+    );
+    if (matches && matches.length) {
+      return matches[0];
+    }
+    return null;
   },
 };

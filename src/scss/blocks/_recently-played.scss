@@ -3,11 +3,22 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  ::-webkit-scrollbar-track {
+  &::-webkit-scrollbar {
+  height: 1rem;
+  }
+  
+  &::-webkit-scrollbar-track {
     background-color: transparent;
-    border: none;
+    border: 1px solid var(--text-glare);
     //border-radius: 0.25rem;
   }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-shade);
+    border-radius: 0.1rem;
+  }
+  
+  
 
   &__album {
     padding: get-size("300");

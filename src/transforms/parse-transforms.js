@@ -19,9 +19,6 @@ const imageOptions = {
     mozjpeg: true,
   },
   sharpAvifOptions: {
-    quality: 40,
-  },
-  sharpWebpOptions: {
     quality: 60,
   },
   filenameFormat: (id, src, width, format) => {
@@ -51,14 +48,12 @@ module.exports = async function (value, outputPath) {
 
     if (articleImages.length) {
       for (let image of articleImages) {
-        /*
-                TODO: make picture element
-                TODO: cache images
-                TODO: optimize images
-
-                */
         const file = image.getAttribute("src");
         const alt = image.getAttribute("alt");
+        const cls = image.getAttribute("class");
+        const title = image.getAttribute("title");
+        const parent = image.parentElement;
+
         let imageHtml;
         // TODO: better sizes?
         let sizes = "100vw";
@@ -68,6 +63,9 @@ module.exports = async function (value, outputPath) {
           loading: "lazy",
           decoding: "async",
         };
+        if (cls) {
+          imageAttributes.class = cls;
+        }
 
         // TODO: Refactor this to be DRY
 
@@ -116,8 +114,22 @@ module.exports = async function (value, outputPath) {
             if (!hasImageBeenOptimized) {
               stats = await Image(localPath, imageOptions);
             }
-            const parent = image.parentElement;
-            if (parent.tagName === "P" && parent.querySelector("img:only-child")) {
+
+            // Wrap image in figure if it has an alt or title and use that as figcaption
+
+            if (parent.tagName !== "FIGURE" && image.closest("page-content")) {
+              if (alt || title) {
+                imageHtml = `<figure>
+                ${imageHtml}
+                <figcaption>${title || alt}</figcaption>
+                </figure>`;
+              }
+            }
+
+            if (
+              parent.tagName === "P" &&
+              parent.querySelector("img:only-child")
+            ) {
               parent.outerHTML = imageHtml;
             } else {
               image.outerHTML = imageHtml;
@@ -129,26 +141,36 @@ module.exports = async function (value, outputPath) {
           // It's a remote image, so we need to cache the download (eleventy-image does this automatically, but not with statsync)
           let url = file;
           let stats = await Image(url, {
-            widths: [1920, 1280, 640, 320],
+            widths: [1800, 1200, 1600],
             formats: ["avif", "webp", "jpeg"],
             urlPath: "/images/",
             outputDir: "./dist/images/",
             cacheOptions: {
-              duration: "7d",
+              duration: "14d",
               removeUrlQueryParams: true,
             },
             sharpJpegOptions: {
               mozjpeg: true,
             },
-            sharpAvifOptions: {
-              quality: 40,
-            },
-            sharpWebpOptions: {
-              quality: 60,
-            },
+            // sharpAvifOptions: {
+            //   quality: 60,
+            // },
+            // sharpWebpOptions: {
+            //   quality: 60,
+            // },
           });
           imageHtml = Image.generateHTML(stats, imageAttributes);
           const parent = image.parentElement;
+
+          if (parent.tagName !== "FIGURE" && image.closest(".page-content")) {
+            if (alt || title) {
+              imageHtml = `<figure>
+              ${imageHtml}
+              <figcaption>${title || alt}</figcaption>
+              </figure>`;
+            }
+          }
+
           if (parent.querySelector("img:only-child")) {
             parent.outerHTML = imageHtml;
           } else {

@@ -1,3 +1,4 @@
 {
-    "permalink": "/notes/{{ page.fileSlug }}/"
+  "layout": "/layouts/note.html",
+  "permalink": "/notes/{{ page.fileSlug | strictSlug }}/"
 }

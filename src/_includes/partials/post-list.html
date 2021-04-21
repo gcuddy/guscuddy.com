@@ -1,31 +1,30 @@
 <div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
-  <div class="[ content ] [ flow flow-space-700 ]">
-    {% if postListHeadline %}
-    <h2 class="[ headline ] [ measure-micro ]" data-highlight="primary">
-      {{ postListHeadline }}
-    </h2>
-    {% endif %}
-    <div>
-      <ol class="[ post-list ] [ flow post ]">
-        {% set current = "" %}
-        {% for item in postListItems %}
-                  
-        <li class="[ post-list__item ] [ measure-long ]">
-          <a href="{{ item.url }}" class="post-list__link"
-            >{{ item.data.title }}</a
-          >
-          <p class="post-list__description">{{ item.data.description }}</p>
-          <time
-            class="post-list__time"
-            datetime="{{ item.date | w3DateFilter }}"
-            >{{ item.date | dateFilter }}</time
-          >
-          {% if 'newsletter' in item.filePathStem  %}
-          <a href="/newsletter" class="[ post-list__tag ] [ pill ]">The Curtain</a>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ol>
-    </div>
-  </div>
+	<div class="[ content ] [ flow flow-space-700 ]">
+		{% if postListHeadline %}
+		<div class="post">
+			<div>
+				<h2 class="" data-highlight="primary">
+					{{ postListHeadline }}
+				</h2>
+			</div>
+		</div>
+		{% endif %}
+
+		<div>
+			<ol class="[ post-list ] [ flow post ]">
+				{% set current = "" %} {% for item in postListItems %}
+
+				<li class="[ post-list__item ] [ measure-long ]">
+					<a href="{{ item.url }}" class="post-list__link">{{ item.data.title }}</a>
+					<div>
+						{#{% if 'newsletter' in item.filePathStem %}
+						<a href="/newsletter" class="[ post-list__tag ] [ pill ]">The Curtain</a>
+						{% endif %}#}
+						<time class="post-list__time" datetime="{{ item.date | w3DateFilter }}">{% if dateMonthFilter %} {{ item.date | dateMonthFilter }} {% else %} {{ item.date | dateFilter }} {% endif %}</time>
+					</div>
+				</li>
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
 </div>

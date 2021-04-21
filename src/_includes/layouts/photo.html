@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/show.css', 'css/about.css'] %}
+{% set pageHeaderSafe = true %} {% set
+pageHeaderTitle %}
+
+<a href="{{ show.url }}#main-content">{{ show.title }}</a>
+
+{% endset %} {% block content %}
+
+<article>
+  {% include "partials/page-header.html" %}
+  <div class="gap-top-700">
+    <figure class="[ production-photo ] [ flow full-bleed   ]">
+      <a href="{{show.src}}"><img class="shadow" src="{{show.src}}" alt="Photo of Gus Cuddy in {{show.title}}" /></a>
+      <figcaption class="post align-center">
+        <p>{{ show.title }} at {{ show.theater }}.</p>
+        {% if show.credit %}<p>Photo by {{ show.credit }}.</p>{% endif %}
+      </figcaption>
+    </figure>
+
+    {% include "partials/photo-pagination.html" %}
+  </div>
+</article>
+<footer class="panel">
+  <div class="content flow post">
+    <details class="flow">
+      <summary class="align-center">
+        <h3>Other Productions I've Been In</h3>
+      </summary>
+      {% include "partials/production-list.html" %}
+    </details>
+  </div>
+</footer>
+
+{% endblock %}

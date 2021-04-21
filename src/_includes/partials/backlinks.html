@@ -1,13 +1,13 @@
 {% if backlinks.length > 0 %}
 <div class="[ backlinks ] [ content flow ]">
     <h2 class="backlinks__title">Backlinks</h2>
-    <ul class="backlinks__list">
+    <ul>
         {% for link in backlinks %}
-            <li class="backlink__item">
-                <a href="{{link.url}}" class="backlink__link">{{link.title}}</a>
-                <div class="backlink__preview" role="none">
+            <li>
+                <a href="{{link.url}}">{{link.title}}</a>
+                <!-- <div class="backlink__preview" role="none">
                     {{link.preview | markdownify | safe }}
-                </div>
+                </div> -->
             </li>
         {% endfor %}
     </ul>

@@ -1,4 +1,12 @@
+// .full-bleed {
+//     width: 100vw;
+//     margin-left: calc(50% - 50vw);
+//   }
+
 .full-bleed {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
+  width: 100vw;
+  max-width: var(--full-bleed-max-width, 58rem);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}

@@ -1,12 +1,31 @@
-<h2>Productions I've Been in</h2>
+<div class="[ panel ]" id="production-list">
+    <div class="flow">
+        {% if productionListHeadline %}
+        {{ productionListHeadline | safe }}
+        {% endif %}
+        <div>
+            <ol class="[ production-list ] [ flow ]">
+                {% set currentYear = "" %} {% for show in collections.shows %} {% set year =
+                show.date.getFullYear() %} {% if currentYear != year %}
+                <li class="production-list__year">
+                    <h4>{{ year }}</h4>
+                </li>
+                {% endif %}
+                <li class="[ production-list__item ] [ flow ]" {{ helpers.getLinkActiveState(show.url, page.url) | safe}}>
+                    <div class="production-list__item-photo">
+                        <a href="{{show.url}}1#main-content"><img src="{{ show.data.photos.src[0] }}"
+                                alt="Production Photo from {{show.data.title}}" loading="lazy" decoding="async" /></a>
+                    </div>
+                    <div class="production-list__item-description">
+                        <p><a class="production-list__item-title" href="{{show.url}}#main-content">{{ show.data.title
+                                }}</a>
+                            —
+                            {{show.data.theater}}</p>
+                    </div>
+                </li>
 
-<ol class="[ production-list ] [ flow ]">
-  {% set currentYear = "" %} 
-  {% for show in collections.shows %} 
-    {% set year = show.date.getFullYear() %} 
-    {% if currentYear != year %}
-        <h3>{{ year }}</h3>
-    {% endif %}
-  <li class="production-list__item"><a class="production-list__item-title" href="{{show.url}}">{{ show.data.title }}</a></li>
-  {% endfor %}
-</ol>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>

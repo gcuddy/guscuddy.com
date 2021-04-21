@@ -1,0 +1,25 @@
+// First up: config and functions
+@import "config";
+
+// Set Gorko to output no CSS for this file
+$outputTokenCSS: false;
+
+// Next: pull in Gorko for design tokens
+@import "../../node_modules/gorko/gorko.scss";
+
+@import "./blocks/show/show-gallery";
+
+.details-items {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: var(--s-300) var(--s-500);
+	font-family: var(--font-sans);
+	
+	dt {
+		font-weight: bold;
+	}
+}
+
+.heading-anchor {
+	display: none;
+}

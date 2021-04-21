@@ -1,18 +1,18 @@
-.nav {
-  line-height: 1;
+.site-head__nav {
 
-  &__list {
+  &-list {
+    line-height: 1;
     display: flex;
     flex-wrap: wrap;
     gap: get-size("300");
     grid-gap: get-size("300");
-    font-size: var(--s-400);
+    font-size: var(--s-500);
     @include media-query("md") {
       font-size: var(--s-500);
     }
 
     > * {
-      margin: 0.25rem;
+      //margin: 0.25rem;
 
       &:not(:last-of-type) {
         margin-right: get-size('300');

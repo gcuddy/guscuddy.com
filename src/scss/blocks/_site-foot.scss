@@ -1,13 +1,28 @@
 .site-foot {
-  padding: get-size('500') 0 get-size('700') 0;
+  padding: get-size("700") 0 get-size("700") 0;
   text-align: center;
+  background-color: var(--bg-shade);
+  font-size: var(--s-400);
+  font-family: var(--font-sans);
+
+  @include media-query("lg") {
+    font-size: var(--s-500);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--s-200);
+  }
 
   &__list {
     display: flex;
     justify-content: center;
 
     > *:not(:last-of-type) {
-      padding-inline-end: get-size('400');
+      padding-inline-end: get-size("400");
     }
   }
 }
