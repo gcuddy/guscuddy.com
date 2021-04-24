@@ -1,5 +1,6 @@
 ---
 title: "The cure for nostalgia"
+draft: true
 ---
 
 We live in nostalgic times. It's everywhere: in our obsession with vinyl, with The Office, with the 90s. Perhaps it's because we're scared of the present and our uncertain future on the planet.

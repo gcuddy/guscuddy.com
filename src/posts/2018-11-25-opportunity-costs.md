@@ -1,5 +1,6 @@
 ---
 title: "Opportunity costs and attention spans"
+draft: true
 ---
 
 > “Attention spans arent falling. Opportunity costs are just rising. Big, big difference. People love long, in-depth content. But it needs to be really, really good.”

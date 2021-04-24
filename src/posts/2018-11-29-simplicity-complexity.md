@@ -1,5 +1,6 @@
 ---
 title: "Simplicity and complexity"
+draft: true
 ---
 
 [Beware simple stories.][1] It's easier and easier to [fall into them these days][2].
