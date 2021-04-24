@@ -1,5 +1,7 @@
 ---
 title: "Don't be literal"
+draft: true
+permalink: /blog/literal/
 ---
 
 In order to make good theatre, you can't be literal.
