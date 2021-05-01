@@ -17,6 +17,13 @@ $outputTokenCSS: false;
   font-family: var(--font-sans);
 
   &__inner {
+    border: 5px solid var(--color-gold);
+    padding: 20px;
     background: var(--bg-img);
+    
+    > * + * {
+      // --flow-space: var(--s-major);
+      margin-top: var(--s-900);
+    }
   }
 }

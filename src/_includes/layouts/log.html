@@ -2,8 +2,8 @@
 {% set pageHeaderTitle = title %} {% block content %}
 <div class="[ content flow ]">
   {% include "partials/page-header.html" %}
-  <div class="[ logs ] [ post flow ]">
-    <div class="logs__inner">
+  <div class="[ logs ]">
+    <div class="logs__inner | flow">
       <div class="auto-grid">
         {% include 'partials/film-diary.html' %}
         {% include

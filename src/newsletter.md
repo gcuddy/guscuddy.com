@@ -7,7 +7,7 @@ pagination:
 paginationPrevText: "Newer dispatches"
 paginationNextText: "Older dispatches"
 paginationAnchor: "#post-list"
-permalink: "newsletter{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html"
+permalink: "curtain{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html"
 ---
 {% set grouping = 'season' %}
 

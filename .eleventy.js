@@ -25,7 +25,8 @@ const markdown = require("./src/utils/markdown.js");
 const htmlMinTransform = require("./src/transforms/html-min-transform");
 const parseTransform = require("./src/transforms/parse-transforms");
 const embedTransform = require("./src/transforms/embeds");
-const noteTransform = require("./src/transforms/note-transform");
+//const obsdianEmbed = require("./src/transforms/obsidian-embed");
+//const noteTransform = require("./src/transforms/note-transform");
 
 module.exports = (config) => {
   const CONTENT_GLOBS = {
@@ -65,7 +66,8 @@ module.exports = (config) => {
   // Transforms
   config.addTransform("parsetransform", parseTransform);
   config.addTransform("embedtransform", embedTransform);
-  config.addTransform("noteTransform", noteTransform);
+  // config.addTransform("obsidianEmbed", obsdianEmbed);
+  //config.addTransform("noteTransform", noteTransform);
   if (isProduction) {
     config.addTransform("htmlmin", htmlMinTransform);
   }
@@ -83,7 +85,7 @@ module.exports = (config) => {
   config.addCollection("newsletter", (collection) => {
     return [
       ...collection.getFilteredByGlob(
-        "./src/newsletter/**/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*.md"
+        "./src/newsletter/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*.md"
       ),
     ].reverse();
   });

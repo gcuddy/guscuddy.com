@@ -5,8 +5,9 @@ recommendedPosts = helpers.getSiblingContent(collections.newsletter, page) %} {#
 Render post date and any tags that this post has been filed under #} {% set time
 %}
 <div class="[ curtain-header__time ] [ shadow ]">
-  <span>To: The Curtain mailing list</span>
+  <span>To: <a href="/curtain">The Curtain mailing list</a></span>
   <span>From: Gus Cuddy</span>
+  <span>Issue: {{ page.fileSlug }}</span>
   <span>
     Sent:
     <time datetime="{{ page.date | w3DateFilter }}">

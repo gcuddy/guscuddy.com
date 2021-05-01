@@ -39,6 +39,8 @@
   --color-dim: var(--color-dark-gray);
 
   --grayscale: grayscale(66%);
+  --font-smoothing: antialiased;
+
 }
 
 @mixin light-mode {
@@ -61,6 +63,7 @@
   --font-headings: var(--font-sans);
 
   --grayscale: grayscale(50%);
+  --font-smoothing: auto;
 
   //--font-base: #{@i}
 }
@@ -127,11 +130,13 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  font-size: var(--s-500);
+  //font-size: var(--s-500);
+  //font-size: clamp(var(--s-400), calc(var(--s-400) + 3vw), var(--s-500));
   font-family: var(--font-base);
   overflow-x: hidden;
   background: var(--bg);
   min-height: 100vh;
+  -webkit-font-smoothing: var(--font-smoothing);
 }
 
 // .site-wrap {
@@ -177,15 +182,15 @@ h4 {
 
 h1 {
   font-family: var(--font-serif);
-  font-size: var(--s-800);
-}
-
-h2 {
   font-size: var(--s-700);
 }
 
-h3 {
+h2 {
   font-size: var(--s-600);
+}
+
+h3 {
+  font-size: var(--s-500);
 }
 
 h2,
@@ -248,6 +253,25 @@ figcaption {
 
 // BUMP UP SIZES FOR LARGER VIEWPORTS
 
+
+@include media-query("md") {
+  body {
+    font-size: var(--s-500);
+  }
+  figcaption {
+    font-size: var(--s-400);
+  }
+  h1 {
+    font-size: var(--s-800);
+  }
+  h2 {
+    font-size: var(--s-700);
+  }
+  h3 {
+    font-size: var(--s-600);
+  }
+}
+
 @include media-query("lg") {
   h1 {
     font-size: var(--s-900);
@@ -255,12 +279,13 @@ figcaption {
   h2 {
     font-size: var(--s-800);
   }
+  h3 {
+    font-size: var(--s-700);
+  }
   body {
     font-size: var(--s-600);
   }
-  figcaption {
-    font-size: var(--s-400);
-  }
+
 }
 
 @import "./utilities/flow";
@@ -293,3 +318,4 @@ figcaption {
 @import "./blocks/hr";
 @import "./blocks/pagination";
 @import "./blocks/sidebar";
+@import "./blocks/grayscale";

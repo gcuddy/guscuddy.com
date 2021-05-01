@@ -10,4 +10,4 @@ paginationAnchor: "#post-list"
 permalink: "archives{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html"
 ---
 
-This is a collection of all my essays, newsletter issues, and blog/essay-type writing projects in one place. 
+This is a collection of all my [newsletter issues](/tag/newsletter) and [blog/essay-type writing](/tag/blog) in one place. 

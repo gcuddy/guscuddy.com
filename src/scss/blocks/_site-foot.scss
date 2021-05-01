@@ -11,10 +11,10 @@
 
   &__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: var(--s-200);
+    gap: var(--s-800);
   }
 
   &__list {

@@ -4,7 +4,7 @@
   &__time {
     @extend .pill;
     color: var(--color-primary);
-    border: get-size("300") double var(--primary-glare);
+    border: 2px dashed var(--primary-glare);
     border-radius: get-size("400");
     padding: get-size("400");
     text-transform: uppercase;
@@ -12,10 +12,11 @@
     margin: get-size("600") 0;
     background: transparent;
     @include apply-utility("leading", "tight");
-    // @include media-query("md") {
-    //   font-size: get-size("500");
-    //   transform: rotate(-4deg);
-    // }
+    font-size: var(--s-300);
+    @include media-query("md") {
+      font-size: var(--s-400);
+    //  transform: rotate(-4deg);
+    }
 
     time {
       display: inline;

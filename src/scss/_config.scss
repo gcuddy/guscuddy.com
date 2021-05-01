@@ -14,29 +14,45 @@ $gorko-base-size: 1rem;
  * your whole project.
  */
 // $gorko-size-scale: (
+//   "200": $gorko-base-size * 0.56,
 //   "300": $gorko-base-size * 0.75,
 //   "400": $gorko-base-size,
 //   "500": $gorko-base-size * 1.33,
-//   "600": $gorko-base-size * 1.78,
-//   "700": $gorko-base-size * 2.37,
-//   "800": $gorko-base-size * 3.16,
-//   "900": $gorko-base-size * 4.21,
+//   "600": $gorko-base-size * 1.77,
+//   "700": $gorko-base-size * 2.36,
+//   "800": $gorko-base-size * 3.15,
+//   "900": $gorko-base-size * 4.2,
 //   "major": $gorko-base-size * 5.61,
 // );
 
-// Let's switch to Major Third
+
+// How about the much more sublte Minor Second?
 
 $gorko-size-scale: (
-  "200": $gorko-base-size * 0.64,
-  "300": $gorko-base-size * 0.8,
+  "200": $gorko-base-size * 0.69,
+  "300": $gorko-base-size * 0.83,
   "400": $gorko-base-size,
-  "500": $gorko-base-size * 1.25,
-  "600": $gorko-base-size * 1.563,
-  "700": $gorko-base-size * 1.953,
-  "800": $gorko-base-size * 2.441,
-  "900": $gorko-base-size * 3.052,
-  "major": $gorko-base-size * 3.815,
+  "500": $gorko-base-size * 1.2,
+  "600": $gorko-base-size * 1.44,
+  "700": $gorko-base-size * 1.73,
+  "800": $gorko-base-size * 2.07,
+  "900": $gorko-base-size * 2.49,
+  "major": $gorko-base-size * 2.99,
 );
+
+// Let's switch to Major Third
+
+// $gorko-size-scale: (
+//   "200": $gorko-base-size * 0.64,
+//   "300": $gorko-base-size * 0.8,
+//   "400": $gorko-base-size,
+//   "500": $gorko-base-size * 1.25,
+//   "600": $gorko-base-size * 1.563,
+//   "700": $gorko-base-size * 1.953,
+//   "800": $gorko-base-size * 2.441,
+//   "900": $gorko-base-size * 3.052,
+//   "major": $gorko-base-size * 3.815,
+// );
 
 /**
  * COLORS
