@@ -1,0 +1,10 @@
+.grayscale {
+  filter: var(--grayscale);
+  transition: 0.3s ease;
+
+  &:focus-within,
+  &:focus,
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
