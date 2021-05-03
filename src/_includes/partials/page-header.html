@@ -1,6 +1,6 @@
 <div class="[ page-header ] [ content post ]">
-  <div class="[ flow ]">
-    <h1 class="[ page-header__heading ]">
+  <div class="[ flow flow-space-200 ]">
+    <h1 class="[ page-header__heading ] [ headline ]">
       {% if pageHeaderSafe %}
       {{ pageHeaderTitle | safe }}
       {% else %}
@@ -8,7 +8,7 @@
       {% endif %}
     </h1>
     {% if pageHeaderSummary %}
-    <div class="[ page-header__summary ] [ measure-long ]">
+    <div class="[ page-header__summary ] [ measure-long flow ]">
       {{ pageHeaderSummary | safe }}
     </div>
     {% endif %}

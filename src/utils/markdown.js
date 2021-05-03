@@ -14,6 +14,7 @@ const markdown = markdownIt({
     permalinkBefore: true,
     level: 2,
   })
+  .use(require("markdown-it-footnote"))
   .use(function (md) {
     // Add obsidian embed
     md.linkify.add("![[", {

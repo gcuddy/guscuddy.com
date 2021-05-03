@@ -1,0 +1,7 @@
+.details-items {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--details-row-gap, var(--s-300))
+    var(--details-column-gap, var(--s-500));
+  font-family: var(--font-sans);
+}

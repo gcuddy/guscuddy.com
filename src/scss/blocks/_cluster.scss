@@ -1,0 +1,12 @@
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  gap: var(--s-200);
+
+  > * {
+    margin: 0.2rem;
+  }
+}

@@ -95,4 +95,26 @@ module.exports = {
     }
     return null;
   },
+
+  /**
+   * Takes current issue, and spits out season and episode text
+   *
+   * @param {Number}
+   * @returns {String} The resulting text
+   */
+  episodeNumber(issue) {
+    // TODO: non hard code this
+
+    const num = parseInt(issue);
+
+    if (num < 89) {
+      return `S-01-${num} (Issue ${num})`;
+    } else if (num > 88) {
+      const ep = num - 88;
+      return `S02-${ep.toString().padStart(2, "0")} (Issue ${num})`;
+    }
+  },
+  startsWith(string, text) {
+    return string.startsWith(text);
+  },
 };

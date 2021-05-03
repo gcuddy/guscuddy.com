@@ -1,12 +1,12 @@
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
 
 {% set pageTitle = title + ' — ' + site.name %} {# We don't want any
-duplication. This is likely for the home page. #} 
+duplication. This is likely for the home page. #}
 {% if site.name === title %}
 {% set pageTitle = title %} {% endif %} {% set siteTitle = site.name %} {% set
 currentUrl = site.url + page.url %} {# If the page’s Front Matter has specific
 metaTitle and/or metaDesc items, switch them into the mix. #} {% if metaTitle %}
-{% set pageTitle = metaTitle %} {% endif %} 
+{% set pageTitle = metaTitle %} {% endif %}
 
 {%- set isPost = layout == 'post'
 -%} {%- set isCurtain = layout == 'curtain' -%} {%- if isPost or isCurtain -%}
@@ -22,11 +22,14 @@ currentPage.templateContent | excerpt | safe | striptags -%} {% endif %}
 <!-- I don't understand this at all!!! -->
 {# Page-specific #}
 <meta name="description" content="{{ description or summary or autoDescription or site.description }}" />
-{%- if image -%}<meta name="image" content="{{ absolutePageUrl }}{{ image }}">{%- endif -%}
+{%- if image -%}
+<meta name="image" content="{{ absolutePageUrl }}{{ image }}">{%- endif -%}
 <meta property="og:title" content="{{ pageTitle }}" />
 <meta property="og:description" content="{{ description or summary or autoDescription or site.description }}" />
 <meta property="og:url" content="{{ currentUrl }}" />
-<meta property="og:image" content="{%- if image -%}{{ absolutePageUrl }}{{ image }}{%- else -%}{{ site.author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+<!--- if the image starts with / then go from base, otherwise go inside foler -->
+<meta property="og:image"
+    content="{%- if image -%}{%if helpers.startsWith(image, '/')%}{{site.url}}{{image}}{%else%}{{ absolutePageUrl }}{{ image }}{%endif%}{%- else -%}{{ site.author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 <meta name="twitter:card" content="summary_large_image" />
 
 {# General #}

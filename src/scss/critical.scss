@@ -40,7 +40,6 @@
 
   --grayscale: grayscale(66%);
   --font-smoothing: antialiased;
-
 }
 
 @mixin light-mode {
@@ -130,7 +129,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  //font-size: var(--s-500);
+  font-size: var(--s-500);
   //font-size: clamp(var(--s-400), calc(var(--s-400) + 3vw), var(--s-500));
   font-family: var(--font-base);
   overflow-x: hidden;
@@ -168,9 +167,9 @@ main:focus {
   outline-offset: 0.25rem;
 }
 
-[href]:hover {
-  text-decoration: none;
-}
+// [href]:hover {
+//   text-decoration: none;
+// }
 
 h1,
 h2,
@@ -253,7 +252,6 @@ figcaption {
 
 // BUMP UP SIZES FOR LARGER VIEWPORTS
 
-
 @include media-query("md") {
   body {
     font-size: var(--s-500);
@@ -285,7 +283,6 @@ figcaption {
   body {
     font-size: var(--s-600);
   }
-
 }
 
 @import "./utilities/flow";
@@ -319,3 +316,5 @@ figcaption {
 @import "./blocks/pagination";
 @import "./blocks/sidebar";
 @import "./blocks/grayscale";
+@import "./blocks/cluster";
+@import "./blocks/details-items";

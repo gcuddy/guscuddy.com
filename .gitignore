@@ -9,6 +9,7 @@ Thumbs.db
 .env
 .cache
 tests
+.Ulysses-Group.plist
 
 # Node modules and output
 node_modules

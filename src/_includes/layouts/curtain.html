@@ -5,7 +5,20 @@ recommendedPosts = helpers.getSiblingContent(collections.newsletter, page) %} {#
 Render post date and any tags that this post has been filed under #} {% set time
 %}
 <div class="[ curtain-header__time ] [ shadow ]">
-  <span>To: <a href="/curtain">The Curtain mailing list</a></span>
+  <dl class="details-items">
+    <dt>To:</dt>
+    <dd><a href="/curtain">The Curtain mailing list</a></dd>
+    <dt>From:</dt>
+    <dd>Gus Cuddy</dd>
+    <dt>Issue:</dt>
+    <dd>{{ helpers.episodeNumber(page.fileSlug) }}</dd>
+    <dt>Sent:</dt>
+    <dd><time datetime="{{ page.date | w3DateFilter }}">
+        {{ page.date | dateFilter }}
+      </time></dd>
+  </dl>
+  {#
+  <!-- <span>To: <a href="/curtain">The Curtain mailing list</a></span>
   <span>From: Gus Cuddy</span>
   <span>Issue: {{ page.fileSlug }}</span>
   <span>
@@ -13,24 +26,27 @@ Render post date and any tags that this post has been filed under #} {% set time
     <time datetime="{{ page.date | w3DateFilter }}">
       {{ page.date | dateFilter }}
     </time>
-  </span>
+  </span> -->#}
 </div>
 {% endset %} {% block content %}
 <article>
   <div class="[ page-header curtain-header ] [ content post ]">
+
     <div class="[ flow ]">
-      <h1 class="[ curtain-header__heading ]">{{ title }}</h1>
+      <h1 class="[ curtain-header__heading ] [ headline ] [ align-center ] ">{{ title }}</h1>
       {% if description %}
       <div class="[ curtain-header__summary ] [ measure-long ]">
         {{ description | safe }}
       </div>
-      {% endif %} {{ time | safe}}
+      {% endif %}
+      <!-- {% if image %}
+        <img src="{{image}}" alt="">
+        {% endif %} -->
+      {{ time | safe}}
     </div>
   </div>
 
-  <div
-    class="[ page-content curtain ] [ content post ] [ flow-space-700 gap-top-900 ]"
-  >
+  <div class="[ page-content curtain ] [ content post ] [ flow-space-700 gap-top-900 ]">
     <div class="flow">{{ content | safe }}</div>
   </div>
   {% if recommendedPosts %}
