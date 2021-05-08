@@ -61,7 +61,7 @@
         "zotero-api-client": "^0.36.0"
     },
     "devDependencies": {
-        "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assetsf",
+        "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
         "gulp-terser": "^2.0.1"
     }
 }
