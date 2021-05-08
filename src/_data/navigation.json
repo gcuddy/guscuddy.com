@@ -1,12 +1,16 @@
 {
-  "items": [
-    {
-      "text": "About",
-      "url": "/about/"
-    },
-    {
-      "text": "Archives",
-      "url": "/archives/"
-    }
-  ]
+    "items": [
+        {
+            "text": "About",
+            "url": "/about/"
+        },
+        {
+            "text": "Archives",
+            "url": "/archives/"
+        },
+        {
+            "text": "Curtain",
+            "url": "/curtain/"
+        }
+    ]
 }

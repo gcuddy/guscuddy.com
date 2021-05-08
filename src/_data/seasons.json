@@ -1,0 +1,15 @@
+{
+    "seasons": [
+        {
+            "name": "Season 1",
+            "description": "The first 88 issues of The Curtain: a variety of things, mainly culture and theatre.",
+            "start": 1,
+            "end": 88
+        },
+        {
+            "name": "Season 2",
+            "description": "Season 2 of The Curtain, running from January 2021 to Present. A focus on the internet.",
+            "start": 89
+        }
+    ]
+}

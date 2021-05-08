@@ -1,22 +1,22 @@
-{% extends "layouts/base.html" %} {% set pageCriticalStyles = ['css/home.css']
+{% extends "layouts/base.njk" %} {% set pageCriticalStyles = ['css/home.css']
 %} {% block content %}
 <div class="content">
-  <article class="[ intro ] [ flow post ]">
-    
-    <div class="[ intro__header ] [ post ]">
-      {% if intro.title %}
-      <h1 class="[ intro__heading ] [ text-800 md:text-900 ]">
-        {{ intro.title }}
-      </h1>
-      {% endif %}
-      <img src="/images/me.jpg" alt="A photo of Gus Cuddy looking sort of angelic-like in Louisville sun">
-    </div>
-    
-    <div class="[ intro__content ] [ flow post ]">
-      <!-- <p class="intro__summary">{{ intro.summary }}</p> -->
-      {{ content | safe}}
-    </div>
-  </article>
+    <article class="[ intro ] [ flow post ]">
+
+        <div class="[ intro__header ] [ post ]">
+            {% if intro.title %}
+            <h1 class="[ intro__heading ] [ text-800 md:text-900 ]">
+                {{ intro.title }}
+            </h1>
+            {% endif %}
+            <img src="/images/me.jpg" alt="A photo of Gus Cuddy looking sort of angelic-like in Louisville sun">
+        </div>
+
+        <div class="[ intro__content ] [ flow post ]">
+            <!-- <p class="intro__summary">{{ intro.summary }}</p> -->
+            {{ content | safe}}
+        </div>
+    </article>
 
 </div>
 {% include "partials/cta.html" %} {% endblock %}

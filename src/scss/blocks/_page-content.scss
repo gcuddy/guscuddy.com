@@ -1,89 +1,94 @@
-@import "../utilities/radius";
-@import "../utilities/shadow";
+@import '../utilities/radius';
+@import '../utilities/shadow';
 
 .page-content {
-  @include apply-utility("leading", "loose");
-
-  > * {
-    @include apply-utility("measure", "long");
-  }
-
-  margin-bottom: get-size("900");
-  padding-bottom: get-size("900");
-
-  img {
-    @extend .shadow;
-  }
-
-  .youtube-embed {
-    padding-top: var(--s-800);
-  }
-
-  .youtube-embed + * {
-    --flow-space: var(--s-900);
-  }
-
-  picture,
-  video,
-  .youtube-embed {
-    @extend .radius;
-    width: 100vw;
-    max-width: 58rem;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    position: relative;
-  }
-
-  .twitter-embed {
-    iframe {
-      border-radius: 12px;
-      @extend .shadow;
-    }
+    @include apply-utility('leading', 'loose');
 
     > * {
-      margin-left: auto;
-      margin-right: auto;
+        @include apply-utility('measure', 'long');
     }
-  }
 
-  .eleventy-plugin-youtube-embed,
-  figure,
-  img {
-    max-width: min(58rem, 100%);
-  }
+    margin-bottom: get-size('900');
+    padding-bottom: get-size('900');
 
-  blockquote {
-    border-inline-start: 1rem solid var(--primary);
-    padding-inline-start: get-size("600");
-    padding-top: get-size("500");
-    padding-bottom: get-size("500");
-    font-style: italic;
-  }
+    img {
+        @extend .shadow;
+    }
 
-  ol,
-  ul {
-    padding-inline-start: get-size("800");
-  }
+    .youtube-embed {
+        padding-top: var(--s-800);
+    }
 
-  li + li {
-    margin-top: get-size("300");
-  }
+    .youtube-embed + * {
+        --flow-space: var(--s-900);
+    }
 
-  // Add a greater flow space for heading elements so
-  // they appear more like article sections
-  h2,
-  h3 {
-    --flow-space: var(--s-900);
-  }
+    picture,
+    video,
+    .youtube-embed {
+        @extend .radius;
+        width: 100vw;
+        max-width: 58rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+    }
 
-  // Add tighter flow for elements that follow a heading
-  h2 + *,
-  h3 + * {
-    --flow-space: var(--s-400);
-  }
+    .twitter-embed {
+        iframe {
+            border-radius: 12px;
+            @extend .shadow;
+        }
 
-  figure,
-  figure + * {
-    --flow-space: var(--s-900);
-  }
+        > * {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .eleventy-plugin-youtube-embed,
+    figure,
+    img {
+        max-width: min(58rem, 100%);
+    }
+
+    blockquote {
+        border-inline-start: 1rem solid var(--primary);
+        padding-inline-start: get-size('600');
+        padding-top: get-size('500');
+        padding-bottom: get-size('500');
+        font-style: italic;
+    }
+
+    ol,
+    ul {
+        padding-inline-start: get-size('800');
+    }
+
+    li + li {
+        margin-top: get-size('300');
+    }
+
+    // Add a greater flow space for heading elements so
+    // they appear more like article sections
+    h2,
+    h3 {
+        --flow-space: var(--s-900);
+    }
+
+    // Add tighter flow for elements that follow a heading
+    h2 + *,
+    h3 + * {
+        --flow-space: var(--s-400);
+    }
+
+    figure,
+    figure + * {
+        --flow-space: var(--s-900);
+    }
+}
+h2,
+h3,
+h4 {
+    position: relative;
 }

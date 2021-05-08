@@ -10,8 +10,10 @@ Thumbs.db
 .cache
 tests
 .Ulysses-Group.plist
+bak
 
 # Node modules and output
 node_modules
 dist
 src/_includes/css
+src/notes

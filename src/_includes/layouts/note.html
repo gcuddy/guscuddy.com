@@ -1,9 +1,10 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.njk" %}
 {% set pageCriticalStyles = ['css/note.css'] %}
 {% block content %}
 
 <fieldset class="[ note-overlay ] [ content flow ]" role="presentation">
     <legend><a href="/notes/">🚧 working note 🚧</a></legend>
+    {{ page.date }}
     {# <aside class="callout content">Heads up! These are my working notes. They are messy, always changing, unpolished.
         Proceed at your own risk.</aside> #}
     <article>

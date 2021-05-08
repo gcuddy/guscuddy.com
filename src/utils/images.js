@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -8,8 +8,7 @@ const sharp = require("sharp");
 const getSize = require("image-size");
 const glob = require("fast-glob");
 const cheerio = require("cheerio");
-const shortHash = require('shorthash2');
-
+const shortHash = require("shorthash2");
 
 const imageWidths = [600, 1200, 1800];
 const imageFormats = ["avif", "webp", "jpeg"];
@@ -18,7 +17,6 @@ const imageFormats = ["avif", "webp", "jpeg"];
 
 // EleventyImage defaults to using cache, i'm a dodo brain
 // Hopefully eventually it will be able to persist through builds
-
 
 // get filename, check if avif and webp versions exist. if so, then just skip this shit.
 // use hashing?
@@ -73,13 +71,11 @@ module.exports = async function (content, outputPath) {
     if (articleImages.length) {
       for (let image of articleImages) {
         let file = $(image).attr("src");
-        console.log(file);
         let alt = $(image).attr("alt");
         let urlPath;
         let outputDir;
         // if it begins with a . it's relative
         if (file.startsWith(".")) {
-          console.log(`Relative File ${file}`);
           urlPath = `${path.dirname(file)}/`;
           file = path.join(path.dirname(outputPath), file);
           outputDir = `${path.dirname(file)}/`;

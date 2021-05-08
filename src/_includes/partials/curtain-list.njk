@@ -1,0 +1,56 @@
+<div class="panel">
+    <div class="[ content ] [ flow flow-space-700 ]">
+
+        <ol class="curtain-list | auto-grid">
+            {# this will sort seasons so that the newest is first #}
+            {% set sortedSeasons = helpers.sortArray(seasons.seasons, 'start') %}
+            {% set currentSeasonIndex = 0 %}
+            {% set currentSeason = sortedSeasons[0] %}
+            {% set displaySeason = '' %}
+            {% for item in postListItems %}
+            {% set imgSrc = '' %}
+            {% if helpers.startsWith(item.data.image, '/') %}
+            {% set imgSrc %}
+            {{item.data.image}}
+            {% endset %}
+            {% else %}
+            {%- set absolutePageUrl -%}{{ item.url | url | absoluteUrl(site.url) }}{{item.data.image}}{%- endset -%}
+            {% set imgSrc = absolutePageUrl %}
+            {% endif %}
+            {% set numSeasons = seasons.seasons.length %}
+            {%- set card %}
+            <li class="curtain-list__item">
+                <img src="{{imgSrc}}" alt="">
+                <div class="curtain-list__item-inner | flow flow-space-200">
+                    <a href="{{ item.url | url }}" class="curtain-list__item-link">
+                        <span class="curtain-list__item-title">{{ item.data.title }}</span>
+                    </a>
+                    <p class="curtain-list__item-description">
+                        {% if item.data.description %}
+                        {{ item.data.description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </li>
+            {% endset %}
+            {% if item.fileSlug < currentSeason.start %}
+            {% set currentSeasonIndex = currentSeasonIndex + 1 %}
+            {% set currentSeason = sortedSeasons[currentSeasonIndex] %}
+            {% endif %}
+            {%- if item.fileSlug >= currentSeason.start and displaySeason != currentSeason.name -%}
+            {% set displaySeason = currentSeason.name %}
+            <li class="curtain-list__item curtain-list__item-heading">
+                <div>
+                    <h2 class="font-display text-major">{{displaySeason}}</h2>
+                    <p class="curtain-list__item-description curtain-season-heading">{{currentSeason.description}}</p>
+                </div>
+            </li>
+            {{card | safe }}
+            {% else %}
+            {{card | safe}}
+            {%- endif -%}
+
+            {% endfor %}
+        </ol>
+    </div>
+</div>

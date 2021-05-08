@@ -1,0 +1,28 @@
+.email-capture {
+    label {
+        text-transform: uppercase;
+        font-size: get-size('300');
+        color: var(--text-shade);
+        // margin: calc(#{get-size('300')} / 2);
+    }
+    &__fields {
+        --sidebar-width: 12rem;
+
+        input[type='email'] {
+            background-color: inherit;
+            border: none;
+            border-bottom: 2px dashed var(--text);
+            color: var(--text);
+            //  @include apply-utility('font', 'headings');
+            // font-size: var(--s-600);
+
+            &:focus {
+                border-color: var(--primary-glare);
+            }
+        }
+
+        input[type='submit'] {
+            cursor: pointer;
+        }
+    }
+}

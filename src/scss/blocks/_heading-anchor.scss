@@ -1,12 +1,29 @@
 .heading-anchor {
     display: none;
-    @include media-query("lg") {
+    color: currentColor;
+    text-decoration: none;
+    @include media-query('md') {
         display: block;
         position: absolute;
-        left: -#{get-size('400')};
+        top: 0;
+        left: -1em;
+        width: 1em;
         opacity: 0;
+        transition: 0.1s ease;
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         opacity: 1;
+    }
+}
+
+h2,
+h3,
+h4 {
+    &:hover,
+    &:focus {
+        > .heading-anchor {
+            opacity: 0.67;
+        }
     }
 }

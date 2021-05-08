@@ -1,33 +1,39 @@
 .button {
-  @extend .radius;
+    @extend .radius;
 
-  display: inline-block;
-  padding: 0.5rem 2rem;
-  background: var(--primary);
-  color: var(--color-light);
-  border: none;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background: var(--primary);
+    color: var(--color-light);
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
 
-  //@include apply-utility("font", "headings");
-  @include apply-utility("weight", "bold");
+    //@include apply-utility("font", "headings");
+    @include apply-utility('weight', 'bold');
 
-  // Make sure hover state trumps all variants with a good ol’ important
-  // &:hover {
-  //   background: var(--primary) !important;
-  //   color: var(--bg-shade) !important;
-  // }
+    // Make sure hover state trumps all variants with a good ol’ important
+    // &:hover {
+    //   background: var(--primary) !important;
+    //   color: var(--bg-shade) !important;
+    // }
 
-  &:active {
-    transform: scale(0.95);
-  }
+    &:active {
+        transform: scale(0.95);
+    }
 
-  // Add a ghost modifier
-  &[data-variant="ghost"] {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--text);
-    text-transform: none;
-  }
+    // Add a ghost modifier
+    &[data-variant='ghost'] {
+        background: transparent;
+        color: var(--color-primary);
+        border: 1px solid;
+        text-transform: none;
+    }
+    &[data-variant='plain'] {
+        background: transparent;
+        color: var(--color-text);
+        border: 1px solid;
+        text-transform: none;
+    }
 }

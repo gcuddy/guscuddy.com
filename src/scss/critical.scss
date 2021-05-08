@@ -1,74 +1,78 @@
 // First up: config and functions
-@import "config";
+@import 'config';
 
 // Next: pull in gorko for design tokens
-@import "../../node_modules/gorko/gorko.scss";
+@import '../../node_modules/gorko/gorko.scss';
 
 // CSS Reset
-@import "reset";
+@import 'reset';
 
 // Load fonts
-@import "fonts";
+@import 'fonts';
+
+// Mixins
+@import './_utils/mixins';
 
 // Use sass functions to get colors and fonts into CSS variables
 :root {
-  @each $color in $gorko-colors {
-    #{'--color-' + nth($color, 1)}: #{nth($color, 2)};
-  }
-  @each $size in $gorko-size-scale {
-    #{'--s-' + nth($size, 1)}: #{nth($size, 2)};
-  }
-  @each $font in $gorko-fonts {
-    #{'--font-' + nth($font, 1)}: #{nth($font, 2)};
-  }
-  --flow-space: var(--s-500);
+    @each $color in $gorko-colors {
+        #{'--color-' + nth($color, 1)}: #{nth($color, 2)};
+    }
+    @each $size in $gorko-size-scale {
+        #{'--s-' + nth($size, 1)}: #{nth($size, 2)};
+    }
+    @each $font in $gorko-fonts {
+        #{'--font-' + nth($font, 1)}: #{nth($font, 2)};
+    }
+    --flow-space: var(--s-500);
+    --box-shadow: 0 0 1rem rgb(0 0 0 / 8%);
 }
 
 // Create a light mode and dark mode
 @mixin dark-mode {
-  --bg-img: url("/images/noise-tile-dark.svg");
-  --bg: var(--color-dark-blue);
-  --bg-shade: var(--color-dark-shade);
-  --bg-glare: var(--color-dark-glare);
-  --text: var(--color-off-white);
-  --text-glare: var(--color-light-glare);
-  --text-shade: var(--color-light-shade);
-  --primary: var(--color-pink);
+    --bg-img: url('/images/noise-tile-dark.svg');
+    --bg: var(--color-dark-blue);
+    --bg-shade: var(--color-dark-shade);
+    --bg-glare: var(--color-dark-glare);
+    --text: var(--color-off-white);
+    --text-glare: var(--color-light-glare);
+    --text-shade: var(--color-light-shade);
+    --primary: var(--color-pink);
 
-  --color-mid: var(--color-gray);
-  --color-dim: var(--color-dark-gray);
+    --color-mid: var(--color-gray);
+    --color-dim: var(--color-dark-gray);
 
-  --grayscale: grayscale(66%);
-  --font-smoothing: antialiased;
+    --grayscale: grayscale(66%);
+    --font-smoothing: antialiased;
 }
 
 @mixin light-mode {
-  --color-mode: "light";
+    --color-mode: 'light';
 
-  --bg-img: url("/images/noise-tile-light.svg");
-  --site-border: var(--color-gold);
-  --bg: var(--color-light);
-  --bg-glare: var(--color-light-glare);
-  --bg-shade: var(--color-light-shade);
-  --text: var(--color-near-black);
-  --text-glare: var(--color-black);
-  --text-shade: var(--color-dark-blue);
-  --primary: var(--color-blue);
-  --primary-glare: var(--color-light-blue);
-  --color-mid: var(--color-dark-gray);
-  --color-dim: var(--color-gray);
+    --bg-img: url('/images/noise-tile-light.svg');
+    --site-border: var(--color-gold);
+    --bg: var(--color-light);
+    --bg-glare: var(--color-light-glare);
+    --bg-shade: var(--color-light-shade);
+    --text: var(--color-near-black);
+    --text-glare: var(--color-black);
+    --text-shade: var(--color-dark-blue);
+    --primary: var(--color-blue);
+    --primary-glare: var(--color-light-blue);
+    --color-mid: var(--color-dark-gray);
+    --color-dim: var(--color-gray);
 
-  --font-base: var(--font-serif);
-  --font-headings: var(--font-sans);
+    --font-base: var(--font-serif);
+    --font-headings: var(--font-sans);
 
-  --grayscale: grayscale(50%);
-  --font-smoothing: auto;
+    --grayscale: grayscale(50%);
+    --font-smoothing: auto;
 
-  //--font-base: #{@i}
+    //--font-base: #{@i}
 }
 
 :root {
-  @include light-mode();
+    @include light-mode();
 }
 
 // Global styles start
@@ -99,12 +103,12 @@
 // }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: "dark";
-  }
-  :root:not([data-user-color-scheme]) {
-    @include dark-mode();
-  }
+    :root {
+        --color-mode: 'dark';
+    }
+    :root:not([data-user-color-scheme]) {
+        @include dark-mode();
+    }
 }
 // note: could make above sass mixin
 
@@ -121,21 +125,27 @@
 
 // }
 
-[data-user-color-scheme="dark"] {
-  @include dark-mode();
+[data-user-color-scheme='dark'] {
+    @include dark-mode();
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  font-size: var(--s-500);
-  //font-size: clamp(var(--s-400), calc(var(--s-400) + 3vw), var(--s-500));
-  font-family: var(--font-base);
-  overflow-x: hidden;
-  background: var(--bg);
-  min-height: 100vh;
-  -webkit-font-smoothing: var(--font-smoothing);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    font-size: var(--s-500);
+    //font-size: clamp(var(--s-400), calc(var(--s-400) + 3vw), var(--s-500));
+    font-family: var(--font-base);
+    overflow-x: hidden;
+    background: var(--bg);
+    min-height: 100vh;
+    -webkit-font-smoothing: var(--font-smoothing);
+}
+
+.site-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 // .site-wrap {
@@ -151,20 +161,20 @@ body {
 // }
 
 a:not([class]) {
-  color: currentColor;
+    color: currentColor;
 }
 
 a:hover {
-  color: var(--color-mid);
+    color: var(--color-mid);
 }
 
 main:focus {
-  outline: none;
+    outline: none;
 }
 
 :focus {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 0.25rem;
+    outline: 2px solid var(--color-gold);
+    outline-offset: 0.25rem;
 }
 
 // [href]:hover {
@@ -175,61 +185,61 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
-  @include apply-utility("leading", "tight");
+    font-weight: 700;
+    @include apply-utility('leading', 'tight');
 }
 
 h1 {
-  font-family: var(--font-serif);
-  font-size: var(--s-700);
+    font-family: var(--font-serif);
+    font-size: var(--s-700);
 }
 
 h2 {
-  font-size: var(--s-600);
+    font-size: var(--s-600);
 }
 
 h3 {
-  font-size: var(--s-500);
+    font-size: var(--s-500);
 }
 
 h2,
 h3,
 h4 {
-  font-family: var(--font-sans);
+    font-family: var(--font-sans);
 }
 
 time[datetime] {
-  display: block;
-  font-style: italic;
+    display: block;
+    font-style: italic;
 }
 
 p,
 li,
 hr {
-  max-width: 65ch;
+    max-width: 65ch;
 }
 
 img {
-  max-width: min(58rem, 100%);
+    max-width: min(58rem, 100%);
 }
 
 figcaption {
-  font-size: var(--s-300);
-  font-style: italic;
-  margin-top: 1rem;
-  font-family: var(--font-sans);
-  color: var(--color-mid);
-  text-align: center;
+    font-size: var(--s-300);
+    font-style: italic;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    color: var(--color-mid);
+    text-align: center;
 }
 
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
-  color: var(--bg);
+    color: var(--bg);
 
-  // We set this as an RGBA because that's how you get a solid color, by using 0.99
-  // alpha value. Browsers are wild.
-  background: var(--primary);
+    // We set this as an RGBA because that's how you get a solid color, by using 0.99
+    // alpha value. Browsers are wild.
+    background: var(--primary);
 }
 
 // Scrollbar styles
@@ -252,69 +262,70 @@ figcaption {
 
 // BUMP UP SIZES FOR LARGER VIEWPORTS
 
-@include media-query("md") {
-  body {
-    font-size: var(--s-500);
-  }
-  figcaption {
-    font-size: var(--s-400);
-  }
-  h1 {
-    font-size: var(--s-800);
-  }
-  h2 {
-    font-size: var(--s-700);
-  }
-  h3 {
-    font-size: var(--s-600);
-  }
+@include media-query('md') {
+    body {
+        font-size: var(--s-500);
+    }
+    figcaption {
+        font-size: var(--s-400);
+    }
+    h1 {
+        font-size: var(--s-800);
+    }
+    h2 {
+        font-size: var(--s-700);
+    }
+    h3 {
+        font-size: var(--s-600);
+    }
 }
 
-@include media-query("lg") {
-  h1 {
-    font-size: var(--s-900);
-  }
-  h2 {
-    font-size: var(--s-800);
-  }
-  h3 {
-    font-size: var(--s-700);
-  }
-  body {
-    font-size: var(--s-600);
-  }
+@include media-query('lg') {
+    h1 {
+        font-size: var(--s-900);
+    }
+    h2 {
+        font-size: var(--s-800);
+    }
+    h3 {
+        font-size: var(--s-700);
+    }
+    body {
+        font-size: var(--s-600);
+    }
 }
 
-@import "./utilities/flow";
-@import "./utilities/radius";
-@import "./utilities/content";
-@import "./utilities/visually-hidden";
-@import "./utilities/grid";
-@import "./utilities/reel";
-@import "./utilities/headline";
-@import "./utilities/panel";
-@import "./utilities/shadow";
-@import "./utilities/neon";
-@import "./utilities/full-bleed";
-@import "./utilities/post";
-@import "./utilities/auto-grid";
-@import "./utilities/extend";
+@import './utilities/flow';
+@import './utilities/radius';
+@import './utilities/content';
+@import './utilities/visually-hidden';
+@import './utilities/grid';
+@import './utilities/reel';
+@import './utilities/headline';
+@import './utilities/panel';
+@import './utilities/shadow';
+@import './utilities/neon';
+@import './utilities/full-bleed';
+@import './utilities/post';
+@import './utilities/auto-grid';
+@import './utilities/extend';
 
 // @import "./blocks/post-list";
-@import "./blocks/pill";
-@import "./blocks/site-head";
-@import "./blocks/nav";
-@import "./blocks/site-foot";
-@import "./blocks/button";
-@import "./blocks/skip-link";
-@import "./blocks/page-header";
-@import "./blocks/work";
-@import "./blocks/cta";
-@import "./blocks/user-toggle";
-@import "./blocks/callout";
-@import "./blocks/hr";
-@import "./blocks/pagination";
-@import "./blocks/sidebar";
-@import "./blocks/grayscale";
-@import "./blocks/cluster";
-@import "./blocks/details-items";
+@import './blocks/pill';
+@import './blocks/site-head';
+@import './blocks/nav';
+@import './blocks/site-foot';
+@import './blocks/button';
+@import './blocks/skip-link';
+@import './blocks/page-header';
+@import './blocks/work';
+@import './blocks/cta';
+@import './blocks/user-toggle';
+@import './blocks/callout';
+@import './blocks/hr';
+@import './blocks/pagination';
+@import './blocks/sidebar';
+@import './blocks/grayscale';
+@import './blocks/cluster';
+@import './blocks/details-items';
+@import './blocks/email-capture';

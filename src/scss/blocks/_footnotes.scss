@@ -1,0 +1,28 @@
+.footnotes {
+    margin-top: var(--s-major);
+    padding: var(--s-700) 0;
+    border-top: 2px solid var(--color-dim);
+    font-family: var(--font-sans);
+
+    li {
+        font-size: var(--s-400);
+        @include media-query('md') {
+            font-size: var(--s-500);
+        }
+    }
+}
+
+.footnote {
+    &-ref {
+        font-family: var(--font-sans);
+        font-size: var(--s-300);
+        @include media-query('md') {
+            font-size: var(--s-400);
+        }
+
+        a {
+            color: var(--color-mid);
+            text-decoration: none;
+        }
+    }
+}

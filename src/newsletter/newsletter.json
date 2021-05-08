@@ -1,4 +1,4 @@
 {
-  "layout": "layouts/curtain.html",
-  "permalink": "/newsletter/{{ page.fileSlug }}/index.html"
+    "layout": "layouts/curtain.html",
+    "permalink": "/curtain/{{ page.fileSlug }}/index.html"
 }

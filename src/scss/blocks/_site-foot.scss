@@ -1,28 +1,29 @@
 .site-foot {
-  padding: get-size("700") 0 get-size("700") 0;
-  text-align: center;
-  background-color: var(--bg-shade);
-  font-size: var(--s-400);
-  font-family: var(--font-sans);
+    padding: get-size('700') 0 get-size('700') 0;
+    text-align: center;
+    background-color: var(--bg-shade);
+    font-size: var(--s-400);
+    font-family: var(--font-sans);
+    margin-top: auto;
 
-  @include media-query("lg") {
-    font-size: var(--s-500);
-  }
-
-  &__inner {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--s-800);
-  }
-
-  &__list {
-    display: flex;
-    justify-content: center;
-
-    > *:not(:last-of-type) {
-      padding-inline-end: get-size("400");
+    @include media-query('lg') {
+        font-size: var(--s-500);
     }
-  }
+
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: var(--s-800);
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+
+        > *:not(:last-of-type) {
+            padding-inline-end: get-size('400');
+        }
+    }
 }

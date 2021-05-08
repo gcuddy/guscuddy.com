@@ -1,17 +1,24 @@
 ---
-title: "The Curtain"
-layout: "layouts/feed.html"
+title: 'The Curtain'
+layout: 'layouts/feed.html'
 pagination:
-  data: collections.newsletter
-  size: 25
-paginationPrevText: "Newer dispatches"
-paginationNextText: "Older dispatches"
-paginationAnchor: "#post-list"
-permalink: "curtain{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html"
+    data: collections.newsletter
+    size: 25
+    alias: curtain
+paginationPrevText: 'Newer dispatches'
+paginationNextText: 'Older dispatches'
+paginationAnchor: '#post-list'
+permalink: 'curtain{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html'
+noCta: true
 ---
 
 {% set grouping = 'season' %}
 
 A weekly newsletter on art, theater, media, culture, and the internet.
 
-Not in the loop yet? [Sign up here](#cta).
+<!-- I try to make it feel personal, and hundreds of folks seem to love it. -->
+
+{% set dataVariant = "ghost" %}
+{% include "partials/email-capture.html" %}
+
+<!-- Not in the loop yet? [Sign up here](#cta). -->
