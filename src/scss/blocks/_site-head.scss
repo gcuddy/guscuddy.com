@@ -1,35 +1,35 @@
 .site-head {
-  padding: get-size('500') 0;
+    padding: get-size('500') 0;
 
-  &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__logo {
-    font-size: var(--s-700);
-    // @include media-query("md") {
-    //   font-size: var(--s-700);
-    // }
-    font-family: var(--font-serif);
-    a {
-      text-decoration: none;
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
-    // background: linear-gradient(90deg, var(--primary), var(--primary-glare));
-    // -webkit-background-clip: text;  
-    // -webkit-text-fill-color: transparent;
 
-    // &:hover {
-    //   transform: scale(1.05);
-    // }
-    // &:active {
-    //   transform:scale(0.95);
-    // }
-  }
+    &__logo {
+        font-size: var(--s-700);
+        // @include media-query("md") {
+        //   font-size: var(--s-700);
+        // }
+        font-family: var(--font-serif);
+        a {
+            text-decoration: none;
+        }
+        // background: linear-gradient(90deg, var(--primary), var(--primary-glare));
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
 
-  &__nav {
-    padding: get-size('300') 0;
-  }
+        // &:hover {
+        //   transform: scale(1.05);
+        // }
+        // &:active {
+        //   transform:scale(0.95);
+        // }
+    }
+
+    &__nav {
+        padding: var(--s-400) 0;
+    }
 }
