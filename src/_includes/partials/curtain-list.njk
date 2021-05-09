@@ -14,7 +14,7 @@
             {{item.data.image}}
             {% endset %}
             {% else %}
-            {%- set absolutePageUrl -%}{{ item.url | url | absoluteUrl(site.url) }}{{item.data.image}}{%- endset -%}
+            {%- set absolutePageUrl -%}{{ item.url }}{{item.data.image}}{%- endset -%}
             {% set imgSrc = absolutePageUrl %}
             {% endif %}
             {% set numSeasons = seasons.seasons.length %}

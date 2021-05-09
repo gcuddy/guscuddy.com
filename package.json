@@ -5,6 +5,7 @@
     "main": ".eleventy.js",
     "scripts": {
         "start": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
+        "debug": "npx gulp && concurrently \"npx gulp watch\" \"DEBUG=Eleventy:Benchmark* npx eleventy --serve\"",
         "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy"
     },
     "keywords": [],
