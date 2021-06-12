@@ -3,10 +3,11 @@
 {% set pageHeaderTitle = title %}
 
 {% set pageHeaderSummary %}
-
-<time datetime="{{ date.toUTCString() | w3DateFilter }}">{{ date | dateMonthFilter }}</time>
-<p>{% if url %}<a href="{{url}}">{% endif %}{{ theater }}{% if url %}</a>{% endif %}</p>
-
+<div class="cluster">
+    <time datetime="{{ date.toUTCString() | w3DateFilter }}">{{ date | dateMonthFilter }}</time>{% include
+    "partials/tag-cluster.html" %}
+    <p>{% if url %}<a href="{{url}}">{% endif %}{{ theater }}{% if url %}</a>{% endif %}</p>
+</div>
 {% endset %}
 
 {% block content %}

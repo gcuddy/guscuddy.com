@@ -1,0 +1,13 @@
+{% if tags %}
+<span> | </span>
+<p class="visually-hidden" id="tags-desc">
+    Tags that this post has been filed under.
+</p>
+<ul class="[ tags-list ] [ cluster ]" aria-describedby="tags-desc">
+    {% for tag in tags %}
+    <li>
+        <a href="/tag/{{ tag | slug }}/">{{ tag | title | replace(' ', '') }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

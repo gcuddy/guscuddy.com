@@ -1,4 +1,5 @@
 {
-  "layout": "layouts/show.html",
-  "permalink": "/shows/{{ title | slug }}/index.html"
+    "layout": "layouts/show.html",
+    "permalink": "/shows/{{ title | slug }}/index.html",
+    "tags": ["shows", "acting"]
 }

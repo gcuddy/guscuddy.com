@@ -33,6 +33,8 @@
         text-align: center;
         color: var(--color-mid);
         font-family: var(--font-sans);
+        margin-left: auto;
+        margin-right: auto;
     }
     &__heading {
         font-weight: var(--fw, 900);

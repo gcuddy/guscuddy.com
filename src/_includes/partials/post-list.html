@@ -18,7 +18,7 @@
                     <a href="{{ item.url }}" class="post-list__link">{{ item.data.title }}</a>
                     <div>
                         {#{% if 'newsletter' in item.filePathStem %}
-                        <a href="/newsletter" class="[ post-list__tag ] [ pill ]">The Curtain</a>
+                        <a href="/curtain" class="[ post-list__tag ] [ pill ]">The Curtain</a>
                         {% endif %}#}
                         <time class="post-list__time" datetime="{{ item.date | w3DateFilter }}">{% if dateMonthFilter %}
                             {{ item.date | dateMonthFilter }} {% else %} {{ item.date | dateFilter }} {% endif %}</time>

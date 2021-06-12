@@ -1,45 +1,49 @@
 .neon {
     color: #fee;
-    text-shadow: 0 -#{get-size('300')} #{get-size('major')}, 0 0 1em var(--primary), 0 0 0.5em var(--primary), 0 0 0.1em var(--primary), 0 10px 3px #000;
-
-    :hover span {
-        animation: blink linear infinite 2s;
-    }
-    :hover span:nth-of-type(2) {
-        animation: blink linear infinite 3s;
-    }
+    text-shadow: 0 -#{get-size('300')} #{get-size('major')},
+        0 0 1em var(--primary), 0 0 0.5em var(--primary),
+        0 0 0.1em var(--primary), 0 10px 3px #000;
+    // animation: blink linear infinite 2s;
+    // &::first-letter {
+    //     animation: blink linear infinite 4s;
+    // }
+    // :hover span {
+    //     animation: blink linear infinite 2s;
+    // }
+    // :hover span:nth-of-type(2) {
+    //     animation: blink linear infinite 3s;
+    // }
 }
 
-  @keyframes blink {
+@keyframes blink {
     78% {
-      color: inherit;
-      text-shadow: inherit;
+        color: inherit;
+        text-shadow: inherit;
     }
-    79%{
-       color: #333;
+    79% {
+        color: #333;
     }
     80% {
-      
-      text-shadow: none;
+        text-shadow: none;
     }
     81% {
-      color: inherit;
-      text-shadow: inherit;
+        color: inherit;
+        text-shadow: inherit;
     }
     82% {
-      color: #333;
-      text-shadow: none;
+        color: #333;
+        text-shadow: none;
     }
     83% {
-      color: inherit;
-      text-shadow: inherit;
+        color: inherit;
+        text-shadow: inherit;
     }
     92% {
-      color: #333;
-      text-shadow: none;
+        color: #333;
+        text-shadow: none;
     }
     92.5% {
-      color: inherit;
-      text-shadow: inherit;
+        color: inherit;
+        text-shadow: inherit;
     }
-  }
+}

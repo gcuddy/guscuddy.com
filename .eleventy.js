@@ -34,11 +34,11 @@ module.exports = config => {
     const CONTENT_GLOBS = {
         posts: ['src/posts/*/*.md', 'src/newsletter/**/*.md'],
         notes: 'src/notes/*.md',
-        media: '*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm',
+        media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm',
     }
 
     // Quiet Mode - comment out for noisiness
-    // config.setQuietMode(true)
+    config.setQuietMode(true)
 
     // Add filters
     config.addFilter('dateFilter', dateFilter)

@@ -1,37 +1,42 @@
 .reel {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  height: auto;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
 
-  &::-webkit-scrollbar {
-    height: 1rem;
-  }
+    img {
+        height: 27rem;
+        object-fit: cover;
+    }
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-    border: 1px solid var(--text-glare);
-    border-radius: 0.25rem;
-  }
+    &::-webkit-scrollbar {
+        height: 1rem;
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--text-shade);
-    border-radius: 0.25rem;
-  }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        border: 1px solid var(--text-glare);
+        border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--text-shade);
+        border-radius: 0.25rem;
+    }
 }
 
-.reel>* {
-  flex: 0 0 auto;
-  width: 18rem;
-  margin-bottom: var(--s-400);
+.reel > * {
+    flex: 0 0 auto;
+    width: 24rem;
+    margin-bottom: var(--s-400);
 }
 
-.reel>img {
-  height: 100%;
-  flex-basis: auto;
-  width: auto;
+.reel > img {
+    height: 100%;
+    flex-basis: auto;
+    width: auto;
 }
 
-.reel>*+* {
-  margin-left: var(--s-400);
+.reel > * + * {
+    margin-left: var(--s-400);
 }

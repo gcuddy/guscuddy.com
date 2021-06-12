@@ -33,7 +33,7 @@ Render post date and any tags that this post has been filed under #} {% set time
     <div class="[ page-header curtain-header ] [ content post ]">
 
         <div class="[ flow ]">
-            <h1 class="[ curtain-header__heading ] [ headline ] [ align-center ] ">{{ title }}</h1>
+            <h1 class="[ curtain-header__heading ] [ headline ] [ align-center  ] ">{{ title }}</h1>
             {% if description %}
             <div class="[ curtain-header__summary ] [ measure-long ]">
                 {{ description | safe }}
@@ -59,7 +59,7 @@ Render post date and any tags that this post has been filed under #} {% set time
 
 {% include "partials/cta.html" %} {% endblock %}
 
-<!-- {#{% block foot %}
+{% block foot %}
 <script>
     let h1 = document.querySelector('main article h1');
     let maxWeight = 900;
@@ -77,4 +77,4 @@ Render post date and any tags that this post has been filed under #} {% set time
         false
     )
 </script>
-{% endblock %}#} -->
+{% endblock %}

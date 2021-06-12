@@ -9,14 +9,16 @@
             {% set displaySeason = '' %}
             {% for item in postListItems %}
             {% set imgSrc = '' %}
-            {% if helpers.startsWith(item.data.image, '/') %}
-            {% set imgSrc %}
-            {{item.data.image}}
-            {% endset %}
-            {% else %}
-            {%- set absolutePageUrl -%}{{ item.url }}{{item.data.image}}{%- endset -%}
-            {% set imgSrc = absolutePageUrl %}
-            {% endif %}
+            {%- if item.data.image -%}
+                {% if helpers.startsWith(item.data.image, '/') %}
+                    {% set imgSrc %}
+                        {{item.data.image}}
+                    {% endset %}
+                {% else %}
+                    {%- set absolutePageUrl -%}{{ item.url }}{{item.data.image}}{%- endset -%}
+                    {% set imgSrc = absolutePageUrl %}
+                {% endif %}
+            {%- endif -%}
             {% set numSeasons = seasons.seasons.length %}
             {%- set card %}
             <li class="curtain-list__item">
@@ -41,7 +43,7 @@
             {% set displaySeason = currentSeason.name %}
             <li class="curtain-list__item curtain-list__item-heading">
                 <div>
-                    <h2 class="font-display text-major">{{displaySeason}}</h2>
+                    <h2 class="font-display text-major color-primary">{{displaySeason}}</h2>
                     <p class="curtain-list__item-description curtain-season-heading">{{currentSeason.description}}</p>
                 </div>
             </li>

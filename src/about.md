@@ -1,14 +1,14 @@
 ---
-title: "About Gus"
-layout: "layouts/about.html"
-permalink: "/about/"
+title: 'About Gus'
+layout: 'layouts/about.html'
+permalink: '/about/'
 ---
 
 I'm a Brooklyn-based performer, writer, director, designer/developer, and tinkerer.
 
 Prior to an industry-busting pandemic, I performed in New York and around the country in plays performed in-person on real, physical stages. It's still weird to think about. I’ve been seen at the Humana Festival at Actor’s Theatre of Louisville, Geva Theatre, Arizona Theatre Company, and many more. I love to dive into things and make exhilirating theatre with a room full of great collaborators.
 
-For the last two years I've sent out a weekly newsletter called _The Curtain_. It's loosely about arts, theatre, film, culture, and technology, but it can get pretty far-reaching. Many people seem to enjoy it. You can [subscribe and read more here](/newsletter), or browse through all my essays in [the feed](/feed).
+For the last two years I've sent out a weekly newsletter called _The Curtain_. It's loosely about arts, theatre, film, culture, and technology, but it can get pretty far-reaching. Many people seem to enjoy it. You can [subscribe and read more here](/curtain), or browse through all my essays in [the feed](/feed).
 
 I also dabble in playwriting and screenwriting. I love film and have been dreaming about getting into filmmaking for a while, as well.
 
