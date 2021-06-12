@@ -1,18 +1,41 @@
-.neon {
-    color: #fee;
-    text-shadow: 0 -#{get-size('300')} #{get-size('major')},
-        0 0 1em var(--primary), 0 0 0.5em var(--primary),
-        0 0 0.1em var(--primary), 0 10px 3px #000;
-    // animation: blink linear infinite 2s;
-    // &::first-letter {
-    //     animation: blink linear infinite 4s;
-    // }
-    // :hover span {
-    //     animation: blink linear infinite 2s;
-    // }
-    // :hover span:nth-of-type(2) {
-    //     animation: blink linear infinite 3s;
-    // }
+@media (prefers-color-scheme: dark) {
+    html:not([data-user-color-scheme]) {
+        .neon {
+            color: #fee;
+            text-shadow: 0 -#{get-size('300')} #{get-size('major')},
+                0 0 1em var(--primary), 0 0 0.5em var(--primary),
+                0 0 0.1em var(--primary), 0 10px 3px #000;
+            // animation: blink linear infinite 2s;
+            // &::first-letter {
+            //     animation: blink linear infinite 4s;
+            // }
+            // :hover span {
+            //     animation: blink linear infinite 2s;
+            // }
+            // :hover span:nth-of-type(2) {
+            //     animation: blink linear infinite 3s;
+            // }
+        }
+    }
+}
+
+html[data-user-color-scheme='dark'] {
+    .neon {
+        color: #fee;
+        text-shadow: 0 -#{get-size('300')} #{get-size('major')},
+            0 0 1em var(--primary), 0 0 0.5em var(--primary),
+            0 0 0.1em var(--primary), 0 10px 3px #000;
+        // animation: blink linear infinite 2s;
+        // &::first-letter {
+        //     animation: blink linear infinite 4s;
+        // }
+        // :hover span {
+        //     animation: blink linear infinite 2s;
+        // }
+        // :hover span:nth-of-type(2) {
+        //     animation: blink linear infinite 3s;
+        // }
+    }
 }
 
 @keyframes blink {
