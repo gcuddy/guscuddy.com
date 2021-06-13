@@ -69,9 +69,11 @@ Render post date and any tags that this post has been filed under #} {% set time
     window.addEventListener(
         'scroll',
         () => {
+            let fw = (maxWeight - (window.scrollY * factor))
+            if (fw < 100) fw = 100
             document.body.style.setProperty(
                 '--fw',
-                (maxWeight - (window.scrollY * factor))
+                fw
             )
         },
         false

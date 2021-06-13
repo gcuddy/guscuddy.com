@@ -4,6 +4,12 @@
 {% set pageCriticalStyles = ['css/page.css', 'css/curtain.css'] %}
 {% endif %}
 {% set pageHeaderTitle = title %}
+{%- if curtain -%}
+{% set pageHeaderSafe = true %}
+{% set pageHeaderTitle %}
+The <span>C</span>urta<span>i</span>n
+{% endset %}
+{%- endif -%}
 {% set pageHeaderSummary = content %}
 {% set postListItems = pagination.items %}
 {# If this is a tag, grab those items

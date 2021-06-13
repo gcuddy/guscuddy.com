@@ -150,6 +150,10 @@ body {
     body {
         padding: var(--s-300);
     }
+    .site-wrap {
+        border-radius: 0.25rem;
+        border: 2px solid var(--bg-shade);
+    }
 }
 @include media-query('lg') {
     body {
@@ -158,7 +162,6 @@ body {
 }
 .site-wrap {
     background-color: var(--bg);
-    border: 2px solid var(--bg-shade);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

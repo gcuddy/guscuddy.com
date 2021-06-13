@@ -1,68 +1,82 @@
-const STORAGE_KEY = "user-color-scheme";
-const COLOR_MODE_KEY = "--color-mode";
+const STORAGE_KEY = 'user-color-scheme'
+const COLOR_MODE_KEY = '--color-mode'
 
-const modeToggleButton = document.querySelector(".js-mode-toggle");
-const modeToggleText = document.querySelector(".js-mode-toggle-text");
-const modeStatusElement = document.querySelector(".js-mode-status");
+const modeToggleButton = document.querySelector('.js-mode-toggle')
+const modeToggleText = document.querySelector('.js-mode-toggle-text')
+const modeStatusElement = document.querySelector('.js-mode-status')
 
-const getCSSCustomProp = (propKey) => {
-  let response = getComputedStyle(document.documentElement).getPropertyValue(
-    propKey
-  );
+function switchTweetTheme(currentSetting) {
+    var tweets = document.querySelectorAll('[data-tweet-id]')
 
-  if (response.length) {
-    response = response.replace(/\"/g, "").trim();
-  }
+    tweets.forEach(function (tweet) {
+        var src = tweet.getAttribute('src')
+        tweet.setAttribute(
+            'src',
+            src.replace(/theme=(light|dark)/, 'theme=' + currentSetting)
+        )
+    })
+}
 
-  return response;
-};
+const getCSSCustomProp = propKey => {
+    let response = getComputedStyle(document.documentElement).getPropertyValue(
+        propKey
+    )
 
-const applySetting = (passedSetting) => {
-  let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
+    if (response.length) {
+        response = response.replace(/\"/g, '').trim()
+    }
 
-  if (currentSetting) {
-    document.documentElement.setAttribute(
-      "data-user-color-scheme",
-      currentSetting
-    );
-    setButtonLabelAndStatus(currentSetting);
-  } else {
-    setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
-  }
-};
+    return response
+}
 
-const setButtonLabelAndStatus = (currentSetting) => {
-  modeToggleText.innerText = `Enable ${
-    currentSetting === "dark" ? "light" : "dark"
-  } mode`;
-  modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
-};
+const applySetting = passedSetting => {
+    let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY)
+
+    if (currentSetting) {
+        document.documentElement.setAttribute(
+            'data-user-color-scheme',
+            currentSetting
+        )
+        setButtonLabelAndStatus(currentSetting)
+        switchTweetTheme(currentSetting)
+    } else {
+        setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY))
+        setTimeout(switchTweetTheme(getCSSCustomProp(COLOR_MODE_KEY)), 1000)
+    }
+}
+
+const setButtonLabelAndStatus = currentSetting => {
+    modeToggleText.innerText = `Enable ${
+        currentSetting === 'dark' ? 'light' : 'dark'
+    } mode`
+    modeStatusElement.innerText = `Color mode is now "${currentSetting}"`
+}
 
 const toggleSetting = () => {
-  let currentSetting = localStorage.getItem(STORAGE_KEY);
+    let currentSetting = localStorage.getItem(STORAGE_KEY)
 
-  switch (currentSetting) {
-    case null:
-      currentSetting =
-        getCSSCustomProp(COLOR_MODE_KEY) === "dark" ? "light" : "dark";
-      break;
-    case "light":
-      currentSetting = "dark";
-      break;
-    case "dark":
-      currentSetting = "light";
-      break;
-  }
+    switch (currentSetting) {
+        case null:
+            currentSetting =
+                getCSSCustomProp(COLOR_MODE_KEY) === 'dark' ? 'light' : 'dark'
+            break
+        case 'light':
+            currentSetting = 'dark'
+            break
+        case 'dark':
+            currentSetting = 'light'
+            break
+    }
 
-  localStorage.setItem(STORAGE_KEY, currentSetting);
+    localStorage.setItem(STORAGE_KEY, currentSetting)
 
-  return currentSetting;
-};
+    return currentSetting
+}
 
-modeToggleButton.addEventListener("click", (evt) => {
-  evt.preventDefault();
+modeToggleButton.addEventListener('click', evt => {
+    evt.preventDefault()
 
-  applySetting(toggleSetting());
-});
+    applySetting(toggleSetting())
+})
 
-applySetting();
+applySetting()
