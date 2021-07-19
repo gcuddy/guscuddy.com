@@ -4,7 +4,7 @@ helpers.getSiblingContent(collections.blog, page) %} {# Render post date and any
 under #} {% set pageHeaderSummary %}
 <div class="cluster">
     <time datetime="{{ page.date | w3DateFilter }}">{{ page.date | dateFilter }}</time>
-    {% if tags %}
+    <!-- {#{% if tags %}
     <span> | </span>
     <p class="visually-hidden" id="tags-desc">
         Tags that this post has been filed under.
@@ -16,7 +16,7 @@ under #} {% set pageHeaderSummary %}
         </li>
         {% endfor %}
     </ul>
-    {% endif %}
+    {% endif %} #}-->
 </div>{% if description %}
 <section class="flow-space-700">
     <p class="description">{{ description }}</p>
