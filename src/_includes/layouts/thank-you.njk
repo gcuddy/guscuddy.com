@@ -1,0 +1,33 @@
+{% extends "layouts/base.njk" %}{% block content %}
+<div class="content">
+    <div class="flow">
+        <h1 class="text-major">You're in!</h1>
+        <section class="thank-you text-700 flow">
+            <noscript>
+                <p>Thanks so much for signing up. You'll get the next email.</p>
+            </noscript>
+            <p>Questions? Feel free to email me: <a href="mailto:gus@guscuddy.com">gus@guscuddy.com</a>.</p>
+        </section>
+
+    </div>
+</div>
+{% endblock %}
+{% block foot%}
+{% set js %}
+const el = document.querySelector("section.thank-you");
+const params = new URLSearchParams(window.location.search);
+const email = params.get('email');
+if (email) {
+const p = document.createElement('p');
+p.innerHTML = `Thanks so much for signing up with your email <strong>${email}</strong>. You'll get the next email.`
+el.prepend(p);
+} else {
+const p = document.createElement('p');
+p.innerHTML = `Thanks so much for signing up. You'll get the next email.`
+el.prepend(p);
+}
+{% endset %}
+<!-- prettier-ignore-start -->
+<script>{{ js | jsmin | safe }}</script>
+<!-- prettier-ignore-end -->
+{% endblock %}

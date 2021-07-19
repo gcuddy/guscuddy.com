@@ -16,7 +16,7 @@ bak
 node_modules
 dist
 src/_includes/css
-src/notes
+#src/notes
 
 # Local Netlify folder
 .netlify

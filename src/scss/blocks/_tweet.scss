@@ -1,0 +1,83 @@
+.tweet {
+    background: var(--blank-bg);
+    display: block;
+    padding: 12px 16px 4px;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    font-family: var(--font-sans);
+    color: var(--text);
+
+    > * {
+        --flow-space: var(--s-400);
+    }
+    a {
+        text-decoration: none;
+    }
+
+    &__header {
+        a {
+            display: block;
+        }
+        @include apply-utility('leading', 'flat');
+        &-avatar {
+            float: left;
+            border-radius: 50%;
+            margin-right: var(--s-200);
+        }
+        &-name {
+            font-weight: 700;
+        }
+        &-username {
+            color: var(--color-mid);
+        }
+        span {
+            display: block;
+            text-decoration: none;
+        }
+    }
+    &__body {
+        @include apply-utility('leading', 'tight');
+        .quoted-tweet {
+            border: 1px solid var(--color-dim);
+            border-radius: 0.5rem;
+            padding: var(--s-200);
+            font-size: 0.9em;
+        }
+        .quote-tweet-displayname {
+            font-weight: 700;
+            margin-right: 6px;
+        }
+        video.tweet-video,
+        video.tweet-gif {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-dim);
+        }
+    }
+    &__footer {
+        color: var(--color-mid);
+        .tweet-date {
+            border-bottom: 1px solid var(--color-dim);
+        }
+        .retweets {
+            margin-right: var(--s-200);
+        }
+        .likes-count,
+        .retweets-count {
+            color: var(--text);
+            font-weight: 700;
+            font-variant-numeric: lining-nums;
+        }
+    }
+}
+.deleted-tweet {
+    background: var(--bg-glare);
+    padding: clamp(var(--s-400), var(--s-400) + 0.5vw, var(--s-600));
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    max-width: min(55rem, 100%);
+    font-family: var(--font-sans);
+    a {
+        text-decoration-color: var(--color-primary);
+    }
+}

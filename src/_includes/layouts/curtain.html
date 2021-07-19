@@ -33,7 +33,7 @@ Render post date and any tags that this post has been filed under #} {% set time
     <div class="[ page-header curtain-header ] [ content post ]">
 
         <div class="[ flow ]">
-            <h1 class="[ curtain-header__heading ] [ headline ] [ align-center  ] ">{{ title }}</h1>
+            <h1 class="[ curtain-header__heading ] [ headline ] [ align-center fw-400  ] ">{{ title }}</h1>
             {% if description %}
             <div class="[ curtain-header__summary ] [ measure-long ]">
                 {{ description | safe }}
@@ -70,6 +70,7 @@ Render post date and any tags that this post has been filed under #} {% set time
         'scroll',
         () => {
             let fw = (maxWeight - (window.scrollY * factor))
+            if (fw > 900) fw = 900
             if (fw < 100) fw = 100
             document.body.style.setProperty(
                 '--fw',
@@ -78,5 +79,6 @@ Render post date and any tags that this post has been filed under #} {% set time
         },
         false
     )
+    document.body.style.backgroundColor = 'hsl(calc(360*var(--scroll, 0)), var(--bg-glare-saturation), var(--bg-glare-lightness))'
 </script>
 {% endblock %}

@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+
 // First up: config and functions
 @import 'config';
 
@@ -31,10 +34,18 @@
 // Create a light mode and dark mode
 @mixin dark-mode {
     --bg-img: url('/images/noise-tile-dark.svg');
+    --blank-bg: #000;
     --bg: var(--color-dark-blue);
     --bg-shade: var(--color-dark-shade);
     --bg-shade-alt: var(--color-dark-shade-alt);
     --bg-glare: var(--color-dark-glare);
+    --bg-glare-hue: #{color.hue(map.get($gorko-colors, 'dark-glare'))};
+    --bg-glare-saturation: #{color.saturation(
+            map.get($gorko-colors, 'dark-glare')
+        )};
+    --bg-glare-lightness: #{color.lightness(
+            map.get($gorko-colors, 'dark-glare')
+        )};
     // --bg-glare-hue: #{hue(var(--color-dark-glare))};
     // --bg-glare-saturation: #{saturation(var(--color-dark-glare))};
     // --bg-glare-lightness: #{lightness(var(--color-dark-glare))};
@@ -55,8 +66,21 @@
 
     --bg-img: url('/images/noise-tile-light.svg');
     --site-border: var(--color-gold);
+    --blank-bg: #fff;
     --bg: var(--color-light);
     --bg-glare: var(--color-light-glare);
+    --bg-glare-hue: #{color.hue(map.get($gorko-colors, 'light-glare'))};
+    --bg-glare-saturation: #{color.saturation(
+            map.get($gorko-colors, 'light-glare')
+        )};
+    --bg-glare-lightness: #{color.lightness(
+            map.get($gorko-colors, 'light-glare')
+        )};
+    --bg-glare: hsl(
+        var(--bg-glare-hue),
+        var(--bg-glare-saturation),
+        var(--bg-glare-lightness)
+    );
     --bg-shade: var(--color-light-shade);
     --bg-shade-alt: var(--color-light-shade-alt);
     --text: var(--color-near-black);
@@ -115,6 +139,7 @@
         @include dark-mode();
     }
 }
+
 // note: could make above sass mixin
 
 // [data-user-color-scheme="dark"] {

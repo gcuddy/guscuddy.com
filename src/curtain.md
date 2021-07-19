@@ -10,6 +10,7 @@ paginationNextText: 'Older dispatches'
 paginationAnchor: '#post-list'
 permalink: 'curtain{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html'
 noCta: true
+cssclass: 'curtain-landing'
 ---
 
 {% set grouping = 'season' %}

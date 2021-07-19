@@ -6,8 +6,6 @@
         border: 2px dashed var(--primary-glare);
         border-radius: get-size('400');
         padding: get-size('400');
-        text-transform: uppercase;
-        font-family: var(--font-mono);
         margin: var(--s-700) 0;
         background: transparent;
         line-height: 1;
@@ -16,6 +14,7 @@
         max-width: fit-content;
         margin-left: auto;
         margin-right: auto;
+        font-variant: small-caps;
         @include media-query('md') {
             font-size: var(--s-400);
             //  transform: rotate(-4deg);
@@ -37,6 +36,6 @@
         margin-right: auto;
     }
     &__heading {
-        font-weight: var(--fw, 900);
+        // font-weight: var(--fw, 900);
     }
 }

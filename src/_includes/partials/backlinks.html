@@ -3,12 +3,16 @@
     <h2 class="backlinks__title">Backlinks</h2>
     <ul>
         {% for link in backlinks %}
-            <li>
-                <a href="{{link.url}}">{{link.title}}</a>
-                <!-- <div class="backlink__preview" role="none">
-                    {{link.preview | markdownify | safe }}
-                </div> -->
-            </li>
+        <li>
+            <details>
+                <summary><a href="{{link.url}}">{{link.title}}</a></summary>
+                <a href="{{link.url}}">
+                    <div class="[ backlinks__preview ] [ flow ]">
+                        {{link.preview | markdownify | safe }}
+                    </div>
+                </a>
+            </details>
+        </li>
         {% endfor %}
     </ul>
 </div>

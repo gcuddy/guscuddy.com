@@ -1,22 +1,23 @@
 // First up: config and functions
-@import "config";
+@import 'config';
 
 // Set Gorko to output no CSS for this file
 $outputTokenCSS: false;
 
 // Next: pull in Gorko for design tokens
-@import "../../node_modules/gorko/gorko.scss";
+@import '../../node_modules/gorko/gorko.scss';
 
 body {
-  font-family: var(--font-sans);
+    font-family: var(--font-sans);
 }
 
 .note-overlay {
-  h1 {
-    max-width: 25ch;
-  }
+    h1 {
+        max-width: 25ch;
+    }
 }
 
 // blocks
 
-@import "./blocks/note-content";
+@import './blocks/note-content';
+@import './blocks/backlinks';

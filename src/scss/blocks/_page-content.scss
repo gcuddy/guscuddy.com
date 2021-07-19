@@ -24,7 +24,7 @@
     }
 
     picture,
-    video,
+    video:not(.tweet-video):not(.tweet-gif),
     .youtube-embed {
         @extend .radius;
         width: calc(100vw - var(--s-800));

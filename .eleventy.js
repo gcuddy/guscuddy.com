@@ -27,6 +27,7 @@ const markdown = require('./src/utils/markdown.js')
 const htmlMinTransform = require('./src/transforms/html-min-transform')
 const parseTransform = require('./src/transforms/parse-transforms')
 const embedTransform = require('./src/transforms/embeds')
+const twitterTransform = require('./src/transforms/twitter-transform')
 // const obsdianEmbed = require('./src/transforms/obsidian-embed')
 //const noteTransform = require("./src/transforms/note-transform");
 
@@ -57,14 +58,14 @@ module.exports = config => {
 
     // Plugins
     config.addPlugin(rssPlugin)
-    config.addPlugin(embedTwitter, {
-        doNotTrack: true,
-        embedClass: 'twitter-embed',
-        theme: 'dark',
-        twitterScript: {
-            defer: true,
-        },
-    })
+    // config.addPlugin(embedTwitter, {
+    //     doNotTrack: true,
+    //     embedClass: 'twitter-embed',
+    //     theme: 'dark',
+    //     twitterScript: {
+    //         defer: true,
+    //     },
+    // })
     config.addPlugin(pluginPageAssets, {
         mode: 'directory',
         postsMatching: 'src/newsletter/**/*.md',
@@ -75,6 +76,7 @@ module.exports = config => {
     // Transforms
     config.addTransform('parsetransform', parseTransform)
     config.addTransform('embedtransform', embedTransform)
+    config.addTransform('twitterTransform', twitterTransform)
     // config.addTransform('obsidianEmbed', obsdianEmbed)
     //config.addTransform("noteTransform", noteTransform);
     if (isProduction) {

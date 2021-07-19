@@ -20,14 +20,14 @@
     />
     <link
       rel="preload"
-      href="/fonts/source-sans-pro-v14-latin-regular.woff2"
+      href="/fonts/alegreya-sans-v14-latin-regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin="crossorigin"
     />
     <link
       rel="preload"
-      href="/fonts/source-sans-pro-v14-latin-700.woff2"
+      href="/fonts/alegreya-sans-v14-latin-900.woff2"
       as="font"
       type="font/woff2"
       crossorigin="crossorigin"
@@ -71,7 +71,7 @@
   <body>
     <div class="site-wrap">
       {% include "partials/site-head.html" %}
-      <main tabindex="-1" id="main-content">
+      <main tabindex="-1" id="main-content" {% if cssclass %} class="{{cssclass}}"{%endif%}>
         {% block content %}{% endblock %}
       </main>
 

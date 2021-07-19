@@ -1,0 +1,38 @@
+.backlinks {
+    --h1: 1.296em;
+    --h2: 1.215em;
+    --h3: 1.138em;
+    --h4: 1.067em;
+    --flow-space: 0.3rem;
+    summary {
+        padding: 4px;
+        border-radius: 0.25rem;
+
+        &:hover {
+            background-color: var(--bg-shade);
+        }
+    }
+    &__preview {
+        padding-left: var(--s-800);
+        border-left: 1px solid var(--text);
+        font-size: var(--s-400);
+        color: var(--color-mid);
+
+        h1 {
+            font-size: var(--h1);
+        }
+        h2 {
+            font-size: var(--h2);
+        }
+        h3 {
+            font-size: var(--h3);
+        }
+        h4 {
+            font-size: var(--h4);
+        }
+
+        .heading-anchor {
+            display: none;
+        }
+    }
+}

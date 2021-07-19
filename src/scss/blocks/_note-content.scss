@@ -1,33 +1,41 @@
 .note-overlay {
-  border: 5px solid var(--color-gold);
-  background-image: var(--bg-img);
+    border: 5px solid var(--color-gold);
+    background-image: var(--bg-img);
+    font-family: var(--font-mono) !important;
 
-  legend {
-    text-transform: uppercase;
-    font-size: var(--s-400);
-  }
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-mono);
+    }
+
+    legend {
+        text-transform: uppercase;
+        font-size: var(--s-400);
+    }
 }
 
 .note-content {
-  font-family: var(--font-ia);
+    // font-family: var(--font-ia);
 
-  .heading-anchor {
-    display: none;
-  }
-
-  blockquote {
-    border-inline-start: 1rem solid var(--color-gold);
-    padding-inline-start: get-size("600");
-    padding-top: get-size("500");
-    padding-bottom: get-size("500");
-    font-style: italic;
-
-    > * + * {
-      margin-top: var(--s-500);
+    .heading-anchor {
+        display: none;
     }
-  }
 
-  > * {
-    @include apply-utility("measure", "long");
-  }
+    blockquote {
+        border-inline-start: 1rem solid var(--color-gold);
+        padding-inline-start: get-size('600');
+        padding-top: get-size('500');
+        padding-bottom: get-size('500');
+        font-style: italic;
+
+        > * + * {
+            margin-top: var(--s-500);
+        }
+    }
+
+    > * {
+        @include apply-utility('measure', 'long');
+    }
 }

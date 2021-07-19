@@ -8,17 +8,17 @@ $outputTokenCSS: false;
 @import '../../node_modules/gorko/gorko.scss';
 
 // Import Fonts
-@import './display-fonts';
+// @import './display-fonts';
 
 // Blocks
 @import './blocks/curtain-header';
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--font-display);
-}
+// h1,
+// h2,
+// h3,
+// h4 {
+//     font-family: var(--font-display);
+// }
 
 .curtain {
     hr:after {
