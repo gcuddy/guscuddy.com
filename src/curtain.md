@@ -3,7 +3,7 @@ title: 'The Curtain'
 layout: 'layouts/feed.html'
 pagination:
     data: collections.newsletter
-    size: 25
+    size: 500
     alias: curtain
 paginationPrevText: 'Newer dispatches'
 paginationNextText: 'Older dispatches'

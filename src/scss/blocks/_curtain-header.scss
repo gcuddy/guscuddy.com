@@ -10,13 +10,14 @@
         background: transparent;
         line-height: 1;
         font-weight: 700;
-        font-size: var(--s-300);
+        font-size: var(--s-400);
+        max-width: -moz-fit-content;
         max-width: fit-content;
         margin-left: auto;
         margin-right: auto;
         font-variant: small-caps;
         @include media-query('md') {
-            font-size: var(--s-400);
+            font-size: var(--s-500);
             //  transform: rotate(-4deg);
         }
 

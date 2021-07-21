@@ -108,7 +108,7 @@ module.exports = {
         const num = parseInt(issue)
 
         if (num < 89) {
-            return `S-01-${num} (Issue ${num})`
+            return `S01-${num} (Issue ${num})`
         } else if (num > 88) {
             const ep = num - 88
             return `S02-${ep.toString().padStart(2, '0')} (Issue ${num})`

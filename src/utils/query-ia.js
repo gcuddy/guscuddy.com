@@ -15,5 +15,5 @@ const query = async url => {
 module.exports = async url => {
     const data = await query(url)
     if (!data) return undefined
-    return data.archived_snapshots.closest.url
+    return data.archived_snapshots?.closest?.url
 }

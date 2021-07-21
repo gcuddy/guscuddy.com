@@ -11,11 +11,19 @@ const kFormatter = num =>
         ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'k'
         : Math.sign(num) * Math.abs(num)
 
-function buildQuoteTweet(data) {
+async function buildQuoteTweet(data) {
     if (!data.is_quote_status) return undefined
     const quote = {}
     quote.url = data.quoted_status_permalink.expanded
     const status = data.quoted_status
+    if (!status) {
+        const ia = await queryIA(quote.url)
+        if (ia) {
+            return `<div class="quoted-tweet"><p>This tweet has been deleted. You can try <a href="${ia}">this internet archive snapshot</a>, though!</p></div>`
+        } else {
+            return `<div class="quoted-tweet"><p>This tweet has been deleted.</p></div>`
+        }
+    }
     quote.text = status.full_text
     quote.username = status.user.screen_name
     quote.displayName = status.user.name
@@ -27,7 +35,7 @@ function buildMediaHTML(media) {
     let html = ''
     for (let item of media) {
         if (item.type === 'photo') {
-            html += `<a href="${item.link}"><img loading="lazy" class="tweet-photo" src="${item.url}" alt=""></a>`
+            html += `<a class="tweet-photo-link" href="${item.link}"><img loading="lazy" class="tweet-photo" src="${item.url}" alt=""></a>`
         } else if (item.type === 'video') {
             html += `<video controls="" src="${item.url}" class="tweet-video" type="video/mp4"></video>`
         } else if (item.type === 'animated_gif') {
@@ -41,7 +49,7 @@ const fetchTweet = async id => {
     const tweetURL = `https://api.twitter.com/1.1/statuses/show.json?id=${id}&tweet_mode=extended`
     try {
         return await Cache(tweetURL, {
-            duration: '3d',
+            duration: '14d',
             type: 'json',
             fetchOptions: {
                 headers: {
@@ -58,7 +66,7 @@ const fetchTweet = async id => {
  * Takes tweet id and builds full "fake" twitter embed.
  *
  * @param {string} tweet_id - the id of the tweet
- * @returns html of fake tweet embed
+ * @returns html of fake tweet <embed src="" type="" />
  */
 
 module.exports = async (tweet_id, username) => {
@@ -77,11 +85,7 @@ module.exports = async (tweet_id, username) => {
     if (data.entities?.urls?.length > 0) {
         // replace urls with expanded versions
         for (let url of data.entities.urls) {
-            fullText.overwrite(
-                url.indices[0],
-                url.indices[1] + 1,
-                url.expanded_url
-            )
+            fullText.overwrite(url.indices[0], url.indices[1], url.expanded_url)
         }
     }
     // Link Mentioned Uers
@@ -129,7 +133,7 @@ module.exports = async (tweet_id, username) => {
     }
     const mediaHTML = buildMediaHTML(media)
     // Quoted tweet
-    const quote = buildQuoteTweet(data)
+    const quote = await buildQuoteTweet(data)
     // Now remove the link from the fullText
     var tweetBody = fullText.toString()
     if (quote) {
