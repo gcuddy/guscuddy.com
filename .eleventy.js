@@ -39,7 +39,7 @@ module.exports = config => {
     }
 
     // Quiet Mode - comment out for noisiness
-    config.setQuietMode(true)
+    config.setQuietMode(false)
 
     // Add filters
     config.addFilter('dateFilter', dateFilter)
