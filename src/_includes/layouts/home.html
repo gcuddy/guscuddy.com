@@ -1,18 +1,20 @@
 {% extends "layouts/base.njk" %} {% set pageCriticalStyles = ['css/home.css']
 %} {% block content %}
 <div class="content">
-    <article class="[ intro ] [ flow post ]">
+    <article class="[ intro ] [ post ]">
 
         <div class="[ intro__header ] [ post ]">
+            <h1>Gus is <a href="/feed">writing</a>, <a href="/about#acting">performing</a>,
+                designing, thinking.</h1>
             {% if intro.title %}
             <h1 class="[ intro__heading ] [ text-800 md:text-900 ]">
                 {{ intro.title }}
             </h1>
             {% endif %}
-            <img src="/images/me.jpg" alt="A photo of Gus Cuddy looking sort of angelic-like in Louisville sun">
+            <img src="/images/me.jpg" alt="Gus Cuddy looking sort of angelic-like in Louisville sun">
         </div>
 
-        <div class="[ intro__content ] [ flow post ]">
+        <div class="[ intro__content ] [ flow post ] [ gap-top-800 md:gap-top-900 ]">
             <!-- <p class="intro__summary">{{ intro.summary }}</p> -->
             {{ content | safe}}
         </div>

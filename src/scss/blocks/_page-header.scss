@@ -2,8 +2,10 @@
     padding-top: get-size('600');
 
     > * {
-        border-bottom: 0.2rem solid var(--color-dim);
+        // border-bottom: 0.2rem solid var(--color-dim);
         padding-bottom: 0.25rem;
+
+        @include gradientBorderBottom;
     }
 
     &__summary {

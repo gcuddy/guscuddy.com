@@ -1,13 +1,50 @@
 .intro {
-
     &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        $imgRadius: 100%;
+        $imgMaxWidth: 15rem;
+
+        picture {
+            position: relative;
+            margin-left: var(--s-400);
+
+            &::before,
+            &::after {
+                // content: '';
+                width: 100%;
+                height: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                position: absolute;
+                z-index: 1;
+                margin: 0 auto;
+                border-radius: $imgRadius;
+                max-width: $imgMaxWidth;
+            }
+            &::before {
+                background: var(--color-primary);
+                mix-blend-mode: multiply;
+            }
+            &::after {
+                background: var(--color-secondary);
+                mix-blend-mode: screen;
+                filter: brightness(0.2);
+            }
+        }
         img {
             border-radius: 100%;
             max-width: 15rem;
-            filter: var(--grayscale);
-            transition: 0.3s ease;
+            filter: grayscale(1) brightness(1.1);
+            transition: 0.2s ease;
+            height: 10rem;
+            width: auto;
 
-            &:focus-within, &:focus, &:hover {
+            &:focus-within,
+            &:focus,
+            &:hover {
                 filter: grayscale(0%);
             }
         }

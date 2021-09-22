@@ -34,3 +34,19 @@ https://css-tricks.com/easing-linear-gradients/
 
     background: linear-gradient(unquote($direction), $stops);
 }
+
+@mixin gradientBorderBottom(
+    $startColor: var(--color-primary),
+    $endColor: var(--color-secondary),
+    $bottom: -2px
+) {
+    position: relative;
+    &::after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, $startColor, $endColor);
+        bottom: $bottom;
+        position: absolute;
+    }
+}

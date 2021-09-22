@@ -132,6 +132,13 @@ module.exports = async function (value, outputPath) {
                             }
                             if (!hasImageBeenOptimized) {
                                 stats = await Image(localPath, imageOptions)
+                                console.log(
+                                    `Running image optimizations on ${localPath}`
+                                )
+                            } else {
+                                console.log(
+                                    `Skipping image optimizations on ${localPath} as it already exists`
+                                )
                             }
 
                             // console.log(parent)

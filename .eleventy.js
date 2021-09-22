@@ -27,7 +27,7 @@ const markdown = require('./src/utils/markdown.js')
 const htmlMinTransform = require('./src/transforms/html-min-transform')
 const parseTransform = require('./src/transforms/parse-transforms')
 const embedTransform = require('./src/transforms/embeds')
-const twitterTransform = require('./src/transforms/twitter-transform')
+// const twitterTransform = require('./src/transforms/twitter-transform')
 // const obsdianEmbed = require('./src/transforms/obsidian-embed')
 //const noteTransform = require("./src/transforms/note-transform");
 
@@ -58,14 +58,14 @@ module.exports = config => {
 
     // Plugins
     config.addPlugin(rssPlugin)
-    // config.addPlugin(embedTwitter, {
-    //     doNotTrack: true,
-    //     embedClass: 'twitter-embed',
-    //     theme: 'dark',
-    //     twitterScript: {
-    //         defer: true,
-    //     },
-    // })
+    config.addPlugin(embedTwitter, {
+        doNotTrack: true,
+        embedClass: 'twitter-embed',
+        theme: 'dark',
+        twitterScript: {
+            defer: true,
+        },
+    })
     config.addPlugin(pluginPageAssets, {
         mode: 'directory',
         postsMatching: 'src/newsletter/**/*.md',
@@ -76,7 +76,7 @@ module.exports = config => {
     // Transforms
     config.addTransform('parsetransform', parseTransform)
     config.addTransform('embedtransform', embedTransform)
-    config.addTransform('twitterTransform', twitterTransform)
+    // config.addTransform('twitterTransform', twitterTransform)
     // config.addTransform('obsidianEmbed', obsdianEmbed)
     //config.addTransform("noteTransform", noteTransform);
     if (isProduction) {
@@ -131,9 +131,15 @@ module.exports = config => {
     })
 
     config.addCollection('notes', function (collection) {
-        return [
-            ...collection.getFilteredByGlob('./src/notes/**/*.md'),
-        ].reverse()
+        return [...collection.getFilteredByGlob('./src/notes/**/*.md')].sort(
+            (a, b) => {
+                //sort by filename
+                if (a.fileSlug < b.fileSlug) {
+                    return -1
+                }
+                return 1
+            }
+        )
     })
 
     // config.addCollection("showsByYear", (collection) => {
