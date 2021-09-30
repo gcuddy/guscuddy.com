@@ -6,9 +6,13 @@
 .tweet {
     background: var(--bg-pure);
     display: block;
-    padding: 12px 16px 4px;
+    padding: var(--s-400) var(--s-500);
     border-radius: 1rem;
-    box-shadow: var(--box-shadow);
+    border: 1px solid var(--color-dim);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    // box-shadow: var(--box-shadow);
     font-family: var(--font-sans);
     color: var(--text);
 
@@ -18,10 +22,6 @@
     a {
         text-decoration: none;
     }
-    .hashtag {
-        color: var(--primary);
-    }
-
     &__header {
         @include apply-utility('leading', 'flat');
         font-size: 0.8em;
@@ -60,6 +60,7 @@
         @include apply-utility('leading', 'tight');
         overflow-wrap: break-word;
         word-wrap: break-word;
+        font-size: 0.85em;
         .quoted-tweet {
             border: 1px solid var(--color-dim);
             border-radius: 0.5rem;
@@ -89,7 +90,7 @@
     }
     &__footer {
         color: var(--color-mid);
-        font-size: 0.8em;
+        font-size: 0.75em;
         .tweet-date {
             border-bottom: 1px solid var(--color-dim);
             max-width: 100% !important;
@@ -106,6 +107,12 @@
     }
 }
 
+.tweet {
+    .hashtag,
+    .user-mention {
+        color: var(--primary);
+    }
+}
 .tweet__media {
     display: flex;
     > * {

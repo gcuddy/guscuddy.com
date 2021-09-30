@@ -164,7 +164,7 @@
 body {
     color: var(--text);
     line-height: 1.5;
-    font-size: var(--s-500);
+    font-size: clamp(var(--s-500), calc(var(--s-400) + 0.7vw), var(--s-600));
     //font-size: clamp(var(--s-400), calc(var(--s-400) + 3vw), var(--s-500));
     font-family: var(--font-base);
     overflow-x: hidden;
@@ -182,11 +182,11 @@ body {
         border: 2px solid var(--bg-shade);
     }
 }
-@include media-query('lg') {
-    body {
-        padding: var(--s-400);
-    }
-}
+// @include media-query('lg') {
+//     body {
+//         padding: var(--s-400);
+//     }
+// }
 .site-wrap {
     background-color: var(--bg);
     min-height: 100vh;
@@ -241,15 +241,15 @@ h4 {
 
 h1 {
     font-family: var(--font-serif);
-    font-size: var(--s-700);
+    font-size: var(--s-800);
 }
 
 h2 {
-    font-size: var(--s-600);
+    font-size: var(--s-700);
 }
 
 h3 {
-    font-size: var(--s-500);
+    font-size: var(--s-600);
 }
 
 h2,
@@ -318,23 +318,11 @@ figcaption {
 
 @include media-query('md') {
     body {
-        font-size: var(--s-500);
+        // font-size: var(--s-500);
     }
     figcaption {
         font-size: var(--s-400);
     }
-    h1 {
-        font-size: var(--s-800);
-    }
-    h2 {
-        font-size: var(--s-700);
-    }
-    h3 {
-        font-size: var(--s-600);
-    }
-}
-
-@include media-query('lg') {
     h1 {
         font-size: var(--s-900);
     }
@@ -344,10 +332,22 @@ figcaption {
     h3 {
         font-size: var(--s-700);
     }
-    body {
-        font-size: var(--s-600);
-    }
 }
+
+// @include media-query('lg') {
+//     h1 {
+//         font-size: var(--s-900);
+//     }
+//     h2 {
+//         font-size: var(--s-800);
+//     }
+//     h3 {
+//         font-size: var(--s-700);
+//     }
+//     body {
+//         font-size: var(--s-600);
+//     }
+// }
 
 @import './utilities/flow';
 @import './utilities/radius';

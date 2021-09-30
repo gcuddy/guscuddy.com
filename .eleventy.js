@@ -94,6 +94,7 @@ module.exports = config => {
 
     config.addPassthroughCopy('./src/fonts')
     config.addPassthroughCopy('./src/files')
+    config.addPassthroughCopy('_headers')
 
     config.addCollection('newsletter', collection => {
         return [
