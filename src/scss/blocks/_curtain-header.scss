@@ -3,7 +3,7 @@
     &__time {
         // @extend .pill;
         color: var(--color-mid);
-        border: 2px dashed var(--primary-glare);
+        border: 2px dashed var(--primary);
         border-radius: get-size('400');
         padding: get-size('400');
         margin: var(--s-700) 0;
@@ -38,5 +38,6 @@
     }
     &__heading {
         // font-weight: var(--fw, 900);
+        font-family: var(--font-sans);
     }
 }

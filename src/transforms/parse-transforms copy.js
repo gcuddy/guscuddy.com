@@ -3,6 +3,8 @@ const { JSDOM } = jsdom
 const fs = require('fs')
 const Image = require('@11ty/eleventy-img')
 const path = require('path')
+const shortHash = require('shorthash2')
+const Cache = require('@11ty/eleventy-cache-assets')
 
 const imageOptions = {
     widths: [1800, 1200, 600],
@@ -10,7 +12,7 @@ const imageOptions = {
     urlPath: '/images/',
     outputDir: './dist/images/',
     cacheOptions: {
-        duration: '30d',
+        duration: '7d',
         removeUrlQueryParams: true,
     },
     sharpJpegOptions: {
@@ -18,6 +20,16 @@ const imageOptions = {
     },
     sharpAvifOptions: {
         quality: 60,
+    },
+    filenameFormat: (id, src, width, format) => {
+        const extension = path.extname(src)
+        const name = path.basename(src, extension)
+
+        const stats = fs.statSync(src)
+
+        const hash = shortHash(`${src}|${stats.size}`)
+
+        return `${name}-${hash}-${width}w.${format}`
     },
 }
 
@@ -29,13 +41,8 @@ module.exports = async function (value, outputPath) {
 
         const document = DOM.window.document
 
-        // Grab all article images (that don't contain "tweet" in their class, since I'm doing those separately)
-        // Ideally have a better way to do this to future-proof it to avoid adding on :not selectors
-        const articleImages = [
-            ...document.querySelectorAll(
-                'main article img:not([class*="tweet"])'
-            ),
-        ]
+        // Grab all article images
+        const articleImages = [...document.querySelectorAll('main article img')]
 
         const articleEmbeds = [
             ...document.querySelectorAll('main article iframe'),
@@ -49,11 +56,6 @@ module.exports = async function (value, outputPath) {
                 const title = image.getAttribute('title')
                 const style = image.getAttribute('style')
                 const parent = image.parentElement
-
-                // if the parent element is a picture element, let's skip it
-                if (parent.tagName === 'PICTURE') {
-                    continue
-                }
 
                 let imageHtml
                 // TODO: better sizes?
@@ -98,9 +100,48 @@ module.exports = async function (value, outputPath) {
                                 stats,
                                 imageAttributes
                             )
+                            // After generating the HTML, we'll check if we have already optimized this file. If not, we'll just run the actual thing.
 
-                            // todo: figure out what I was doing here lol
-                            stats = await Image(localPath, imageOptions)
+                            /** Creating a flat array of all the output paths from the stats object. */
+                            const outputPaths = Object.keys(stats).reduce(
+                                (acc, key) => {
+                                    return [
+                                        ...acc,
+                                        ...stats[key].map(resource => {
+                                            return resource.outputPath
+                                        }),
+                                    ]
+                                },
+                                []
+                            )
+                            /** Checking if all output files exists. */
+                            let hasImageBeenOptimized = true
+                            for (const outputPath of outputPaths) {
+                                if (
+                                    !fs.existsSync(
+                                        path.resolve(
+                                            __dirname,
+                                            '..',
+                                            '..',
+                                            outputPath
+                                        )
+                                    )
+                                ) {
+                                    hasImageBeenOptimized = false
+                                }
+                            }
+                            if (!hasImageBeenOptimized) {
+                                stats = await Image(localPath, imageOptions)
+                                console.log(
+                                    `Running image optimizations on ${localPath}`
+                                )
+                            } else {
+                                console.log(
+                                    `Skipping image optimizations on ${localPath} as it already exists`
+                                )
+                            }
+
+                            // console.log(parent)
 
                             // Wrap image in figure if it has an alt or title and use that as figcaption
 
@@ -110,11 +151,10 @@ module.exports = async function (value, outputPath) {
                             ) {
                                 if (alt || title) {
                                     imageHtml = `<figure>
-                                                    ${imageHtml}
-                                                    <figcaption>${
-                                                        title || alt
-                                                    }</figcaption>
-                                                </figure>`
+                    ${imageHtml}
+                    <figcaption>${title || alt}</figcaption>
+                    </figure>`
+                                    // console.log(imageHtml)
                                 }
                             }
 
@@ -138,7 +178,7 @@ module.exports = async function (value, outputPath) {
                             urlPath: '/images/',
                             outputDir: './dist/images/',
                             cacheOptions: {
-                                duration: '30d',
+                                duration: '14d',
                                 removeUrlQueryParams: true,
                             },
                             sharpJpegOptions: {
@@ -173,8 +213,13 @@ module.exports = async function (value, outputPath) {
                         } else {
                             image.outerHTML = imageHtml
                         }
+                        // image.outerHTML = imageHtml;
+
+                        //let metadata = await Image(file, imageOptions);
+                        //console.log(metadata);
                     }
                 }
+                // replace image with our fancy new html
             }
         }
 

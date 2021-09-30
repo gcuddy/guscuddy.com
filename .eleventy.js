@@ -17,7 +17,7 @@ const slugFilter = require('./src/filters/slug')
 
 // Plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const embedTwitter = require('eleventy-plugin-embed-twitter')
+// const embedTwitter = require('eleventy-plugin-embed-twitter')
 const pluginPageAssets = require('eleventy-plugin-page-assets')
 
 // Utils
@@ -27,7 +27,8 @@ const markdown = require('./src/utils/markdown.js')
 const htmlMinTransform = require('./src/transforms/html-min-transform')
 const parseTransform = require('./src/transforms/parse-transforms')
 const embedTransform = require('./src/transforms/embeds')
-// const twitterTransform = require('./src/transforms/twitter-transform')
+const twitterTransform = require('./src/transforms/twitter-transform')
+const instagramTransform = require('./src/transforms/instagram-transform.js')
 // const obsdianEmbed = require('./src/transforms/obsidian-embed')
 //const noteTransform = require("./src/transforms/note-transform");
 
@@ -39,7 +40,7 @@ module.exports = config => {
     }
 
     // Quiet Mode - comment out for noisiness
-    config.setQuietMode(false)
+    config.setQuietMode(true)
 
     // Add filters
     config.addFilter('dateFilter', dateFilter)
@@ -58,14 +59,14 @@ module.exports = config => {
 
     // Plugins
     config.addPlugin(rssPlugin)
-    config.addPlugin(embedTwitter, {
-        doNotTrack: true,
-        embedClass: 'twitter-embed',
-        theme: 'dark',
-        twitterScript: {
-            defer: true,
-        },
-    })
+    // config.addPlugin(embedTwitter, {
+    //     doNotTrack: true,
+    //     embedClass: 'twitter-embed',
+    //     theme: 'dark',
+    //     twitterScript: {
+    //         defer: true,
+    //     },
+    // })
     config.addPlugin(pluginPageAssets, {
         mode: 'directory',
         postsMatching: 'src/newsletter/**/*.md',
@@ -74,12 +75,13 @@ module.exports = config => {
     })
 
     // Transforms
-    config.addTransform('parsetransform', parseTransform)
     config.addTransform('embedtransform', embedTransform)
-    // config.addTransform('twitterTransform', twitterTransform)
+    config.addTransform('twitterTransform', twitterTransform)
+    config.addTransform('instagramTransform', instagramTransform)
     // config.addTransform('obsidianEmbed', obsdianEmbed)
     //config.addTransform("noteTransform", noteTransform);
     if (isProduction) {
+        config.addTransform('parsetransform', parseTransform)
         config.addTransform('htmlmin', htmlMinTransform)
     }
 

@@ -3,7 +3,7 @@
 
     > * {
         // border-bottom: 0.2rem solid var(--color-dim);
-        padding-bottom: 0.25rem;
+        padding-bottom: var(--s-200);
 
         @include gradientBorderBottom;
     }

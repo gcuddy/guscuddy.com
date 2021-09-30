@@ -5,7 +5,9 @@
         justify-content: space-between;
         $imgRadius: 100%;
         $imgMaxWidth: 15rem;
-
+        h1 {
+            margin-right: var(--s-400) !important;
+        }
         picture {
             position: relative;
             margin-left: var(--s-400);

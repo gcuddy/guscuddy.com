@@ -1,0 +1,23 @@
+$spacing: var(--s-300);
+
+.instagram-embed {
+    border: 1px solid var(--color-dim);
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-size: 0.875em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    background-color: var(--bg-pure);
+}
+.instagram-embed__user {
+    display: block;
+    padding: #{$spacing};
+    text-decoration: none;
+    color: var(--color-text);
+}
+.instagram-embed__caption {
+    @include apply-utility('leading', 'tight');
+    padding: #{$spacing};
+}

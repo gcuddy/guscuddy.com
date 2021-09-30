@@ -5,7 +5,7 @@
     "main": ".eleventy.js",
     "scripts": {
         "start": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
-        "debug": "npx gulp && concurrently \"npx gulp watch\" \"DEBUG=Eleventy:Benchmark* npx eleventy --serve\"",
+        "debug": "npx gulp && concurrently \"npx gulp watch\" \"DEBUG=Eleventy* npx eleventy --serve\"",
         "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy"
     },
     "keywords": [],
@@ -14,7 +14,7 @@
     "dependencies": {
         "@11ty/eleventy": "^0.11.1",
         "@11ty/eleventy-cache-assets": "^2.1.0",
-        "@11ty/eleventy-img": "^0.8.0",
+        "@11ty/eleventy-img": "^1.0.0-beta.2",
         "@11ty/eleventy-plugin-rss": "^1.1.0",
         "@gerhobbelt/markdown-it-regexp": "^0.6.0-12",
         "@slightlyoff/lite-vimeo": "^0.1.2",
@@ -56,8 +56,9 @@
         "netlify-plugin-cache": "^1.0.3",
         "node-fetch": "^2.6.1",
         "node-isbn": "^1.6.0",
+        "nunjucks": "^3.2.3",
         "sass": "^1.41.0",
-        "sharp": "^0.27.1",
+        "sharp": "^0.27.2",
         "shorthash2": "^1.0.3",
         "terser": "^5.4.0",
         "title-case": "^3.0.3",

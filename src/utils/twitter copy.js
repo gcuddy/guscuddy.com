@@ -3,46 +3,13 @@ const Cache = require('@11ty/eleventy-cache-assets')
 const MagicString = require('magic-string')
 const dayjs = require('dayjs')
 const queryIA = require('./query-ia')
-const Image = require('@11ty/eleventy-img')
 // const { minify } = require('html-minifier')
 require('dotenv').config()
-
-// use eleventy img to download profile pics
 
 const kFormatter = num =>
     Math.abs(num) > 999
         ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'k'
         : Math.sign(num) * Math.abs(num)
-
-async function getImageHTML(url, attrs = {}, imageOpts = {}) {
-    let debug = false
-    if (!url.includes('profile_images')) {
-        debug = true
-    }
-    try {
-        const stats = await Image(url, {
-            urlPath: '/images/twitter/',
-            outputDir: './dist/images/twitter/',
-            cacheOptions: {
-                duration: '30d',
-                removeUrlQueryParams: true,
-            },
-            ...imageOpts,
-        })
-        const html = Image.generateHTML(stats, {
-            loading: 'lazy',
-            ...attrs,
-        })
-        // debug && console.log(html)
-        return html
-    } catch (e) {
-        // return 'testing testing'
-        console.error(e)
-        return `<img src="${url}" ${
-            attrs.alt ? 'alt="' + attrs.alt + '"' : ''
-        } ${attrs.class ? 'class="' + attrs.class + '"' : ''} loading="lazy" />`
-    }
-}
 
 async function buildQuoteTweet(data) {
     if (!data.is_quote_status) return undefined
@@ -63,19 +30,12 @@ async function buildQuoteTweet(data) {
     return `<div class="quoted-tweet"><a href="${quote.url}"><div class="username"><span class="quote-tweet-displayname">${quote.displayName}</span><span class="quote-tweet-username">@${quote.username}</span></div><p>${quote.text}</p></a></div>`
 }
 
-async function buildMediaHTML(media) {
-    if (media.length < 1) return
+function buildMediaHTML(media) {
+    if (media.length < 1) return undefined
     let html = ''
-    for (const item of media) {
+    for (let item of media) {
         if (item.type === 'photo') {
-            // todo: use twitter api v2 to get alt text
-            const imageHTML = await getImageHTML(
-                item.url,
-                { class: 'tweet-photo', alt: '' },
-                { widths: [600] }
-            )
-            html += `<a class="tweet-photo-link" href="${item.link}">${imageHTML}</a>`
-            // html += `<a class="tweet-photo-link" href="${item.link}"><img loading="lazy" class="tweet-photo" src="${item.url}" alt=""></a>`
+            html += `<a class="tweet-photo-link" href="${item.link}"><img loading="lazy" class="tweet-photo" src="${item.url}" alt=""></a>`
         } else if (item.type === 'video') {
             html += `<video controls="" src="${item.url}" class="tweet-video" type="video/mp4"></video>`
         } else if (item.type === 'animated_gif') {
@@ -171,7 +131,7 @@ module.exports = async (tweet_id, username) => {
             }
         }
     }
-    const mediaHTML = await buildMediaHTML(media)
+    const mediaHTML = buildMediaHTML(media)
     // Quoted tweet
     const quote = await buildQuoteTweet(data)
     // Now remove the link from the fullText
@@ -185,27 +145,20 @@ module.exports = async (tweet_id, username) => {
         .filter(l => l.length > 0)
         .map(i => `<p>${i.replace('\n', '<br>')}</p>`)
         .join('')
-
-    // get Image HTML
-    const imageHTML = await getImageHTML(data.user.profile_image_url_https, {
-        alt: `Twitter Avatar for @${data.user.screen_name}`,
-        class: 'tweet__header-avatar',
-    })
     // Build HTML
     const html = `<div class="[ tweet ] [ flow ]">
-    <div class="tweet__header"><a href="${url}">
-    ${imageHTML}
-    <div>
-    <span class="tweet__header-name">${
+    <div class="tweet__header"><a href="${url}"><img loading="lazy" class="tweet__header-avatar" src="${
+        data.user.profile_image_url_https
+    }" alt="Twitter avatar for @${
+        data.user.screen_name
+    }"><span class="tweet__header-name">${
         data.user.name
     }</span><span class="tweet__header-username">@${
         data.user.screen_name
-    }</span>
-    </div>
-    </a></div>
+    }</span></a></div>
     <div class="[ tweet__body ] [ flow ]">
         ${tweetBodyHTML}
-        ${mediaHTML ? '<div class="tweet__media">' + mediaHTML + '</div>' : ''}
+        ${mediaHTML ? mediaHTML : ''}
         ${quote ? quote : ''}
     </div>
     <div class="tweet__footer">

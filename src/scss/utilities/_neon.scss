@@ -1,3 +1,6 @@
+.neon {
+    font-family: var(--font-sans);
+}
 @media (prefers-color-scheme: dark) {
     html:not([data-user-color-scheme]) {
         .neon {

@@ -6,8 +6,8 @@
 <div class="cluster">
     <time datetime="{{ date.toUTCString() | w3DateFilter }}">{{ date | dateMonthFilter }}</time>{% include
     "partials/tag-cluster.html" %}
-    <p>{% if url %}<a href="{{url}}">{% endif %}{{ theater }}{% if url %}</a>{% endif %}</p>
 </div>
+<p>{% if url %}<a href="{{url}}">{% endif %}{{ theater }}{% if url %}</a>{% endif %}</p>
 {% endset %}
 
 {% block content %}
@@ -16,7 +16,7 @@
     <div class="[ show-content ] [ content post ] [ gap-top-700 ]">
 
         <div class="flow flow-space-800">
-            <section class="[ show-gallery ] [ {%if photos.src.length > 2%}auto-grid{%endif%} full-bleed ]">
+            <section class="[ show-gallery ] [ {%if photos.src.length > 2%}auto-grid{%endif%} ]">
                 {% for photo in photos.src %}
 
                 <a href="{{page.url}}{{loop.index}}/"><img src="{{photo}}"

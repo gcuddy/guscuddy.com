@@ -23,7 +23,8 @@ collections[tag] %} {% set pageHeaderTitle = 'Everything filed under “' + titl
     {% if show %}
     {% set dateMonthFilter = true %}
     {% endif %}
-    {% if curtain %}
+    <!-- change to curtain to use list; testing without -->
+    {% if curtainere %}
     {% include "partials/curtain-list.njk" %}
     {% else %}
     {% include "partials/post-list.html" %}
