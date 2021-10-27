@@ -5,10 +5,10 @@
     &__bio {
         display: grid;
         grid-template-columns: 1fr 3fr;
-        gap: var(--space-l);
+        gap: var(--s-500);
         align-items: center;
         // Not sure about centering or not
-        
+
         img {
             border-radius: 100%;
         }

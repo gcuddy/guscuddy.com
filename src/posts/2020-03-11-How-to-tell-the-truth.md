@@ -33,9 +33,7 @@ I'm increasingly fascinated by how art and reality, lies and truth, perception a
 
 Recently I've been finally attempting to read Karl Ove Knausgaard's _My Struggle_ series, which is a massive six volume set that is basically one incredibly detailed, somewhat mundane, yet strikingly vulnerable (to the point of embarrassment) and addicting memoir. In the first volume, Knausgaard spends at least 60 pages recounting a single night of trying to get beer for a New Year's Eve party. It's exhaustingly thorough and detailed, flipping a microscope onto himself in a way that's somehow both cringe-inducing and fascinating.
 
-Knausgaard's books have become a literary sensation, especially in his native Norway. His success , I think, speaks to a broader trend of blurring the lines between reality and art. As I've written about before, this is a time when we have art that is increasingly intermingling with reality and social media, to form some sort of weird triangle. Everything bleeds into another thing, and the three inform one another:
-
-![](/images/Triangle.jpg)
+Knausgaard's books have become a literary sensation, especially in his native Norway. His success , I think, speaks to a broader trend of blurring the lines between reality and art. As I've written about before, this is a time when we have art that is increasingly intermingling with reality and social media, to form some sort of weird triangle. Everything bleeds into another thing, and the three inform one another.
 
 “The duty of literature is to fight fiction. It's to find a way into the world as it is," [Knausgaard says.](https://www.newyorker.com/culture/the-new-yorker-interview/karl-ove-knausgaard-the-duty-of-literature-is-to-fight-fiction)
 
