@@ -7,7 +7,6 @@ permalink: /conservatism-in-minimalism/
 ![](/images/glass-house.jpg)
 
 Philip Johnson was a Nazi, that much is clear.
-{: #intro}
 
 The man who built the iconic minimalist "glass house" and other twentieth century architectural achievements was also a fascist Nazi sympathizer for much of his life. But this fascism wasn't separated from his work. In many ways, it manifested itself in Johnson's strict designs. Kyle Chayka writes in _The Longing for Less_ about the glass house:
 
