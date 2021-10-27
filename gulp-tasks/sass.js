@@ -2,6 +2,7 @@ const { dest, src } = require('gulp')
 const cleanCSS = require('gulp-clean-css')
 const sassProcessor = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
+const gulpif = require('gulp-if')
 
 // We want to be using canonical Sass, rather than node-sass
 sassProcessor.compiler = require('sass')
@@ -48,12 +49,15 @@ const sass = () => {
         .pipe(sassProcessor().on('error', sassProcessor.logError))
         .pipe(autoprefixer())
         .pipe(
-            cleanCSS(
-                isProduction
-                    ? {
-                          level: 2,
-                      }
-                    : {}
+            gulpif(
+                isProduction,
+                cleanCSS(
+                    isProduction
+                        ? {
+                              level: 2,
+                          }
+                        : {}
+                )
             )
         )
         .pipe(dest(calculateOutput, { sourceMaps: !isProduction }))

@@ -68,7 +68,7 @@
     --bg-img: url('/images/noise-tile-light.svg');
     --site-border: var(--color-gold);
     --blank-bg: #fff;
-    --bg: var(--color-light);
+    --bg: var(--color-off-white);
     --bg-pure: var(--color-white);
     --bg-glare: var(--color-light-glare);
     --bg-glare-hue: #{color.hue(map.get($gorko-colors, 'light-glare'))};

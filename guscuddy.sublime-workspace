@@ -1,0 +1,994 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"add",
+				"addPlugin"
+			],
+			[
+				"eleven",
+				"eleventyConfig"
+			],
+			[
+				"processIm",
+				"processImage"
+			],
+			[
+				"webP",
+				"webpSrc"
+			],
+			[
+				"optim",
+				"optimizeHtml"
+			],
+			[
+				"grid-template-",
+				"grid-template-columns\tproperty"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"wet",
+				"wets_bed"
+			],
+			[
+				"if",
+				"ife\tif … else … end"
+			],
+			[
+				"page",
+				"page_numbers"
+			],
+			[
+				"num",
+				"num_at_start"
+			],
+			[
+				"l",
+				"lName"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/User/Javascript.sublime-build",
+					""
+				],
+				[
+					"Packages/User/nodejs.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/nodejs.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 123.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"word wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"prettif",
+				"HTMLPrettify"
+			],
+			[
+				"prettify",
+				"HTMLPrettify"
+			],
+			[
+				"js",
+				"JsPrettier: Format Code"
+			],
+			[
+				"j",
+				"JsPrettier: Format Code"
+			],
+			[
+				"jsp",
+				"JsPrettier: Format Code"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"mono",
+				"Monokai Pro: select theme"
+			],
+			[
+				"monok",
+				"Monokai Pro: select theme"
+			],
+			[
+				"finder",
+				"Finder: Open here"
+			],
+			[
+				"prettier",
+				"JsPrettier: Format Code"
+			],
+			[
+				"jspre",
+				"JsPrettier: Format Code"
+			],
+			[
+				"monokai",
+				"Monokai Pro: select theme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"word wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packa",
+				"Package Control: Add Repository"
+			],
+			[
+				"character",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"packag",
+				"Package Control: Add Channel"
+			],
+			[
+				"syntax html",
+				"Set Syntax: HTML"
+			],
+			[
+				"mat",
+				"Material Theme: Activate theme"
+			],
+			[
+				"install packa",
+				"Package Control: Install Package"
+			],
+			[
+				"install pack",
+				"Install Package Control"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 176.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com"
+	],
+	"file_history":
+	[
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/logs/books/pilgrim-at-tinker-creek.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/layouts/feed.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/partials/post-list.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/.eleventy.js",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/critical.scss",
+		"/Users/guscuddy/Dropbox/To Sort/Roam/Why Is Everyone Always Stealing Black Music?.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/blocks/_site-head.scss",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/partials/book-log.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/logs/books/blockchain-chicken-farm.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/logs/books/longing-for-less.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/partials/film-diary.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/blocks/_nav.scss",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/gulp-tasks/images.js",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/curtain.scss",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/blocks/_curtain-header.scss",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/scss/blocks/_button.scss",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/utils/images.js",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/layouts/home.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/posts/2020-02-25-The-Hidden-Conservatism-in-Minimalism.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/layouts/log.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/filters/isbn.js",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/layouts/base.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/partials/site-head.html",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/_headers",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/logs.md",
+		"/Users/guscuddy/Documents/Projects/guscuddy.com/gulpfile.js",
+		"/Users/guscuddy/Library/Mobile Documents/com~apple~CloudDocs/Downloads/exercises/three-pillars/ex.js",
+		"/Users/guscuddy/site/guscuddy.com/css/main.css",
+		"/Users/guscuddy/Library/Application Support/Sublime Text 3/Packages/User/Markdown.sublime-settings",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/images.js",
+		"/Users/guscuddy/Library/Containers/pro.writer.mac/Data/Library/Application Support/iA Writer/Templates/MLA Style.iatemplate/Contents/Resources/document.html",
+		"/Users/guscuddy/site/guscuddy.com/essays/2020-07-07-disneyfication-hamilton.md",
+		"/Users/guscuddy/site/guscuddy.com/.eleventy.js",
+		"/Users/guscuddy/site/guscuddy.com/acting.njk",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/optimize-html.js",
+		"/Users/guscuddy/site/guscuddy.com/.gitignore",
+		"/Users/guscuddy/site/guscuddy.com/essays.njk",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/img-dim.js",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/srcset.js",
+		"/Users/guscuddy/site/guscuddy.com/about.md",
+		"/Users/guscuddy/site/guscuddy.com/src/main.js",
+		"/Users/guscuddy/site/guscuddy.com/test/cheerio.js",
+		"/Users/guscuddy/site/guscuddy.com/package.json",
+		"/Users/guscuddy/site/guscuddy.com/_includes/nav.html",
+		"/Users/guscuddy/site/guscuddy.com/_includes/head.njk",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/markdown-it-implicit-figures/index.js",
+		"/Users/guscuddy/site/guscuddy.com/notes/notes.11tydata.js",
+		"/Users/guscuddy/site/guscuddy.com/_includes/newsletter.html",
+		"/Users/guscuddy/site/guscuddy.com/notes/List of Notes.md",
+		"/Users/guscuddy/site/guscuddy.com/logs/theatre/thisiswhoiam.md",
+		"/Users/guscuddy/site/guscuddy.com/logs/movies/soundOfMusic.md",
+		"/Users/guscuddy/site/guscuddy.com/logs/logs.json",
+		"/Users/guscuddy/site/guscuddy.com/_includes/catalog.njk",
+		"/Users/guscuddy/site/guscuddy.com/notes/notes.json",
+		"/Users/guscuddy/site/guscuddy.com/_includes/notes.njk",
+		"/Users/guscuddy/site/guscuddy.com/logs/movies/marainey.md",
+		"/Users/guscuddy/site/guscuddy.com/logs/theatre/nate.md",
+		"/Users/guscuddy/site/guscuddy.com/_includes/bio.njk",
+		"/Users/guscuddy/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/sharp/lib/output.js",
+		"/Users/guscuddy/site/guscuddy.com/logs/theatre/edwardsnowdenissingle.md",
+		"/Users/guscuddy/site/guscuddy.com/catalog.njk",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/img-processor.js",
+		"/Users/guscuddy/site/guscuddy.com/_includes/dec.njk",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/graceful-fs/graceful-fs.js",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/.bin/html-minifier",
+		"/Users/guscuddy/site/guscuddy.com/_includes/footer.html",
+		"/Users/guscuddy/site/guscuddy.com/_data/metadata.json",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/date-fns/docs/logo.svg",
+		"/Users/guscuddy/site/guscuddy.com/css/style.njk",
+		"/Users/guscuddy/site/guscuddy.com/rollup.config.js",
+		"/Users/guscuddy/site/guscuddy.com/css/screen.css",
+		"/Users/guscuddy/site/guscuddy.com/_includes/post.njk",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/lodash/_arrayIncludes.js",
+		"/Users/guscuddy/site/guscuddy.com/css/nov.css",
+		"/Users/guscuddy/site/guscuddy.com/newsletter.njk",
+		"/Users/guscuddy/site/guscuddy.com/index.njk",
+		"/Users/guscuddy/site/guscuddy.com/posts.njk",
+		"/Users/guscuddy/site/guscuddy.com/_includes/css/screen.css",
+		"/Users/guscuddy/site/guscuddy.com/_includes/css/nav.css",
+		"/Users/guscuddy/site/guscuddy.com/logs/books/longing_for_less.md",
+		"/Users/guscuddy/site/guscuddy.com/books/longing_for_less.md",
+		"/Users/guscuddy/site/guscuddy.com/star.svg",
+		"/Users/guscuddy/site/guscuddy.com/logs/movies/dickjohnsonisdead.md",
+		"/Users/guscuddy/site/guscuddy.com/_includes/css/fonts.css",
+		"/Users/guscuddy/site/guscuddy.com/js/main.js",
+		"/Users/guscuddy/site/guscuddy.com/_includes/nov.njk",
+		"/Users/guscuddy/site/guscuddy.com/_includes/css/dec.css",
+		"/Users/guscuddy/site/guscuddy.com/feed/json.njk",
+		"/Users/guscuddy/site/guscuddy.com/feed/feed.njk",
+		"/Users/guscuddy/site/guscuddy.com/curtain/curtain.11tydata.js",
+		"/Users/guscuddy/site/guscuddy.com/_11ty/apply-csp.js",
+		"/Users/guscuddy/site/guscuddy.com/node_modules/jsdom/lib/api.js",
+		"/Users/guscuddy/site/guscuddy.com/sitemap.xml.njk",
+		"/Users/guscuddy/site/gcuddy.github.io/_layouts/post.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_includes/header.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_includes/head.html",
+		"/Users/guscuddy/site/gcuddy.github.io/custom.css",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-04-07-bottom-up.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_config.yml",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-04-21-build-the-future.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-03-02-The-Entanglement.md",
+		"/Users/guscuddy/site/gcuddy.github.io/index.md",
+		"/Users/guscuddy/site/gcuddy.github.io/resume.md",
+		"/Users/guscuddy/site/gcuddy.github.io/newsletter.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-03-11-How-to-tell-the-truth.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-02-25-The-Hidden-Conservatism-in-Minimalism.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2020-01-22-The-Pitfalls-and-Transcendences-of-Minimalism,-and-the-Potentials-of-Maximalism.md",
+		"/Users/guscuddy/site/gcuddy.github.io/blog/index.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_site/tellthetruth.html",
+		"/Users/guscuddy/site/gcuddy.github.io/Gemfile",
+		"/Users/guscuddy/site/gcuddy.github.io/links.md",
+		"/Users/guscuddy/site/gcuddy.github.io/categories.json",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2019-09-28-state-of-criticism.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_layouts/home.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_layouts/blog.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_drafts/book.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_drafts/booknotes.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2017-07-08-on-daydreaming.md",
+		"/Users/guscuddy/site/gcuddy.github.io/.gitignore",
+		"/Users/guscuddy/site/gcuddy.github.io/_posts/2017-06-03-the-unexpected-route.md",
+		"/Users/guscuddy/site/gcuddy.github.io/_layouts/default.html",
+		"/Users/guscuddy/site/gcuddy.github.io/_books/happy.md",
+		"/Users/guscuddy/site/gcuddy.github.io/contact.md",
+		"/Users/guscuddy/code/advanced algorithms/03 exact_change.js",
+		"/Users/guscuddy/site/gcuddy.github.io/_books/zero.md",
+		"/Users/guscuddy/code/advanced algorithms/02 record_collection.js",
+		"/var/folders/7z/pbyv_d0x3lj62qw9q25khzqc0000gn/T/jrnlRDQoyi.txt"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 141.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 181.0
+	},
+	"output.exec":
+	{
+		"height": 120.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "guscuddy.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"critical",
+				"src/scss/critical.scss"
+			],
+			[
+				".eleve",
+				".eleventy.js"
+			],
+			[
+				"post-list",
+				"src/_includes/partials/post-list.html"
+			],
+			[
+				"feed",
+				"src/_includes/layouts/feed.html"
+			],
+			[
+				"pilgrim",
+				"src/logs/books/pilgrim-at-tinker-creek.md"
+			],
+			[
+				"blockchain-chi",
+				"src/logs/books/blockchain-chicken-farm.md"
+			],
+			[
+				"longing-",
+				"src/logs/books/longing-for-less.md"
+			],
+			[
+				"film-diary",
+				"src/_includes/partials/film-diary.html"
+			],
+			[
+				"book-log",
+				"src/_includes/partials/book-log.html"
+			],
+			[
+				"nav.scs",
+				"src/scss/blocks/_nav.scss"
+			],
+			[
+				"site-head.scs",
+				"src/scss/blocks/_site-head.scss"
+			],
+			[
+				"site-head",
+				"src/_includes/partials/site-head.html"
+			],
+			[
+				"base.html",
+				"src/_includes/layouts/base.html"
+			],
+			[
+				"home.html",
+				"src/_includes/layouts/home.html"
+			],
+			[
+				"conservatism",
+				"src/posts/2020-02-25-The-Hidden-Conservatism-in-Minimalism.md"
+			],
+			[
+				"images.js",
+				"src/utils/images.js"
+			],
+			[
+				"image.js",
+				"src/utils/images.js"
+			],
+			[
+				"crit",
+				"src/scss/critical.scss"
+			],
+			[
+				"curtain",
+				"src/scss/curtain.scss"
+			],
+			[
+				"button.scss",
+				"src/scss/blocks/_button.scss"
+			],
+			[
+				"isbn",
+				"src/filters/isbn.js"
+			],
+			[
+				"layout/log",
+				"src/_includes/layouts/log.html"
+			],
+			[
+				"logs.",
+				"src/logs.md"
+			],
+			[
+				"gulpfile",
+				"gulpfile.js"
+			],
+			[
+				"main.css",
+				"css/main.css"
+			],
+			[
+				".gig",
+				".gitignore"
+			],
+			[
+				"acting.",
+				"acting.njk"
+			],
+			[
+				"optimize",
+				"_11ty/optimize-html.js"
+			],
+			[
+				".elev",
+				".eleventy.js"
+			],
+			[
+				"notes",
+				"_includes/notes.njk"
+			],
+			[
+				"essays",
+				"essays.njk"
+			],
+			[
+				"note",
+				"_includes/notes.njk"
+			],
+			[
+				"sound",
+				"logs/movies/soundOfMusic.md"
+			],
+			[
+				"list of",
+				"notes/List of Notes.md"
+			],
+			[
+				".ele",
+				".eleventy.js"
+			],
+			[
+				"ess",
+				"essays.njk"
+			],
+			[
+				"list",
+				"notes/List of Notes.md"
+			],
+			[
+				".",
+				".eleventy.js"
+			],
+			[
+				"notes.",
+				"_includes/notes.njk"
+			],
+			[
+				".el",
+				".eleventy.js"
+			],
+			[
+				"essa",
+				"essays.njk"
+			],
+			[
+				"listofnotes",
+				"notes/List of Notes.md"
+			],
+			[
+				"notes.njk",
+				"_includes/notes.njk"
+			],
+			[
+				"head.njk",
+				"_includes/head.njk"
+			],
+			[
+				"nav",
+				"_includes/nav.html"
+			],
+			[
+				"head.",
+				"_includes/head.njk"
+			],
+			[
+				"main.js",
+				"src/main.js"
+			],
+			[
+				"head",
+				"_includes/head.njk"
+			],
+			[
+				"implicit-",
+				"node_modules/markdown-it-implicit-figures/index.js"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"bio",
+				"_includes/bio.njk"
+			],
+			[
+				"acting.njk",
+				"acting.njk"
+			],
+			[
+				"srcse",
+				"_11ty/srcset.js"
+			],
+			[
+				"img-dim",
+				"_11ty/img-dim.js"
+			],
+			[
+				"disney",
+				"essays/2020-07-07-disneyfication-hamilton.md"
+			],
+			[
+				".e",
+				".eleventy.js"
+			],
+			[
+				"optimi",
+				"_11ty/optimize-html.js"
+			],
+			[
+				"html-mini",
+				"node_modules/.bin/html-minifier"
+			],
+			[
+				"footer",
+				"_includes/footer.html"
+			],
+			[
+				"dec.nj",
+				"_includes/dec.njk"
+			],
+			[
+				"img-",
+				"_11ty/img-processor.js"
+			],
+			[
+				"img-pr",
+				"_11ty/img-processor.js"
+			],
+			[
+				"acting",
+				"acting.njk"
+			],
+			[
+				"catalg",
+				"catalog.njk"
+			],
+			[
+				"catalog",
+				"catalog.njk"
+			],
+			[
+				"logs",
+				"node_modules/date-fns/docs/logo.svg"
+			],
+			[
+				"mainc.s",
+				"node_modules/lodash/_arrayIncludes.js"
+			],
+			[
+				"main",
+				"src/main.js"
+			],
+			[
+				"news",
+				"_includes/newsletter.html"
+			],
+			[
+				"newsle",
+				"newsletter.njk"
+			],
+			[
+				"src/ma",
+				"src/main.js"
+			],
+			[
+				"bio.njk",
+				"_includes/bio.njk"
+			],
+			[
+				"screen.css",
+				"css/screen.css"
+			],
+			[
+				"dec",
+				"_includes/dec.njk"
+			],
+			[
+				"index.",
+				"index.njk"
+			],
+			[
+				"post.",
+				"_includes/post.njk"
+			],
+			[
+				"post",
+				"posts.njk"
+			],
+			[
+				"meta",
+				"_data/metadata.json"
+			],
+			[
+				"metada",
+				"_data/metadata.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"style.njk",
+				"css/style.njk"
+			],
+			[
+				"style.",
+				"css/style.njk"
+			],
+			[
+				"longing",
+				"logs/books/longing_for_less.md"
+			],
+			[
+				"index",
+				"index.njk"
+			],
+			[
+				"dick",
+				"logs/movies/dickjohnsonisdead.md"
+			],
+			[
+				"catal",
+				"catalog.njk"
+			],
+			[
+				"font",
+				"_includes/css/fonts.css"
+			],
+			[
+				"fonts",
+				"_includes/css/fonts.css"
+			],
+			[
+				"about",
+				"about.md"
+			],
+			[
+				"screen",
+				"_includes/css/screen.css"
+			],
+			[
+				"dec.css",
+				"_includes/css/dec.css"
+			],
+			[
+				"dec.",
+				"_includes/css/dec.css"
+			],
+			[
+				"log",
+				"log.njk"
+			],
+			[
+				".eleven",
+				".eleventy.js"
+			],
+			[
+				"post.njk",
+				"_includes/post.njk"
+			],
+			[
+				"main.",
+				"js/main.js"
+			],
+			[
+				"nov.css",
+				"css/nov.css"
+			],
+			[
+				"nov",
+				"_includes/nov.njk"
+			],
+			[
+				"nov.cs",
+				"css/nov.css"
+			],
+			[
+				"nav.css",
+				"_includes/css/nav.css"
+			],
+			[
+				"nov.",
+				"_includes/nov.njk"
+			],
+			[
+				"css/fonts",
+				"_includes/css/fonts.css"
+			],
+			[
+				"sitemap",
+				"sitemap.xml.njk"
+			],
+			[
+				"nav.html",
+				"_includes/nav.html"
+			],
+			[
+				"metadata",
+				"_data/metadata.json"
+			],
+			[
+				"note.njk",
+				"_includes/notes.njk"
+			],
+			[
+				"header",
+				"_includes/header.html"
+			],
+			[
+				"head.html",
+				"_includes/head.html"
+			],
+			[
+				"cu",
+				"custom.css"
+			],
+			[
+				"config",
+				"_config.yml"
+			],
+			[
+				"resume",
+				"resume.md"
+			],
+			[
+				"entang",
+				"_posts/2020-03-02-The-Entanglement.md"
+			],
+			[
+				"minimalism",
+				"_posts/2020-01-22-The-Pitfalls-and-Transcendences-of-Minimalism,-and-the-Potentials-of-Maximalism.md"
+			],
+			[
+				"hidden",
+				"_posts/2020-02-25-The-Hidden-Conservatism-in-Minimalism.md"
+			],
+			[
+				"inde.m",
+				"index.md"
+			],
+			[
+				"index.md",
+				"index.md"
+			],
+			[
+				"index.ht",
+				"blog/index.html"
+			],
+			[
+				"custom",
+				"custom.css"
+			],
+			[
+				"ho",
+				"_posts/2020-03-11-How-to-tell-the-truth.md"
+			],
+			[
+				"tell",
+				"_site/tellthetruth.html"
+			],
+			[
+				"how to tell",
+				"_posts/2020-03-11-How-to-tell-the-truth.md"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"blog/inde",
+				"blog/index.html"
+			],
+			[
+				"newsl",
+				"newsletter.md"
+			],
+			[
+				"blog",
+				"_layouts/blog.html"
+			],
+			[
+				"home",
+				"_layouts/home.html"
+			],
+			[
+				"book",
+				"_drafts/booknotes.md"
+			],
+			[
+				"newsletter",
+				"newsletter.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "mvg",
+		"selected_items":
+		[
+			[
+				"mvg",
+				"~/Documents/Projects/marivialgolden.com/mvg.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 328.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,3 +1,7 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
 
 {% set pageTitle = title + ' — ' + site.name %} {# We don't want any
@@ -45,3 +49,12 @@ currentPage.templateContent | excerpt | safe | striptags -%} {% endif %}
 <link rel="canonical" href="{{ currentUrl }}" />
 
 <link rel="icon" href="/images/meta/favicon.svg" type="image/svg+xml" />
+
+<link rel="preload" href="/fonts/alegreya-v19-latin-regular.woff2" as="font" type="font/woff2"
+    crossorigin="crossorigin" />
+<link rel="preload" href="/fonts/alegreya-v19-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin" />
+<link rel="preload" href="/fonts/alegreya-sans-v14-latin-regular.woff2" as="font" type="font/woff2"
+    crossorigin="crossorigin" />
+<link rel="preload" href="/fonts/alegreya-sans-v14-latin-900.woff2" as="font" type="font/woff2"
+    crossorigin="crossorigin" />
+<link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />

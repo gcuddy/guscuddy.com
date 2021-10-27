@@ -1,7 +1,7 @@
 .sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sidebar-gutter, var(--s-400));
+  gap: var(--sidebar-gutter, var(--space-m));
 
   > * {
     flex-grow: 1;
@@ -11,6 +11,6 @@
   > :first-child {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: calc(60% - var(--sidebar-gutter, var(--s-400)));
+    min-width: calc(60% - var(--sidebar-gutter, var(--space-m)));
   }
 }

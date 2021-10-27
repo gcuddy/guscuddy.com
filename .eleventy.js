@@ -14,6 +14,7 @@ const timestampFilter = require('./src/filters/timestamp')
 const strictSlugFilter = require('./src/filters/strict-slug')
 const fileNameFilter = require('./src/filters/file-name')
 const slugFilter = require('./src/filters/slug')
+const padFilter = require('./src/filters/pad3')
 
 // Plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
@@ -54,6 +55,7 @@ module.exports = config => {
     config.addFilter('strictSlug', strictSlugFilter)
     config.addFilter('fileNameFilter', fileNameFilter)
     config.addFilter('slug', slugFilter)
+    config.addFilter('pad3', padFilter)
     config.addNunjucksAsyncFilter('jsmin', jsmin)
     config.addNunjucksAsyncFilter('isbn', isbn)
 

@@ -1,0 +1,12 @@
+{% import 'system/globals.njk' as globals %}
+{% set componentStyles = ['test'] %}
+{%- macro component(name, params) -%}
+    {% include "../components/" + name + "/" + name + ".njk" %}
+    {% set componentCSS = "components/" + name + "/" + name + ".css" %}
+    {% set componentStyles = ["testiongeign"] %}
+    {# this is utterly chaotic and probably horrible practice #}
+    {# i can't seem to figure out how to put this in the head tho #}
+    <style>
+        {% include componentCSS %}
+    </style>
+{%- endmacro -%}

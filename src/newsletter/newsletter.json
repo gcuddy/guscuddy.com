@@ -1,4 +1,4 @@
 {
     "layout": "layouts/curtain.html",
-    "permalink": "/curtain/{{ page.fileSlug }}/index.html"
+    "permalink": "/curtain/{{ page.fileSlug | pad3 }}/index.html"
 }

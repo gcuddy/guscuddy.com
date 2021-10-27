@@ -80,3 +80,7 @@ https://css-tricks.com/easing-linear-gradients/
         box-shadow: none;
     }
 }
+
+@mixin clampFontSize($min, $max, $stepBelow) {
+    font-size: clamp(#{$min}, calc(#{$stepBelow} + 0.7vw), #{$max});
+}

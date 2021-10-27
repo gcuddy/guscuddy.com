@@ -118,9 +118,8 @@ module.exports = {
         return string.startsWith(text)
     },
     sortArray(arr, value) {
-        arr.sort((a, b) => {
+        return arr.sort((a, b) => {
             return b[value] - a[value]
         })
-        return arr
     },
 }
