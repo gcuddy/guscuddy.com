@@ -88,6 +88,26 @@
 		"selected_items":
 		[
 			[
+				"format",
+				"JsPrettier: Format Code"
+			],
+			[
+				"package instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Add Repository"
+			],
+			[
+				"mono",
+				"Monokai Pro: select theme"
+			],
+			[
+				"monok",
+				"Monokai Pro: select theme"
+			],
+			[
 				"word wra",
 				"Word Wrap: Toggle"
 			],
@@ -114,14 +134,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"mono",
-				"Monokai Pro: select theme"
-			],
-			[
-				"monok",
-				"Monokai Pro: select theme"
 			],
 			[
 				"finder",
@@ -216,6 +228,14 @@
 	],
 	"file_history":
 	[
+		"/Users/guscuddy/testing/benay/index.html",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/src/_includes/partials/curtain-list.njk",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/src/scss/_config.scss",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/src/scss/critical.scss",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/src/scss/_fonts.scss",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/src/scss/blocks/_curtain-list.scss",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/node_modules/dotenv/config.js",
+		"/Users/guscuddy/Dropbox/Projects/guscuddy.com/.eleventy.js",
 		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/logs/books/pilgrim-at-tinker-creek.md",
 		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/layouts/feed.html",
 		"/Users/guscuddy/Documents/Projects/guscuddy.com/src/_includes/partials/post-list.html",
@@ -335,15 +355,7 @@
 		"/Users/guscuddy/site/gcuddy.github.io/_drafts/book.html",
 		"/Users/guscuddy/site/gcuddy.github.io/_drafts/booknotes.md",
 		"/Users/guscuddy/site/gcuddy.github.io/_posts/2017-07-08-on-daydreaming.md",
-		"/Users/guscuddy/site/gcuddy.github.io/.gitignore",
-		"/Users/guscuddy/site/gcuddy.github.io/_posts/2017-06-03-the-unexpected-route.md",
-		"/Users/guscuddy/site/gcuddy.github.io/_layouts/default.html",
-		"/Users/guscuddy/site/gcuddy.github.io/_books/happy.md",
-		"/Users/guscuddy/site/gcuddy.github.io/contact.md",
-		"/Users/guscuddy/code/advanced algorithms/03 exact_change.js",
-		"/Users/guscuddy/site/gcuddy.github.io/_books/zero.md",
-		"/Users/guscuddy/code/advanced algorithms/02 record_collection.js",
-		"/var/folders/7z/pbyv_d0x3lj62qw9q25khzqc0000gn/T/jrnlRDQoyi.txt"
+		"/Users/guscuddy/site/gcuddy.github.io/.gitignore"
 	],
 	"find":
 	{
@@ -361,6 +373,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"heading"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -441,6 +454,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"curtainl",
+				"src/_includes/partials/curtain-list.njk"
+			],
+			[
+				"curtain-list",
+				"src/scss/blocks/_curtain-list.scss"
+			],
+			[
+				"config.scs",
+				"src/scss/_config.scss"
+			],
+			[
+				"critical.",
+				"src/scss/critical.scss"
+			],
+			[
+				"config",
+				"node_modules/dotenv/config.js"
+			],
+			[
+				"fonts.scss",
+				"src/scss/_fonts.scss"
+			],
+			[
+				"",
+				".eleventy.js"
+			],
 			[
 				"critical",
 				"src/scss/critical.scss"
@@ -878,10 +919,6 @@
 				"custom.css"
 			],
 			[
-				"config",
-				"_config.yml"
-			],
-			[
 				"resume",
 				"resume.md"
 			],
@@ -928,30 +965,6 @@
 			[
 				"gemfile",
 				"Gemfile"
-			],
-			[
-				"blog/inde",
-				"blog/index.html"
-			],
-			[
-				"newsl",
-				"newsletter.md"
-			],
-			[
-				"blog",
-				"_layouts/blog.html"
-			],
-			[
-				"home",
-				"_layouts/home.html"
-			],
-			[
-				"book",
-				"_drafts/booknotes.md"
-			],
-			[
-				"newsletter",
-				"newsletter.md"
 			]
 		],
 		"width": 0.0

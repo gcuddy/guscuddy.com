@@ -14,7 +14,13 @@
                 <li class="[ production-list__item ] [ flow ]" {{ helpers.getLinkActiveState(show.url, page.url) |
                     safe}}>
                     <div class="production-list__item-photo">
-                        <a href="{{show.url}}#main-content"><img src="{{ show.data.photos.src[0] }}"
+                        {% set photoSrc = "" %}
+                        {% if show.data.photos.src[0] %}
+                        {% set photoSrc = show.data.photos.src[0] %}
+                        {% elif show.data.photos.directory %}
+                        {% set photoSrc = show.data.photos.directory | firstPhoto %}
+                        {% endif %}
+                        <a href="{{show.url}}#main-content"><img src="{{ photoSrc }}"
                                 alt="Production Photo from {{show.data.title}}" loading="lazy" decoding="async" /></a>
                     </div>
                     <div class="production-list__item-description">

@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production'
+const fs = require('fs')
 
 // Filters
 const dateFilter = require('./src/filters/date-filter.js')
@@ -30,6 +31,7 @@ const parseTransform = require('./src/transforms/parse-transforms')
 const embedTransform = require('./src/transforms/embeds')
 const twitterTransform = require('./src/transforms/twitter-transform')
 const instagramTransform = require('./src/transforms/instagram-transform.js')
+const path = require('path')
 // const obsdianEmbed = require('./src/transforms/obsidian-embed')
 //const noteTransform = require("./src/transforms/note-transform");
 
@@ -144,6 +146,24 @@ module.exports = config => {
                 }
                 return 1
             }
+        )
+    })
+    config.addShortcode('showPhotos', (directory, page) => {
+        const html = fs
+            .readdirSync(path.join(__dirname, './src/', directory))
+            .map((file, index) => {
+                return `
+                <a href="${
+                    page.url + String(index + 1)
+                }"><img src="${directory}/${file}" alt="Photo of Gus Cuddy in " /></a>`
+            })
+        console.log(page)
+        return html.join('\n')
+    })
+    config.addFilter('firstPhoto', directory => {
+        return path.join(
+            directory,
+            fs.readdirSync(path.join(__dirname, './src/', directory))[0]
         )
     })
 

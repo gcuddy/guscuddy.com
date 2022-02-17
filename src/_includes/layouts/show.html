@@ -16,13 +16,19 @@
     <div class="[ show-content ] [ content post ] [ gap-top-700 ]">
 
         <div class="flow flow-space-800">
-            <section class="[ show-gallery ] [ {%if photos.src.length > 2%}auto-grid{%endif%} ]">
+            <section
+                class="[ show-gallery ] [ {%if (photos.src.length > 2) or (photos.directory) %}auto-grid{%endif%} ]">
+                {% if photos.directory %}
+                {% showPhotos photos.directory, page %}
+                {% elif photos.src %}
                 {% for photo in photos.src %}
 
                 <a href="{{page.url}}{{loop.index}}/"><img src="{{photo}}"
                         alt="Photo of Gus Cuddy in {{ title }} at {{ theater }}"></a>
 
                 {% endfor %}
+                {% endif %}
+
             </section>
             <section class="[ details ]">
                 <dl class="details-items">
