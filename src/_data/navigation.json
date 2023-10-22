@@ -5,6 +5,10 @@
             "url": "/about/"
         },
         {
+            "text": "Portfolio",
+            "url": "https://portfolio.guscuddy.com/"
+        },
+        {
             "text": "Feed",
             "url": "/feed/"
         },
